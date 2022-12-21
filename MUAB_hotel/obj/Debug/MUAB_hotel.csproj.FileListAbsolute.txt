@@ -1,0 +1,11 @@
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\MUAB_hotel.exe.config
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\MUAB_hotel.exe
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\MUAB_hotel.pdb
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.AssemblyReference.cache
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.SuggestedBindingRedirects.cache
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Properties.Resources.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.GenerateResource.cache
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.CoreCompileInputs.cache
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.exe
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.pdb
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Home.resources
