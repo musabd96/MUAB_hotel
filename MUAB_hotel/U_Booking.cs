@@ -90,6 +90,8 @@ namespace MUAB_hotel
         {
             dbHelper db = new dbHelper();
             db.LastBookingId();
+            db.LastcustomerId();
+            txtCusId.Text = dbHelper.customerId.ToString();
             txtBookId.Text = dbHelper.bookingId;
 
             int result = DateTime.Compare(dtCheckout.Value, dtCheckin.Value);
@@ -103,7 +105,6 @@ namespace MUAB_hotel
             {
                 if (result != 0)
                 {
-                    MessageBox.Show("ok");
                     roomsType = (string)cBRoomTy.SelectedItem;
                     
                     pnlSelectRoom.Height = 595;
@@ -180,14 +181,7 @@ namespace MUAB_hotel
             txtChIn.Enabled= false;
             txtChOut.Enabled= false;
 
-            if (checkBox1.Checked == false)
-            {
-                btnBook.Enabled = false;
-            }
-            else
-            {
-                btnBook.Enabled = true;
-            }
+            
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -199,11 +193,19 @@ namespace MUAB_hotel
             dbHelper.totalDays = txtTotalNght.Text;
             dbHelper.checkIn = txtChIn.Text;
             dbHelper.checkOut = txtChOut.Text;
-
+            dbHelper.firstName= txtFirstName.Text;
+            dbHelper.lastName = txtLastname.Text;
+            dbHelper.phoneNr = txtPhoneNr.Text;
+            dbHelper.address = txtAddress.Text;
 
 
             db.newBooking();
             db.newbookingid();
+            db.newCustomer();
+            db.newcustomerid();
+            dbHelper.roomStatus = "BUSY";
+            db.roomstatus();
+            
 
             MessageBox.Show("booking success");
 
@@ -214,9 +216,26 @@ namespace MUAB_hotel
             cBRoomTy.SelectedItem = "-Select  room type-";
             lbAdultCount.Text = "0";
             lbChildrenCount.Text = "0";
+            txtFirstName.Clear();
+            txtLastname.Clear();
+            txtPhoneNr.Clear();
+            txtAddress.Clear();
 
 
 
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                btnBook.Enabled = false;
+            }
+            else
+            {
+                btnBook.Enabled = true;
+            }
         }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbBooking = new System.Windows.Forms.Label();
             this.lbAdult = new System.Windows.Forms.Label();
             this.btnAdultMinus = new System.Windows.Forms.Button();
@@ -72,9 +72,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhoneNr = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastname = new System.Windows.Forms.TextBox();
@@ -198,6 +198,7 @@
             // 
             this.cBRoomTy.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBRoomTy.FormattingEnabled = true;
+            this.cBRoomTy.ItemHeight = 31;
             this.cBRoomTy.Items.AddRange(new object[] {
             "-Select  room type-",
             "Double",
@@ -242,7 +243,7 @@
             this.dtCheckin.Location = new System.Drawing.Point(775, 316);
             this.dtCheckin.Name = "dtCheckin";
             this.dtCheckin.Size = new System.Drawing.Size(189, 39);
-            this.dtCheckin.TabIndex = 9;
+            this.dtCheckin.TabIndex = 5;
             this.dtCheckin.Value = new System.DateTime(2022, 12, 27, 0, 0, 0, 0);
             // 
             // label5
@@ -263,7 +264,7 @@
             this.dtCheckout.Location = new System.Drawing.Point(776, 389);
             this.dtCheckout.Name = "dtCheckout";
             this.dtCheckout.Size = new System.Drawing.Size(183, 39);
-            this.dtCheckout.TabIndex = 9;
+            this.dtCheckout.TabIndex = 6;
             this.dtCheckout.Value = new System.DateTime(2022, 12, 27, 0, 0, 0, 0);
             // 
             // btnReset
@@ -272,7 +273,7 @@
             this.btnReset.Location = new System.Drawing.Point(412, 525);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(154, 61);
-            this.btnReset.TabIndex = 10;
+            this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -282,8 +283,9 @@
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(713, 525);
             this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(154, 61);
-            this.btnSearch.TabIndex = 10;
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -311,9 +313,9 @@
             this.pnlSelectRoom.Controls.Add(this.label3);
             this.pnlSelectRoom.Controls.Add(this.label1);
             this.pnlSelectRoom.Controls.Add(this.dataGridView1);
-            this.pnlSelectRoom.Location = new System.Drawing.Point(0, 106);
+            this.pnlSelectRoom.Location = new System.Drawing.Point(0, 694);
             this.pnlSelectRoom.Name = "pnlSelectRoom";
-            this.pnlSelectRoom.Size = new System.Drawing.Size(1302, 598);
+            this.pnlSelectRoom.Size = new System.Drawing.Size(1302, 10);
             this.pnlSelectRoom.TabIndex = 11;
             // 
             // btnCancel
@@ -480,48 +482,48 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView1.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(18, 62);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 40;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.Size = new System.Drawing.Size(857, 497);
@@ -548,41 +550,41 @@
             this.lbLastName.TabIndex = 6;
             this.lbLastName.Text = "Last Name:";
             // 
-            // lbEmail
+            // lbAddress
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(630, 203);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(84, 31);
-            this.lbEmail.TabIndex = 6;
-            this.lbEmail.Text = "Email:";
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddress.Location = new System.Drawing.Point(630, 251);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(94, 31);
+            this.lbAddress.TabIndex = 6;
+            this.lbAddress.Text = "Adress:";
             // 
             // lbPhone
             // 
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.Location = new System.Drawing.Point(630, 256);
+            this.lbPhone.Location = new System.Drawing.Point(630, 198);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(124, 31);
             this.lbPhone.TabIndex = 6;
             this.lbPhone.Text = "Phone Nr:";
             // 
-            // txtEmail
+            // txtAddress
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(776, 203);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(227, 29);
-            this.txtEmail.TabIndex = 12;
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(776, 251);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(227, 29);
+            this.txtAddress.TabIndex = 4;
             // 
             // txtPhoneNr
             // 
             this.txtPhoneNr.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNr.Location = new System.Drawing.Point(775, 251);
+            this.txtPhoneNr.Location = new System.Drawing.Point(775, 193);
             this.txtPhoneNr.Name = "txtPhoneNr";
             this.txtPhoneNr.Size = new System.Drawing.Size(227, 29);
-            this.txtPhoneNr.TabIndex = 12;
+            this.txtPhoneNr.TabIndex = 3;
             // 
             // txtFirstName
             // 
@@ -590,7 +592,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(304, 200);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(243, 29);
-            this.txtFirstName.TabIndex = 12;
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtLastname
             // 
@@ -598,7 +600,7 @@
             this.txtLastname.Location = new System.Drawing.Point(303, 248);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(243, 29);
-            this.txtLastname.TabIndex = 12;
+            this.txtLastname.TabIndex = 2;
             // 
             // label13
             // 
@@ -629,6 +631,7 @@
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "I AGREE";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // U_Booking
             // 
@@ -639,7 +642,7 @@
             this.Controls.Add(this.txtLastname);
             this.Controls.Add(this.txtPhoneNr);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtCheckout);
@@ -657,7 +660,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbPhone);
             this.Controls.Add(this.lbLastName);
-            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbAddress);
             this.Controls.Add(this.lbFirstName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbAdult);
@@ -717,9 +720,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbLastName;
-        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbPhone;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhoneNr;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastname;

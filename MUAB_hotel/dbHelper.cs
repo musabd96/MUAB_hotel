@@ -89,11 +89,10 @@ namespace MUAB_hotel
 
         internal void newBooking()
         {
-            MessageBox.Show($" room {checkIn}, bid {checkOut} {roomNr} {totalDays}{bookingId}");
 
-
+            MessageBox.Show($"chin {customerId} bokid room{roomNr}");
             string query = "UPDATE hoteldb.booking SET booking_check_in = '" + checkIn+ "', booking_check_out = '" + checkOut + "', " +
-                "booking_days = '" + totalDays + "', rooms_nr  = '" + roomNr+ "' WHERE booking_id = '" + bookingId + "'";
+                "booking_days = '" + totalDays + "', customers_id = '" + customerId + "', rooms_nr = '" + roomNr + "' WHERE booking_id = '" + bookingId + "'";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -108,7 +107,82 @@ namespace MUAB_hotel
 
         #region Customer
 
+        //customer
 
+        public static int customerId { get; set; }
+        public static string firstName { get; set; }
+        public static string lastName { get; set; }
+        public static string phoneNr { get; set; }
+        public static string address { get; set; }
+
+        internal void newcustomerid()
+        {
+
+
+            string Query = "INSERT INTO hoteldb.customers (customers_first_name ) VALUES (0);";
+
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+
+        }
+
+
+
+        internal void LastcustomerId()
+        {
+                MessageBox.Show($"cusId = {customerId}");
+            string query = "SELECT * FROM hoteldb.customers WHERE customers_first_name = 0";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                customerId = (int)reader["customers_id"];
+                MessageBox.Show($"cusId = {customerId}");
+            }
+            conn.Close();
+        }
+
+        internal void newCustomer()
+        {
+            MessageBox.Show($"fname {firstName} lname{lastName} cusid{customerId}");
+            string query = "UPDATE hoteldb.customers SET customers_first_name = '" + firstName + "', customers_last_name = '" + lastName + "', " +
+                "customers_phone = '" + phoneNr + "', customers_address  = '" + address + "' WHERE customers_id = '" + customerId + "'";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+
+
+            conn.Close();
+        }
+        #endregion
+
+        #region Rooms
+
+        public static string roomStatus { get; set; }
+
+
+        internal void roomstatus()
+        {
+            string query = "UPDATE hoteldb.rooms SET rooms_status = '" + roomStatus + "' WHERE rooms_nr = '" + roomNr + "'";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+
+
+            conn.Close();
+        }
 
         #endregion
 
