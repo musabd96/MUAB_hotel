@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MUAB_hotel
 {
@@ -28,8 +29,10 @@ namespace MUAB_hotel
             
             InitializeComponent();
             pnlSelectRoom.Height = 10;
-            dateTimePicker2.MinDate = DateTime.Now;
-            dateTimePicker1.MinDate = DateTime.Now;
+            dtCheckout.MinDate = DateTime.Now;
+            dtCheckin.MinDate = DateTime.Now;
+            dtCheckout.Value = DateTime.Now;
+            dtCheckin.Value = DateTime.Now;
         }
 
         #region - + buttons 
@@ -85,7 +88,11 @@ namespace MUAB_hotel
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int result = DateTime.Compare(dateTimePicker2.Value, dateTimePicker1.Value);
+            dbHelper db = new dbHelper();
+            db.LastBookingId();
+            txtBookId.Text = dbHelper.bookingId;
+
+            int result = DateTime.Compare(dtCheckout.Value, dtCheckin.Value);
 
             if (cBRoomTy.SelectedItem.ToString().Contains(" "))
             {
@@ -98,7 +105,7 @@ namespace MUAB_hotel
                 {
                     MessageBox.Show("ok");
                     roomsType = (string)cBRoomTy.SelectedItem;
-                    dbHelper db = new dbHelper();
+                    
                     pnlSelectRoom.Height = 595;
                     pnlSelectRoom.Location = new Point(0, 109);
                     db.getData(dataGridView1);
@@ -108,14 +115,9 @@ namespace MUAB_hotel
                 {
                     MessageBox.Show("Change the date");
                 }
-                
-
+ 
             }
-
-            
-            
-            
-            
+           
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -123,8 +125,8 @@ namespace MUAB_hotel
             cBRoomTy.SelectedItem = "Select a room type";
             lbAdultCount.Text = "0";
             lbChildrenCount.Text = "0";
-            dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
+            dtCheckin.Value = DateTime.Now;
+            dtCheckout.Value = DateTime.Now;
 
         }
 
@@ -148,18 +150,73 @@ namespace MUAB_hotel
                 txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_type"].FormattedValue.ToString();
                 string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["rooms_price"].FormattedValue.ToString() ;
 
-                txtChIn.Text = dateTimePicker2.Text;
-                txtChOut.Text = dateTimePicker1.Text;
-
-                TimeSpan diff = dateTimePicker2.Value.Subtract(dateTimePicker1.Value);
+                txtChIn.Text = dtCheckin.Text;
+                txtChOut.Text = dtCheckout.Text;
+                
+                TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
                 double days = diff.TotalDays;
-                txtTotalNght.Text = days.ToString();
 
-                int nights = Convert.ToInt32(txtTotalNght.Text);
+                int result = (int)Math.Round(days, 1, MidpointRounding.AwayFromZero);
 
+                txtTotalNght.Text = result.ToString();
+
+
+
+                int nights = Convert.ToInt32(days);
+                
                 int total = nights * (Convert.ToInt32(roomPrice));
                 txtPrice.Text = total.ToString();
+                
 ;            }
+        }
+
+        private void U_Booking_Load(object sender, EventArgs e)
+        {
+            txtBookId.Enabled= false;
+            txtRoomNr.Enabled= false;
+            txtRoomType.Enabled= false;
+            txtTotalNght.Enabled= false;
+            txtPrice.Enabled = false;
+            txtChIn.Enabled= false;
+            txtChOut.Enabled= false;
+
+            if (checkBox1.Checked == false)
+            {
+                btnBook.Enabled = false;
+            }
+            else
+            {
+                btnBook.Enabled = true;
+            }
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            dbHelper db = new dbHelper();
+
+            dbHelper.roomNr = txtRoomNr.Text;
+            dbHelper.roomType = txtRoomType.Text;
+            dbHelper.totalDays = txtTotalNght.Text;
+            dbHelper.checkIn = txtChIn.Text;
+            dbHelper.checkOut = txtChOut.Text;
+
+
+
+            db.newBooking();
+            db.newbookingid();
+
+            MessageBox.Show("booking success");
+
+
+            pnlSelectRoom.Height = 10;
+            dtCheckout.Value = DateTime.Now;
+            dtCheckin.Value = DateTime.Now;
+            cBRoomTy.SelectedItem = "-Select  room type-";
+            lbAdultCount.Text = "0";
+            lbChildrenCount.Text = "0";
+
+
+
         }
     }
 }
