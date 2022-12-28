@@ -28,7 +28,8 @@ namespace MUAB_hotel
         {
             
             InitializeComponent();
-            pnlSelectRoom.Height = 10;
+            pnlSelectRoom.Height = 0;
+            pnlSelectRoom.Visible = false;
             dtCheckout.MinDate = DateTime.Now;
             dtCheckin.MinDate = DateTime.Now;
             dtCheckout.Value = DateTime.Now;
@@ -88,6 +89,8 @@ namespace MUAB_hotel
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show($"chech in {dtCheckin.Text}");
             dbHelper db = new dbHelper();
             db.LastBookingId();
             db.LastcustomerId();
@@ -106,10 +109,11 @@ namespace MUAB_hotel
                 if (result != 0)
                 {
                     roomsType = (string)cBRoomTy.SelectedItem;
-                    
-                    pnlSelectRoom.Height = 595;
-                    pnlSelectRoom.Location = new Point(0, 109);
+                    pnlSelectRoom.Visible = true;
+                    pnlSelectRoom.Height = 707;
+                    pnlSelectRoom.Location = new Point(0, 0);
                     db.getData(dataGridView1);
+                    dataGridView1.Focus();
                 }
 
                 else
@@ -139,40 +143,51 @@ namespace MUAB_hotel
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            pnlSelectRoom.Height = 10;
+            pnlSelectRoom.Visible=false;
+            pnlSelectRoom.Height = 0;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                dataGridView1.CurrentRow.Selected = true;
-                txtRoomNr.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_nr"].FormattedValue.ToString();
-                txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_type"].FormattedValue.ToString();
-                string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["rooms_price"].FormattedValue.ToString() ;
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dataGridView1.CurrentRow.Selected = true;
+                    txtRoomNr.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_nr"].FormattedValue.ToString();
+                    txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_type"].FormattedValue.ToString();
+                    string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["rooms_price"].FormattedValue.ToString();
 
-                txtChIn.Text = dtCheckin.Text;
-                txtChOut.Text = dtCheckout.Text;
-                
-                TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
-                double days = diff.TotalDays;
+                    txtChIn.Text = dtCheckin.Text;
+                    txtChOut.Text = dtCheckout.Text;
 
-                int result = (int)Math.Round(days, 1, MidpointRounding.AwayFromZero);
+                    TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
+                    double days = diff.TotalDays;
 
-                txtTotalNght.Text = result.ToString();
+                    int result = (int)Math.Round(days, 1, MidpointRounding.AwayFromZero);
+
+                    txtTotalNght.Text = result.ToString();
 
 
 
-                int nights = Convert.ToInt32(days);
-                
-                int total = nights * (Convert.ToInt32(roomPrice));
-                txtPrice.Text = total.ToString();
-                
-;            }
+                    int nights = Convert.ToInt32(days);
+
+                    int total = nights * (Convert.ToInt32(roomPrice));
+                    txtPrice.Text = total.ToString();
+
+                    ;
+                }
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void U_Booking_Load(object sender, EventArgs e)
         {
+            txtCusId.Enabled= false;
             txtBookId.Enabled= false;
             txtRoomNr.Enabled= false;
             txtRoomType.Enabled= false;
@@ -197,6 +212,7 @@ namespace MUAB_hotel
             dbHelper.lastName = txtLastname.Text;
             dbHelper.phoneNr = txtPhoneNr.Text;
             dbHelper.address = txtAddress.Text;
+            dbHelper.price = txtPrice.Text;
 
 
             db.newBooking();
@@ -237,5 +253,6 @@ namespace MUAB_hotel
                 btnBook.Enabled = true;
             }
         }
+
     }
 }

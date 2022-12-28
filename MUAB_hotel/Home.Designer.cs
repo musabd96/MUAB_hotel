@@ -47,11 +47,11 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlCloseBar = new System.Windows.Forms.Panel();
-            this.pBCloseBar = new System.Windows.Forms.PictureBox();
-            this.pBLOGO = new System.Windows.Forms.PictureBox();
             this.pnlMenuBarIcon = new System.Windows.Forms.Panel();
             this.pBMenuBarIcon = new System.Windows.Forms.PictureBox();
+            this.pBLOGO = new System.Windows.Forms.PictureBox();
+            this.pnlCloseBar = new System.Windows.Forms.Panel();
+            this.pBCloseBar = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
             this.pnlBlack.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,19 +61,17 @@
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlCloseBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
             this.pnlMenuBarIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
+            this.pnlCloseBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_U
             // 
-            this.pnl_U.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_U.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_U.BackColor = System.Drawing.Color.White;
             this.pnl_U.ForeColor = System.Drawing.Color.Black;
             this.pnl_U.Location = new System.Drawing.Point(60, 94);
@@ -87,9 +85,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBlack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.pnlBlack.Controls.Add(this.label3);
-            this.pnlBlack.Location = new System.Drawing.Point(57, 2);
+            this.pnlBlack.Location = new System.Drawing.Point(60, 0);
             this.pnlBlack.Name = "pnlBlack";
-            this.pnlBlack.Size = new System.Drawing.Size(1305, 92);
+            this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
             this.pnlBlack.TabIndex = 4;
             // 
             // label3
@@ -295,38 +293,6 @@
             this.panel2.Size = new System.Drawing.Size(177, 99);
             this.panel2.TabIndex = 0;
             // 
-            // pnlCloseBar
-            // 
-            this.pnlCloseBar.Controls.Add(this.pBCloseBar);
-            this.pnlCloseBar.Location = new System.Drawing.Point(146, 31);
-            this.pnlCloseBar.Name = "pnlCloseBar";
-            this.pnlCloseBar.Size = new System.Drawing.Size(20, 21);
-            this.pnlCloseBar.TabIndex = 0;
-            // 
-            // pBCloseBar
-            // 
-            this.pBCloseBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBCloseBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBCloseBar.Image = ((System.Drawing.Image)(resources.GetObject("pBCloseBar.Image")));
-            this.pBCloseBar.Location = new System.Drawing.Point(0, 0);
-            this.pBCloseBar.Name = "pBCloseBar";
-            this.pBCloseBar.Size = new System.Drawing.Size(20, 21);
-            this.pBCloseBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBCloseBar.TabIndex = 0;
-            this.pBCloseBar.TabStop = false;
-            this.pBCloseBar.Click += new System.EventHandler(this.pBCloseBar_Click);
-            // 
-            // pBLOGO
-            // 
-            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
-            this.pBLOGO.Location = new System.Drawing.Point(19, 8);
-            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
-            this.pBLOGO.Name = "pBLOGO";
-            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
-            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBLOGO.TabIndex = 1;
-            this.pBLOGO.TabStop = false;
-            // 
             // pnlMenuBarIcon
             // 
             this.pnlMenuBarIcon.Controls.Add(this.pBMenuBarIcon);
@@ -347,6 +313,38 @@
             this.pBMenuBarIcon.TabIndex = 0;
             this.pBMenuBarIcon.TabStop = false;
             this.pBMenuBarIcon.Click += new System.EventHandler(this.pBMenuBarIcon_Click);
+            // 
+            // pBLOGO
+            // 
+            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
+            this.pBLOGO.Location = new System.Drawing.Point(19, 8);
+            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
+            this.pBLOGO.Name = "pBLOGO";
+            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
+            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLOGO.TabIndex = 1;
+            this.pBLOGO.TabStop = false;
+            // 
+            // pnlCloseBar
+            // 
+            this.pnlCloseBar.Controls.Add(this.pBCloseBar);
+            this.pnlCloseBar.Location = new System.Drawing.Point(146, 31);
+            this.pnlCloseBar.Name = "pnlCloseBar";
+            this.pnlCloseBar.Size = new System.Drawing.Size(20, 21);
+            this.pnlCloseBar.TabIndex = 0;
+            // 
+            // pBCloseBar
+            // 
+            this.pBCloseBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBCloseBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pBCloseBar.Image = ((System.Drawing.Image)(resources.GetObject("pBCloseBar.Image")));
+            this.pBCloseBar.Location = new System.Drawing.Point(0, 0);
+            this.pBCloseBar.Name = "pBCloseBar";
+            this.pBCloseBar.Size = new System.Drawing.Size(20, 21);
+            this.pBCloseBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBCloseBar.TabIndex = 0;
+            this.pBCloseBar.TabStop = false;
+            this.pBCloseBar.Click += new System.EventHandler(this.pBCloseBar_Click);
             // 
             // pnlMenuBar
             // 
@@ -389,11 +387,11 @@
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.pnlCloseBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
             this.pnlMenuBarIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
+            this.pnlCloseBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
             this.ResumeLayout(false);

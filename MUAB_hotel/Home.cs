@@ -26,12 +26,12 @@ namespace MUAB_hotel
         public void openMenu()
         {
             pnlMenuBarIcon.Visible = false;
-            pnlMenuBar.Width = 190;
+            pnlMenuBar.Width = 189;
             pBLOGO.Visible = true;
-            pnl_U.Width = 1160;
-            pnlBlack.Width = 1162;
+            pnl_U.Width = 1180;
+            pnlBlack.Width = 1180;
             pnlBlack.Location = new Point(182, 0);
-            pnl_U.Location = new Point(182, 88);
+            pnl_U.Location = new Point(182, 94);
             
 
 
@@ -40,13 +40,14 @@ namespace MUAB_hotel
         //Close Menu bar
         public void closeMenu()
         {
+
             pnlMenuBarIcon.Visible = true;
             pnlMenuBar.Width = 60;
             pBLOGO.Visible = false;
             pnl_U.Width = 1302;
             pnlBlack.Width = 1305;
-            pnl_U.Location = new Point(60, 88);
-            pnlBlack.Location = new Point(57, 0);
+            pnl_U.Location = new Point(60, 94);
+            pnlBlack.Location = new Point(60, 0);
         }
 
 
@@ -77,7 +78,7 @@ namespace MUAB_hotel
             userControl(u_Home);
             btnHome.Enabled = false;
             btnBooking.Enabled = true;
-
+            btnReception.Enabled = true;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
@@ -86,11 +87,16 @@ namespace MUAB_hotel
             userControl(u_Booking);
             btnBooking.Enabled = false;
             btnHome.Enabled = true;
+            btnReception.Enabled = true;
         }
 
         private void btnReception_Click(object sender, EventArgs e)
         {
-
+            U_Reception U_Reception = new U_Reception();
+            userControl(U_Reception);
+            btnReception.Enabled = false;
+            btnBooking.Enabled = true;
+            btnHome.Enabled = true;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

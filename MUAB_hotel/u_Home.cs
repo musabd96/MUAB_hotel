@@ -12,6 +12,8 @@ namespace MUAB_hotel
 {
     public partial class u_Home : UserControl
     {
+        public static string roomsStatus;
+
         public u_Home()
         {
             InitializeComponent();
@@ -19,8 +21,17 @@ namespace MUAB_hotel
 
         private void u_Home_Load(object sender, EventArgs e)
         {
-            lbHome.Parent = pictureBox1;
-            lbHome.BackColor = Color.Transparent;
+            roomsStatus = (string)cBRmSt.SelectedItem;
+            dbHelper db = new dbHelper();
+            db.showRoom(dataGridView2);
+        }
+
+        private void cBRmSt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dbHelper db = new dbHelper();
+            roomsStatus = (string)cBRmSt.SelectedItem;
+            db.showRoom(dataGridView2);
+            dataGridView2.Focus();
         }
     }
 }

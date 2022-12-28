@@ -105,6 +105,12 @@
     <Compile Include="u_Home.Designer.cs">
       <DependentUpon>u_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="U_Reception.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="U_Reception.Designer.cs">
+      <DependentUpon>U_Reception.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="u_Home.resx">
       <DependentUpon>u_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U_Reception.resx">
+      <DependentUpon>U_Reception.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
