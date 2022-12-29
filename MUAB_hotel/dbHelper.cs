@@ -225,7 +225,7 @@ namespace MUAB_hotel
         internal void search(DataGridView dataGridView)
         {
             U_Reception U_Reception = new U_Reception();
-            string Query = "SELECT booking_id AS 'Booking ID', customers.customers_first_name AS 'First Name', " +
+            string Query = "SELECT booking_id AS 'Book ID', customers.customers_first_name AS 'First Name', " +
                                               "customers.customers_last_name AS 'Last Name', " +
                                               "rooms.rooms_nr AS 'Room Nr', " +
                                               "rooms.rooms_type AS 'Type' , " +
@@ -233,9 +233,11 @@ namespace MUAB_hotel
                                               "booking_check_in AS 'Check in', " +
                                               "booking_check_out AS 'Check out' , " +
                                               "booking_days AS 'Total days' " +
-                           " FROM hoteldb.booking inner join hoteldb.customers on booking.customers_id = customers.customers_id " +
-                           " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr WHERE customers_first_name = '" + U_Reception.search + "' " +
-                           " OR booking_id = '" + U_Reception.search + "';";
+                                              " FROM hoteldb.booking inner join hoteldb.customers on " +
+                                              "booking.customers_id = customers.customers_id " +
+                                              " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr " +
+                                              "WHERE customers_first_name = '" + U_Reception.search + "' " +
+                                              " OR booking_id = '" + U_Reception.search + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -249,30 +251,20 @@ namespace MUAB_hotel
 
         internal void editCustomer()
         {
-            MessageBox.Show($"in {U_Reception.checkIn}, out  {U_Reception.checkOut}, days  {U_Reception.Days}, pr  {U_Reception.Price}, bid  {U_Reception.bookingID},");
-
             U_Reception u_Reception = new U_Reception();
 
             string query = " UPDATE  hoteldb.customers SET customers_first_name = '" + U_Reception.FName + "'," +
-                                                           "customers_last_name = '" + U_Reception.LName + "'WHERE customers_id = '" + U_Reception.customersID + "' ;" +
+                                                           "customers_last_name = '" + U_Reception.LName + "' " +
+                                                           "WHERE customers_id = '" + U_Reception.customersID + "' ;" +
                            " UPDATE  hoteldb.rooms SET rooms_status = 'FREE' WHERE rooms_nr = '" + U_Reception.roomNr + "' ;" +
                            " UPDATE  hoteldb.rooms SET rooms_status = 'BUSY' WHERE rooms_nr = '" + U_Reception.newRoomNr + "' ;" +
                            " UPDATE  hoteldb.booking SET booking_check_in = '" + U_Reception.checkIn + "'," +
                                                            "booking_check_out = '" + U_Reception.checkOut + "', " +
                                                            "rooms_nr = '" + U_Reception.newRoomNr + "', " +
                                                            "booking_days = '" + U_Reception.Days + "', " +
-                                                           "booking_price = '" + U_Reception.newPrice + "' WHERE booking_id = '" + U_Reception.bookingID + "';";
+                                                           "booking_price = '" + U_Reception.newPrice + "' " +
+                                                           "WHERE booking_id = '" + U_Reception.bookingID + "';";
 
-            /*
-            string query = "UPDATE hoteldb.booking SET customers.customers_first_name = '" + U_Reception.FName + "', " +
-                                                      "customers.customers_last_name = '" + U_Reception.LName + "'," +
-                                                      "rooms.rooms_nr = '" + U_Reception.roomNr + "', " +
-                                                      "rooms.rooms_type = '" + U_Reception.type + "', " +
-                                                      "booking_check_in = '" + U_Reception.checkIn + "', " +
-                                                      "booking_check_out = '" + U_Reception.checkOut + "', " +
-                                                      "booking_days = '" + U_Reception.Days + "', " +
-                                                      "booking_price = '" + U_Reception.newPrice + "' WHERE booking_id = '" + U_Reception.bookingID + "'";
-            */
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQueryAsync();
@@ -300,7 +292,21 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+        internal void cancelBooking()
+        {
+            MessageBox.Show($"CID {U_Reception.customersID} room {U_Reception.roomNr}");
 
+            string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " +
+                           "UPDATE hoteldb.rooms SET rooms_status = 'FREE' WHERE rooms_nr = '" + U_Reception.roomNr + "';";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+
+
+            conn.Close();
+
+        }
         #endregion
 
     }

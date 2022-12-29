@@ -14,7 +14,7 @@ namespace MUAB_hotel
     {
         public static string search { get; set; }
         public static string FName { get; set; }
-        public static string roomNr { get; set; }
+        public static int roomNr { get; set; }
         public static string newRoomNr { get; set; }
         public static string type { get; set; }
         public static string LName { get; set; }
@@ -78,6 +78,7 @@ namespace MUAB_hotel
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            
             editPnl();
 
 
@@ -89,8 +90,9 @@ namespace MUAB_hotel
             {
                 if (dataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
+            MessageBox.Show("Test hahha454");
                     dataGridView3.CurrentRow.Selected = true;
-                    bookingID = dataGridView3.Rows[e.RowIndex].Cells["Booking ID"].FormattedValue.ToString();
+                    bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
                     txtFName.Text = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
                     txtLName.Text = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
                     cBRmTyp.Text = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
@@ -99,9 +101,8 @@ namespace MUAB_hotel
                     dtCheckout.Text = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
                     Price = dataGridView3.Rows[e.RowIndex].Cells["Price"].FormattedValue.ToString();
 
-                    MessageBox.Show($"Test {dtCheckout.Text}");
-                    roomNr = txtRNr.Text;
-                    MessageBox.Show($"old rnr {roomNr}");
+                    MessageBox.Show($"Test {dtCheckout.Text} hahhaa");
+                    roomNr = Convert.ToInt32(txtRNr.Text);
                 }
             }
             catch
@@ -110,13 +111,38 @@ namespace MUAB_hotel
             }
         }
 
+        
+
+        private void btnCnl_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("Are you sure you want to CANCEL this \n " +
+                                                  $"booking ID ---> {bookingID} \n" +
+                                                  $"Full Name ----> {txtFName.Text} {txtLName.Text} \n",
+                                                  "Confirm", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                dbHelper dbHelper = new dbHelper();
+
+                dbHelper.cancelBooking();
+                editPnl();
+            }
+            else
+            {
+                
+            }
+
+           
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             FName = txtFName.Text;
             LName = txtLName.Text;
             type = (string)cBRmTyp.Text;
-            newRoomNr= txtRNr.Text;
-            checkIn = dtCheckin.Text; 
+            newRoomNr = txtRNr.Text;
+            checkIn = dtCheckin.Text;
             checkOut = dtCheckout.Text;
 
             TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
@@ -135,12 +161,13 @@ namespace MUAB_hotel
 
             editPnl();
 
-            MessageBox.Show($"fname {FName} lnme {LName} days {days} price {newPrice}");
 
             dbHelper dbHelper = new dbHelper();
 
             dbHelper.editCustomer();
         }
+
+        
     }
 
 }

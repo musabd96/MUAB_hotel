@@ -90,7 +90,6 @@ namespace MUAB_hotel
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show($"chech in {dtCheckin.Text}");
             dbHelper db = new dbHelper();
             db.LastBookingId();
             db.LastcustomerId();
