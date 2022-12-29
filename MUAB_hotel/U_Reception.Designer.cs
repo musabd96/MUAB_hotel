@@ -30,11 +30,11 @@ namespace MUAB_hotel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbHome = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSeach = new System.Windows.Forms.Button();
@@ -163,7 +163,7 @@ namespace MUAB_hotel
             // 
             this.txtFName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFName.Location = new System.Drawing.Point(185, -130);
+            this.txtFName.Location = new System.Drawing.Point(185, 135);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(345, 29);
             this.txtFName.TabIndex = 12;
@@ -174,49 +174,49 @@ namespace MUAB_hotel
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AllowUserToResizeColumns = false;
             this.dataGridView3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridView3.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(40, 274);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 40;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridView3.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView3.RowTemplate.Height = 40;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -243,9 +243,9 @@ namespace MUAB_hotel
             this.pnlEdit.Controls.Add(this.label5);
             this.pnlEdit.Controls.Add(this.label1);
             this.pnlEdit.Controls.Add(this.label2);
-            this.pnlEdit.Location = new System.Drawing.Point(0, 694);
+            this.pnlEdit.Location = new System.Drawing.Point(0, 164);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(1302, 10);
+            this.pnlEdit.Size = new System.Drawing.Size(1302, 540);
             this.pnlEdit.TabIndex = 14;
             // 
             // cBRmTyp
@@ -263,7 +263,7 @@ namespace MUAB_hotel
             "Garden View",
             "Single",
             "Family"});
-            this.cBRmTyp.Location = new System.Drawing.Point(185, -30);
+            this.cBRmTyp.Location = new System.Drawing.Point(185, 235);
             this.cBRmTyp.Name = "cBRmTyp";
             this.cBRmTyp.Size = new System.Drawing.Size(345, 39);
             this.cBRmTyp.TabIndex = 16;
@@ -275,7 +275,7 @@ namespace MUAB_hotel
             this.dtCheckout.CustomFormat = "yyyy-MM-dd";
             this.dtCheckout.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCheckout.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtCheckout.Location = new System.Drawing.Point(625, 81);
+            this.dtCheckout.Location = new System.Drawing.Point(625, 346);
             this.dtCheckout.Name = "dtCheckout";
             this.dtCheckout.Size = new System.Drawing.Size(345, 39);
             this.dtCheckout.TabIndex = 15;
@@ -287,7 +287,7 @@ namespace MUAB_hotel
             this.dtCheckin.CustomFormat = "yyyy-MM-dd";
             this.dtCheckin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCheckin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtCheckin.Location = new System.Drawing.Point(185, 81);
+            this.dtCheckin.Location = new System.Drawing.Point(185, 346);
             this.dtCheckin.Name = "dtCheckin";
             this.dtCheckin.Size = new System.Drawing.Size(345, 39);
             this.dtCheckin.TabIndex = 15;
@@ -297,7 +297,7 @@ namespace MUAB_hotel
             // 
             this.txtRNr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRNr.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRNr.Location = new System.Drawing.Point(625, -22);
+            this.txtRNr.Location = new System.Drawing.Point(625, 243);
             this.txtRNr.Name = "txtRNr";
             this.txtRNr.Size = new System.Drawing.Size(345, 29);
             this.txtRNr.TabIndex = 12;
@@ -308,7 +308,7 @@ namespace MUAB_hotel
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(619, 37);
+            this.label7.Location = new System.Drawing.Point(619, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 31);
             this.label7.TabIndex = 13;
@@ -320,7 +320,7 @@ namespace MUAB_hotel
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(179, 37);
+            this.label4.Location = new System.Drawing.Point(179, 302);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 31);
             this.label4.TabIndex = 13;
@@ -330,7 +330,7 @@ namespace MUAB_hotel
             // 
             this.txtLName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLName.Location = new System.Drawing.Point(625, -130);
+            this.txtLName.Location = new System.Drawing.Point(625, 135);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(345, 29);
             this.txtLName.TabIndex = 12;
@@ -341,7 +341,7 @@ namespace MUAB_hotel
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(619, -70);
+            this.label6.Location = new System.Drawing.Point(619, 195);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 31);
             this.label6.TabIndex = 13;
@@ -353,7 +353,7 @@ namespace MUAB_hotel
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(179, -70);
+            this.label3.Location = new System.Drawing.Point(179, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 31);
             this.label3.TabIndex = 13;
@@ -364,7 +364,7 @@ namespace MUAB_hotel
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(625, 198);
+            this.btnCancel.Location = new System.Drawing.Point(625, 463);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 42);
             this.btnCancel.TabIndex = 14;
@@ -377,7 +377,7 @@ namespace MUAB_hotel
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(408, 198);
+            this.btnSave.Location = new System.Drawing.Point(408, 463);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 42);
             this.btnSave.TabIndex = 14;
@@ -391,7 +391,7 @@ namespace MUAB_hotel
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(619, -164);
+            this.label5.Location = new System.Drawing.Point(619, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 31);
             this.label5.TabIndex = 13;
@@ -403,7 +403,7 @@ namespace MUAB_hotel
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(179, -164);
+            this.label1.Location = new System.Drawing.Point(179, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 31);
             this.label1.TabIndex = 13;
@@ -415,7 +415,7 @@ namespace MUAB_hotel
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(423, -346);
+            this.label2.Location = new System.Drawing.Point(423, -81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(434, 93);
             this.label2.TabIndex = 2;
