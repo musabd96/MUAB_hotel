@@ -12,12 +12,15 @@ namespace MUAB_hotel
 {
     public partial class Home : Form
     {
+        bool menuExpand;
+
         public Home()
         {
             InitializeComponent();
-            closeMenu();
             u_Home u_Home = new u_Home();
             userControl(u_Home);
+
+            openMenu();
         }
 
         #region Menu Bar
@@ -32,13 +35,18 @@ namespace MUAB_hotel
             pnlBlack.Width = 1180;
             pnlBlack.Location = new Point(182, 0);
             pnl_U.Location = new Point(182, 94);
-            
 
+            btnHome.Enabled = true;
+            btnBooking.Enabled = true;
+            btnBooking.Enabled = true;
+            btnReception.Enabled = true;
+            btnSetting.Enabled = true;
+            btnAdmin.Enabled = false;
 
         }
 
         //Close Menu bar
-        public void closeMenu()
+        internal void closeMenu()
         {
 
             pnlMenuBarIcon.Visible = true;
@@ -48,6 +56,12 @@ namespace MUAB_hotel
             pnlBlack.Width = 1305;
             pnl_U.Location = new Point(60, 94);
             pnlBlack.Location = new Point(60, 0);
+            btnHome.Enabled = false;
+            btnBooking.Enabled = false;
+            btnBooking.Enabled = false;
+            btnReception.Enabled = false;
+            btnSetting.Enabled = false;
+            btnAdmin.Enabled = false;
         }
 
 
@@ -104,5 +118,10 @@ namespace MUAB_hotel
 
         }
 
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+            btnHome.Enabled = false;
+        }
     }
 }

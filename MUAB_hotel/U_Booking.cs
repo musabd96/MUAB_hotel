@@ -254,6 +254,5 @@ namespace MUAB_hotel
                 btnBook.Enabled = true;
             }
         }
-
     }
 }

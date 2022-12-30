@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -102,6 +103,8 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+
+
         #endregion
 
 
@@ -169,6 +172,21 @@ namespace MUAB_hotel
 
         public static string roomStatus { get; set; }
 
+        internal void roomPrice()
+        {
+            MessageBox.Show($"rom {U_Reception.newRoomNr}");
+            string Query = "SELECT rooms_price FROM hoteldb.rooms where rooms_nr = '" + U_Reception.newRoomNr + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                U_Reception.Price = (string)reader["rooms_price"];
+            }
+            conn.Close();
+        }
 
         internal void roomstatus()
         {
@@ -188,7 +206,7 @@ namespace MUAB_hotel
             
             if(u_Home.roomsStatus == "- All -")
             {
-                string Query = "SELECT * FROM hoteldb.rooms;";
+                string Query = "SELECT rooms_nr AS 'Room Nr' FROM hoteldb.rooms;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -197,11 +215,12 @@ namespace MUAB_hotel
                 DataTable table = new DataTable();
                 table.Load(reader);
                 dataGridView.DataSource = table;
+                
                 conn.Close();
             }
             else
             {
-                string Query = "SELECT * FROM hoteldb.rooms WHERE rooms_status = '" + u_Home.roomsStatus + "';";
+                string Query = "SELECT rooms_nr 'Room Nr', rooms_status AS 'Status' FROM hoteldb.rooms WHERE rooms_type = '" + u_Home.roomsStatus + "';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -210,12 +229,15 @@ namespace MUAB_hotel
                 DataTable table = new DataTable();
                 table.Load(reader);
                 dataGridView.DataSource = table;
+
+
                 conn.Close();
             }
 
-            
+
         }
 
+       
         #endregion
 
 
@@ -247,6 +269,7 @@ namespace MUAB_hotel
             table.Load(reader);
             dataGridView.DataSource = table;
             conn.Close();
+
         }
 
         internal void editCustomer()
@@ -256,8 +279,8 @@ namespace MUAB_hotel
             string query = " UPDATE  hoteldb.customers SET customers_first_name = '" + U_Reception.FName + "'," +
                                                            "customers_last_name = '" + U_Reception.LName + "' " +
                                                            "WHERE customers_id = '" + U_Reception.customersID + "' ;" +
-                           " UPDATE  hoteldb.rooms SET rooms_status = 'FREE' WHERE rooms_nr = '" + U_Reception.roomNr + "' ;" +
-                           " UPDATE  hoteldb.rooms SET rooms_status = 'BUSY' WHERE rooms_nr = '" + U_Reception.newRoomNr + "' ;" +
+                           " UPDATE  hoteldb.rooms SET rooms_status = 'Available' WHERE rooms_nr = '" + U_Reception.roomNr + "' ;" +
+                           " UPDATE  hoteldb.rooms SET rooms_status = 'Booked' WHERE rooms_nr = '" + U_Reception.newRoomNr + "' ;" +
                            " UPDATE  hoteldb.booking SET booking_check_in = '" + U_Reception.checkIn + "'," +
                                                            "booking_check_out = '" + U_Reception.checkOut + "', " +
                                                            "rooms_nr = '" + U_Reception.newRoomNr + "', " +
@@ -293,7 +316,6 @@ namespace MUAB_hotel
 
         internal void cancelBooking()
         {
-            MessageBox.Show($"CID {U_Reception.customersID} room {U_Reception.roomNr}");
 
             string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " +
                            "UPDATE hoteldb.rooms SET rooms_status = 'FREE' WHERE rooms_nr = '" + U_Reception.roomNr + "';";
@@ -306,6 +328,8 @@ namespace MUAB_hotel
             conn.Close();
 
         }
+
+        
         #endregion
 
     }

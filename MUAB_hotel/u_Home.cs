@@ -21,17 +21,36 @@ namespace MUAB_hotel
 
         private void u_Home_Load(object sender, EventArgs e)
         {
-            roomsStatus = (string)cBRmSt.SelectedItem;
-            dbHelper db = new dbHelper();
-            db.showRoom(dataGridView2);
+
+            roomsStatus = "King";
+            dbHelper dbKing = new dbHelper();
+            dbKing.showRoom(dgvKing);
+            
+            roomsStatus = "Ocean View";
+            dbHelper dbOceanView = new dbHelper();
+            dbOceanView.showRoom(dgvOceanView);
+            
+            roomsStatus = "Garden View";
+            dbHelper dbGardenView = new dbHelper();
+            dbGardenView.showRoom(dgvGardenView);
+            
+            roomsStatus = "Balcony";
+            dbHelper dbBalcony = new dbHelper();
+            dbBalcony.showRoom(dgvBalcony);
+            
+            roomsStatus = "Double";
+            dbHelper dbDouble = new dbHelper();
+            dbDouble.showRoom(dgvDouble);
+            
+            roomsStatus = "Family";
+            dbHelper dbFamily = new dbHelper();
+            dbFamily.showRoom(dgvFamily);
+            
+            roomsStatus = "Single";
+            dbHelper dbSingle = new dbHelper();
+            dbSingle.showRoom(dgvSingle);
+
         }
 
-        private void cBRmSt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dbHelper db = new dbHelper();
-            roomsStatus = (string)cBRmSt.SelectedItem;
-            db.showRoom(dataGridView2);
-            dataGridView2.Focus();
-        }
     }
 }

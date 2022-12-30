@@ -184,7 +184,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.btnSetting);
-            this.panel6.Location = new System.Drawing.Point(0, 307);
+            this.panel6.Location = new System.Drawing.Point(-2, 391);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(176, 67);
             this.panel6.TabIndex = 1;
@@ -211,7 +211,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnAdmin);
-            this.panel1.Location = new System.Drawing.Point(0, 389);
+            this.panel1.Location = new System.Drawing.Point(-1, 318);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 67);
             this.panel1.TabIndex = 1;
@@ -360,6 +360,8 @@
             this.pnlMenuBar.Controls.Add(this.panel3);
             this.pnlMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuBar.MaximumSize = new System.Drawing.Size(189, 801);
+            this.pnlMenuBar.MinimumSize = new System.Drawing.Size(60, 801);
             this.pnlMenuBar.Name = "pnlMenuBar";
             this.pnlMenuBar.Size = new System.Drawing.Size(60, 801);
             this.pnlMenuBar.TabIndex = 1;
@@ -378,6 +380,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.pnlBlack.ResumeLayout(false);
             this.pnlBlack.PerformLayout();
             this.panel3.ResumeLayout(false);

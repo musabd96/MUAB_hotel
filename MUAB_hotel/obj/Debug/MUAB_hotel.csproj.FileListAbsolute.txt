@@ -35,3 +35,4 @@ C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\System.Numerics.Vect
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.CopyComplete
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Reception.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Update.resources

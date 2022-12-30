@@ -16,7 +16,7 @@ namespace MUAB_hotel
         public static string search { get; set; }
         public static string FName { get; set; }
         public static int roomNr { get; set; }
-        public static string newRoomNr { get; set; }
+        public static int newRoomNr { get; set; }
         public static string type { get; set; }
         public static string LName { get; set; }
         public static string checkIn { get; set; }
@@ -27,168 +27,146 @@ namespace MUAB_hotel
         public static string Price { get; set; }
         public static string newPrice { get; set; }
 
+        dbHelper db = new dbHelper();
 
         public U_Reception()
         {
             InitializeComponent();
-            pnlEdit.Height = 0;
-            pnlEdit.Visible= false;
+            
 
         }
 
-        private void editPnl()
-        {
-            pnlEdit.Visible = false;
-            pnlEdit.Height = 0;
-            txtSearch.Clear();
-            txtFName.Clear();
-            txtLName.Clear();
-            lbBID.Text = "_____";
-            dtCheckin.Value = DateTime.Now;
-            dtCheckout.Value = DateTime.Now;
-
-            dbHelper db = new dbHelper();
-            search = "";
-            db.search(dataGridView3);
-        }
+        
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
+
             
+
+            
+
+
             search = txtSearch.Text;
 
-            dbHelper db = new dbHelper();
+            
             db.search(dataGridView3);
             dataGridView3.Focus();
             db.getCustomerData();
-
-            DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
-            dataGridView3_CellClick(sender, args);
-
-        }
-
-
-
-        private void U_Reception_Load(object sender, EventArgs e)
-        {
-            editPnl();
-        }
-
-        
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            pnlEdit.Visible = true;
-            pnlEdit.Height = 707;
-            pnlEdit.Location = new Point(0, 0);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
             
-            editPnl();
-
-
-        }
-
-
-
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-
-            try
+            if (dataGridView3.RowCount == 0)
             {
-                
-                if (dataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                {
-                    dataGridView3.CurrentRow.Selected = true;
-                    bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
-                    txtFName.Text = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
-                    txtLName.Text = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
-                    cBRmTyp.Text = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
-                    txtRNr.Text = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
-                    dtCheckin.Text = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
-                    dtCheckout.Text = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
-                    Price = dataGridView3.Rows[e.RowIndex].Cells["Price"].FormattedValue.ToString();
-
-                    roomNr = Convert.ToInt32(txtRNr.Text);
-                    lbBID.Text = bookingID;
-                }
-            }
-            catch
-            {
+                MessageBox.Show("Not Found it");
+                txtSearch.ForeColor = Color.Red;
+                txtSearch.SelectAll();
+                txtSearch.Focus();
 
             }
+            
+            
+        }
+
+
+
+        internal void U_Reception_Load(object sender, EventArgs e)
+        {
+
+            db.search(dataGridView3);
+            dataGridView3.Focus();
+
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+
+
+            buttonColumn.HeaderText = "Edit";
+            buttonColumn.Text = "Edit";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            buttonColumn.Width = 40;
+            dataGridView3.Columns.Add(buttonColumn);
+
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "Cancel";
+            buttonColumn1.Text = "Cancel";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            buttonColumn1.Width = 40;
+            dataGridView3.Columns.Add(buttonColumn1);
 
 
         }
 
         
 
-        private void btnCnl_Click(object sender, EventArgs e)
-        {
-
-            DialogResult result = MessageBox.Show("Are you sure you want to CANCEL this \n " +
-                                                  $"booking ID ---> {bookingID} \n" +
-                                                  $"Full Name ----> {txtFName.Text} {txtLName.Text} \n",
-                                                  "Confirm", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                dbHelper dbHelper = new dbHelper();
-
-                dbHelper.cancelBooking();
-                editPnl();
-            }
-            else
-            {
-                
-            }
-
-           
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            FName = txtFName.Text;
-            LName = txtLName.Text;
-            type = (string)cBRmTyp.Text;
-            newRoomNr = txtRNr.Text;
-            checkIn = dtCheckin.Text;
-            checkOut = dtCheckout.Text;
-
-            TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
-            double days = diff.TotalDays;
-
-            int result = (int)Math.Round(days, 1, MidpointRounding.AwayFromZero);
-
-            days = result;
-
-            Days = days.ToString();
-
-            int nights = Convert.ToInt32(days);
-
-            int total = nights * (Convert.ToInt32(Price));
-            newPrice = total.ToString();
-
-            editPnl();
-
-
-            dbHelper dbHelper = new dbHelper();
-
-            dbHelper.editCustomer();
-        }
+        
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
+            txtSearch.ForeColor = Color.Black;
+
             if (e.KeyCode == Keys.Enter)
             {
                 btnSeach_Click(sender, e);
 
-                
+
             }
             
+            
+            
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dataGridView3.CurrentRow.Selected = true;
+            bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
+            FName = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
+            LName = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
+            type = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
+            string roomnr = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
+            checkIn = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
+            checkOut = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
+            roomNr = Convert.ToInt32(roomnr);
+
+
+            if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Edit")
+            {
+                
+                Update update = new Update();
+
+                
+                update.ShowDialog();
+
+                btnSeach_Click(sender, e);
+
+
+            }
+            else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Cancel")
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to CANCEL this \n " +
+                                                  $"booking ID ---> {bookingID} \n" +
+                                                  $"Full Name ----> {FName} {LName} \n",
+                                                  "Confirm", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    dbHelper dbHelper = new dbHelper();
+
+                    dbHelper.cancelBooking();
+                    txtSearch.Text = "";
+                    btnSeach_Click(sender, e);
+
+                }
+                else
+                {
+
+                }
+            }
+
+
+        }
+
+        private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+
+            e.CellStyle.ForeColor = Color.Green;
         }
     }
 
