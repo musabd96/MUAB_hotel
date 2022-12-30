@@ -38,7 +38,7 @@ namespace MUAB_hotel
         internal void getData(DataGridView dataGridView)
         {
             U_Booking u_Booking = new U_Booking();
-            string Query = "SELECT * FROM hoteldb.rooms where rooms_type ='" + U_Booking.roomsType + "' AND rooms_status = 'FREE';";
+            string Query = "SELECT rooms_nr as 'Room Nr', rooms_type as 'Type', rooms_price as 'Price' FROM hoteldb.rooms where rooms_type ='" + U_Booking.roomsType + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 

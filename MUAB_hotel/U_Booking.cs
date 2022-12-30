@@ -153,9 +153,9 @@ namespace MUAB_hotel
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     dataGridView1.CurrentRow.Selected = true;
-                    txtRoomNr.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_nr"].FormattedValue.ToString();
-                    txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["rooms_type"].FormattedValue.ToString();
-                    string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["rooms_price"].FormattedValue.ToString();
+                    txtRoomNr.Text = dataGridView1.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
+                    txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
+                    string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["Price"].FormattedValue.ToString();
 
                     txtChIn.Text = dtCheckin.Text;
                     txtChOut.Text = dtCheckout.Text;
