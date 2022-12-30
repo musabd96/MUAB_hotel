@@ -194,6 +194,7 @@ namespace MUAB_hotel
             txtPrice.Enabled = false;
             txtChIn.Enabled= false;
             txtChOut.Enabled= false;
+            btnBook.Enabled= false;
 
             
         }
@@ -225,7 +226,8 @@ namespace MUAB_hotel
             MessageBox.Show("booking success");
 
 
-            pnlSelectRoom.Height = 10;
+            pnlSelectRoom.Visible = false;
+            pnlSelectRoom.Height = 0;
             dtCheckout.Value = DateTime.Now;
             dtCheckin.Value = DateTime.Now;
             cBRoomTy.SelectedItem = "-Select  room type-";
@@ -245,7 +247,7 @@ namespace MUAB_hotel
         {
             if (checkBox1.Checked == false)
             {
-                btnBook.Enabled = false;
+                btnBook.Enabled = true;
             }
             else
             {

@@ -287,7 +287,6 @@ namespace MUAB_hotel
             while (reader.Read())
             {
                 U_Reception.customersID = (int)reader["customers_id"];
-                MessageBox.Show($"CID = {U_Reception.customersID} {U_Reception.newRoomNr}");
             }
             conn.Close();
         }

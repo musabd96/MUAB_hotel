@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace MUAB_hotel
 {
@@ -42,6 +43,7 @@ namespace MUAB_hotel
             txtSearch.Clear();
             txtFName.Clear();
             txtLName.Clear();
+            lbBID.Text = "_____";
             dtCheckin.Value = DateTime.Now;
             dtCheckout.Value = DateTime.Now;
 
@@ -52,12 +54,17 @@ namespace MUAB_hotel
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
-            dbHelper db = new dbHelper();
+            
             search = txtSearch.Text;
 
+            dbHelper db = new dbHelper();
             db.search(dataGridView3);
             dataGridView3.Focus();
             db.getCustomerData();
+
+            DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+            dataGridView3_CellClick(sender, args);
+
         }
 
 
@@ -84,13 +91,17 @@ namespace MUAB_hotel
 
         }
 
+
+
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+
             try
             {
+                
                 if (dataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-            MessageBox.Show("Test hahha454");
                     dataGridView3.CurrentRow.Selected = true;
                     bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
                     txtFName.Text = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
@@ -101,14 +112,16 @@ namespace MUAB_hotel
                     dtCheckout.Text = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
                     Price = dataGridView3.Rows[e.RowIndex].Cells["Price"].FormattedValue.ToString();
 
-                    MessageBox.Show($"Test {dtCheckout.Text} hahhaa");
                     roomNr = Convert.ToInt32(txtRNr.Text);
+                    lbBID.Text = bookingID;
                 }
             }
             catch
             {
 
             }
+
+
         }
 
         
@@ -167,7 +180,16 @@ namespace MUAB_hotel
             dbHelper.editCustomer();
         }
 
-        
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSeach_Click(sender, e);
+
+                
+            }
+            
+        }
     }
 
 }
