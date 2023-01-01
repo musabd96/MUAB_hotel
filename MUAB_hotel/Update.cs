@@ -68,7 +68,6 @@ namespace MUAB_hotel
             dbHelper.roomPrice();
             int total = nights * (Convert.ToInt32(U_Reception.Price));
             U_Reception.newPrice = total.ToString();
-            MessageBox.Show($"new {U_Reception.newPrice}");
             dbHelper.editCustomer();
             this.Close();
 

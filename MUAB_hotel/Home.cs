@@ -41,7 +41,7 @@ namespace MUAB_hotel
             btnBooking.Enabled = true;
             btnReception.Enabled = true;
             btnSetting.Enabled = true;
-            btnAdmin.Enabled = false;
+            btnAdmin.Enabled = true;
 
         }
 

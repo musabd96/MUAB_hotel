@@ -87,7 +87,7 @@
             this.dtCheckout.Location = new System.Drawing.Point(186, 331);
             this.dtCheckout.Name = "dtCheckout";
             this.dtCheckout.Size = new System.Drawing.Size(345, 39);
-            this.dtCheckout.TabIndex = 41;
+            this.dtCheckout.TabIndex = 6;
             this.dtCheckout.Value = new System.DateTime(2022, 12, 27, 0, 0, 0, 0);
             // 
             // dtCheckin
@@ -99,7 +99,7 @@
             this.dtCheckin.Location = new System.Drawing.Point(187, 273);
             this.dtCheckin.Name = "dtCheckin";
             this.dtCheckin.Size = new System.Drawing.Size(345, 39);
-            this.dtCheckin.TabIndex = 42;
+            this.dtCheckin.TabIndex = 5;
             this.dtCheckin.Value = new System.DateTime(2022, 12, 28, 0, 0, 0, 0);
             // 
             // label7
@@ -133,7 +133,7 @@
             this.txtLName.Location = new System.Drawing.Point(187, 118);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(345, 29);
-            this.txtLName.TabIndex = 31;
+            this.txtLName.TabIndex = 2;
             // 
             // txtFName
             // 
@@ -142,7 +142,7 @@
             this.txtFName.Location = new System.Drawing.Point(187, 74);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(345, 29);
-            this.txtFName.TabIndex = 32;
+            this.txtFName.TabIndex = 1;
             // 
             // label9
             // 
@@ -176,7 +176,7 @@
             this.btnCancel.Location = new System.Drawing.Point(378, 414);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 42);
-            this.btnCancel.TabIndex = 39;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -189,7 +189,7 @@
             this.btnSave.Location = new System.Drawing.Point(161, 414);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 42);
-            this.btnSave.TabIndex = 40;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

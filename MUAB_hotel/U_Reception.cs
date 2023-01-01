@@ -41,27 +41,31 @@ namespace MUAB_hotel
         private void btnSeach_Click(object sender, EventArgs e)
         {
 
-            
-
-            
 
 
-            search = txtSearch.Text;
-
-            
-            db.search(dataGridView3);
-            dataGridView3.Focus();
-            db.getCustomerData();
-            
-            if (dataGridView3.RowCount == 0)
+            try
             {
-                MessageBox.Show("Not Found it");
-                txtSearch.ForeColor = Color.Red;
-                txtSearch.SelectAll();
-                txtSearch.Focus();
+                search = txtSearch.Text;
+
+                db.search(dataGridView3);
+                dataGridView3.Focus();
+                db.getCustomerData();
+
+                if (dataGridView3.RowCount == 0)
+                {
+                    MessageBox.Show("Not Found it");
+                    txtSearch.ForeColor = Color.Red;
+                    txtSearch.SelectAll();
+                    txtSearch.Focus();
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Field");
 
             }
-            
+
             
         }
 
@@ -72,29 +76,20 @@ namespace MUAB_hotel
 
             db.search(dataGridView3);
             dataGridView3.Focus();
-
-            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-
-
-            buttonColumn.HeaderText = "Edit";
-            buttonColumn.Text = "Edit";
-            buttonColumn.UseColumnTextForButtonValue = true;
-            buttonColumn.Width = 40;
-            dataGridView3.Columns.Add(buttonColumn);
-
-            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.HeaderText = "Cancel";
-            buttonColumn1.Text = "Cancel";
-            buttonColumn1.UseColumnTextForButtonValue = true;
-            buttonColumn1.Width = 40;
-            dataGridView3.Columns.Add(buttonColumn1);
-
-
+          
+            DataGridViewColumn Edit = dataGridView3.Columns[0];
+            Edit.DisplayIndex = dataGridView3.ColumnCount - 1;
+            Edit.Width = 50;
+            
+            DataGridViewColumn Delete = dataGridView3.Columns[1];
+            Delete.DisplayIndex = dataGridView3.ColumnCount - 1;
+            Edit.Width = 50;
+            
         }
 
-        
 
-        
+
+
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
@@ -167,6 +162,11 @@ namespace MUAB_hotel
             
 
             e.CellStyle.ForeColor = Color.Green;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

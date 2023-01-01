@@ -21,7 +21,7 @@ namespace MUAB_hotel
 
         private void u_Home_Load(object sender, EventArgs e)
         {
-
+            flowLayoutPanel1.AutoScroll = true;
             roomsStatus = "King";
             dbHelper dbKing = new dbHelper();
             dbKing.showRoom(dgvKing);
