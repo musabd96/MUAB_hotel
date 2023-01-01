@@ -318,7 +318,7 @@ namespace MUAB_hotel
         {
 
             string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " +
-                           "UPDATE hoteldb.rooms SET rooms_status = 'FREE' WHERE rooms_nr = '" + U_Reception.roomNr + "';";
+                           "UPDATE hoteldb.rooms SET rooms_status = 'Available' WHERE rooms_nr = '" + U_Reception.roomNr + "';";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
