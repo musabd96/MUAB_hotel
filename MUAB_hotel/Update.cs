@@ -27,11 +27,12 @@ namespace MUAB_hotel
         public Update()
         {
             InitializeComponent();
-           
+
 
         }
         private void Update_Load(object sender, EventArgs e)
         {
+
 
             
 
@@ -71,8 +72,8 @@ namespace MUAB_hotel
             dbHelper.editCustomer();
             this.Close();
 
-
             
+
 
         }
 

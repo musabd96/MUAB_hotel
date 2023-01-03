@@ -84,6 +84,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chech_in_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chech_in_out.Designer.cs">
+      <DependentUpon>Chech_in_out.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbHelper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -117,6 +123,9 @@
     <Compile Include="U_Reception.Designer.cs">
       <DependentUpon>U_Reception.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chech_in_out.resx">
+      <DependentUpon>Chech_in_out.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

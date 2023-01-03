@@ -254,7 +254,8 @@ namespace MUAB_hotel
                                               "booking_price AS 'Price', " +
                                               "booking_check_in AS 'Check in', " +
                                               "booking_check_out AS 'Check out' , " +
-                                              "booking_days AS 'Total days' " +
+                                              "booking_days AS 'Total days' , " +
+                                              "booking_status AS 'Status' " +
                                               " FROM hoteldb.booking inner join hoteldb.customers on " +
                                               "booking.customers_id = customers.customers_id " +
                                               " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr " +
@@ -285,7 +286,8 @@ namespace MUAB_hotel
                                                            "booking_check_out = '" + U_Reception.checkOut + "', " +
                                                            "rooms_nr = '" + U_Reception.newRoomNr + "', " +
                                                            "booking_days = '" + U_Reception.Days + "', " +
-                                                           "booking_price = '" + U_Reception.newPrice + "' " +
+                                                           "booking_price = '" + U_Reception.newPrice + "', " +
+                                                           "booking_status = '" + U_Reception.status + "' " +
                                                            "WHERE booking_id = '" + U_Reception.bookingID + "';";
 
             conn.Open();
@@ -311,6 +313,21 @@ namespace MUAB_hotel
             {
                 U_Reception.customersID = (int)reader["customers_id"];
             }
+            conn.Close();
+        }
+
+
+        internal void chechInOut()
+        {
+            U_Reception u_Reception = new U_Reception();
+            string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.status + "' " +
+                                                    "WHERE booking_id = '" + U_Reception.bookingID + "';";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+
+
             conn.Close();
         }
 

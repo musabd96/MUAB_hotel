@@ -23,11 +23,13 @@ namespace MUAB_hotel
         public static string checkOut { get; set; }
         public static string bookingID { get; set; }
         public static int customersID { get; set; }
+        public static string status { get; set; }
         public static string Days { get; set; }
         public static string Price { get; set; }
         public static string newPrice { get; set; }
 
         dbHelper db = new dbHelper();
+        Chech_in_out inout = new Chech_in_out();
 
         public U_Reception()
         {
@@ -40,8 +42,6 @@ namespace MUAB_hotel
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
-
-
 
             try
             {
@@ -66,7 +66,6 @@ namespace MUAB_hotel
 
             }
 
-            
         }
 
 
@@ -84,6 +83,8 @@ namespace MUAB_hotel
             DataGridViewColumn Delete = dataGridView3.Columns[1];
             Delete.DisplayIndex = dataGridView3.ColumnCount - 1;
             Edit.Width = 50;
+
+            
             
         }
 
@@ -109,6 +110,8 @@ namespace MUAB_hotel
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+
             dataGridView3.CurrentRow.Selected = true;
             bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
             FName = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
@@ -117,8 +120,8 @@ namespace MUAB_hotel
             string roomnr = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
             checkIn = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
             checkOut = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
+            status = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
             roomNr = Convert.ToInt32(roomnr);
-
 
             if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Edit")
             {
@@ -132,42 +135,58 @@ namespace MUAB_hotel
 
 
             }
-            else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Cancel")
+            else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Cancelled")
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to CANCEL this \n " +
-                                                  $"booking ID ---> {bookingID} \n" +
-                                                  $"Full Name ----> {FName} {LName} \n",
-                                                  "Confirm", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    dbHelper dbHelper = new dbHelper();
-
-                    dbHelper.cancelBooking();
-                    txtSearch.Text = "";
-                    btnSeach_Click(sender, e);
-
-                }
-                else
-                {
-
-                }
+                Chech_in_out.message = "Cancelled?";
+                inout.ShowDialog();
+                
             }
 
 
         }
 
-        private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        
+
+       
+
+        private void btnChIn_Click(object sender, EventArgs e)
         {
             
+            if (roomNr == 0)
+            {
+                MessageBox.Show($"Select a guest");
+            }
+            else
+            {
+                
+                status = "Chech in";
+                Chech_in_out.message = "Check in?";
+                inout.ShowDialog();
+                btnSeach_Click(sender, e);
 
-            e.CellStyle.ForeColor = Color.Green;
-        }
+            }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
             
         }
+
+        private void btnChOut_Click(object sender, EventArgs e)
+        {
+            
+            if (roomNr == 0)
+            {
+                MessageBox.Show($"Select a guest");
+            }
+            else
+            {
+                
+                status = "Chech out";
+                Chech_in_out.message = "Check out?";
+                inout.ShowDialog();
+                btnSeach_Click(sender, e);
+            }
+        }
+
+       
     }
 
 }

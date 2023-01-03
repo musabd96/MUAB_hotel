@@ -30,6 +30,7 @@ CREATE TABLE `booking` (
   `booking_price` varchar(45) DEFAULT NULL,
   `customers_id` int DEFAULT NULL,
   `rooms_nr` int DEFAULT NULL,
+  `booking_status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`booking_id`),
   KEY `fk_customers_id_idx` (`customers_id`),
   CONSTRAINT `fk_customers_id` FOREIGN KEY (`customers_id`) REFERENCES `customers` (`customers_id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -42,7 +43,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
-INSERT INTO `booking` VALUES ('10c74','0',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `booking` VALUES ('ba2fc','2023-01-03','2023-01-19','16','1920',10005,103,'Chech out'),('d505f','0',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +61,7 @@ CREATE TABLE `customers` (
   `customers_phone` varchar(45) DEFAULT NULL,
   `customers_address` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`customers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10002 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10007 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +70,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (10001,'0',NULL,NULL,NULL);
+INSERT INTO `customers` VALUES (10005,'mustafa','Abdule','145698744','Storgatan 1'),(10006,'0',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +96,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (101,'Garden View','125','Available'),(102,'Double','120','Available'),(103,'Double','120','Available'),(104,'Double','120','Available'),(105,'Double','120','Available'),(106,'Double','120','Available'),(107,'Garden View','125','Available'),(108,'Garden View','125','Available'),(109,'Garden View','125','Available'),(201,'Double','120','Available'),(202,'Balcony','135','Available'),(203,'Balcony','135','Available'),(204,'Balcony','135','Available'),(205,'Single','100','Available'),(206,'Single','100','Available'),(207,'Single','100','Available'),(208,'Single','100','Available'),(209,'Single','100','Available'),(301,'Single','100','Available'),(302,'Single','100','Available'),(303,'Single','100','Available'),(304,'Single','100','Available'),(305,'Family','130','Available'),(306,'Family','130','Available'),(307,'Family','130','Available'),(308,'Family','130','Available'),(309,'Family','130','Available'),(401,'Family','130','Available'),(402,'Family','130','Available'),(403,'Family','130','Available'),(404,'Double','120','Available'),(405,'Double','120','Available'),(406,'Double','120','Available'),(407,'Double','120','Available'),(408,'Double','120','Available'),(409,'Double','120','Available'),(501,'Double','120','Available'),(502,'Double','120','Available'),(503,'King','170','Available'),(504,'King','170','Available'),(505,'Ocean View','150','Available'),(506,'Ocean View','150','Available'),(507,'Ocean View','150','Available'),(508,'Ocean View','150','Available'),(509,'King','170','Available'),(601,'King','170','Available'),(602,'Balcony','135','Available'),(603,'Ocean View','150','Available'),(604,'Balcony','135','Available'),(605,'Ocean View','150','Available'),(606,'Ocean View','150','Available'),(607,'Ocean View','150','Available'),(608,'Balcony','135','Available'),(609,'Balcony','135','Available'),(701,'King','170','Available'),(702,'King','170','Available'),(703,'Ocean View','150','Available'),(704,'Ocean View','150','Available'),(705,'Ocean View','150','Available'),(706,'King','170','Available'),(707,'King','170','Available'),(708,'Ocean View','150','Available'),(709,'Ocean View','150','Available');
+INSERT INTO `rooms` VALUES (101,'Garden View','125','Available'),(102,'Double','120','Available'),(103,'Double','120','Available'),(104,'Double','120','Available'),(105,'Double','120','Available'),(106,'Double','120','Available'),(107,'Garden View','125','Available'),(108,'Garden View','125','Available'),(109,'Garden View','125','Available'),(201,'Double','120','Available'),(202,'Balcony','135','Available'),(203,'Balcony','135','Available'),(204,'Balcony','135','Available'),(205,'Single','100','Available'),(206,'Single','100','Available'),(207,'Single','100','Available'),(208,'Single','100','Available'),(209,'Single','100','Available'),(301,'Single','100','Available'),(302,'Single','100','Available'),(303,'Single','100','Available'),(304,'Single','100','Available'),(305,'Family','130','Available'),(306,'Family','130','Available'),(307,'Family','130','Available'),(308,'Family','130','Available'),(309,'Family','130','Available'),(401,'Family','130','Available'),(402,'Family','130','Available'),(403,'Family','130','Available'),(404,'Double','120','Available'),(405,'Double','120','Available'),(406,'Double','120','Available'),(407,'Double','120','Available'),(408,'Double','120','Available'),(409,'Double','120','Available'),(501,'Double','120','Available'),(502,'Double','120','Available'),(503,'King','170','Booked'),(504,'King','170','Available'),(505,'Ocean View','150','Available'),(506,'Ocean View','150','Available'),(507,'Ocean View','150','Available'),(508,'Ocean View','150','Available'),(509,'King','170','Available'),(601,'King','170','Available'),(602,'Balcony','135','Available'),(603,'Ocean View','150','Available'),(604,'Balcony','135','Available'),(605,'Ocean View','150','Available'),(606,'Ocean View','150','Available'),(607,'Ocean View','150','Available'),(608,'Balcony','135','Available'),(609,'Balcony','135','Available'),(701,'King','170','Available'),(702,'King','170','Available'),(703,'Ocean View','150','Available'),(704,'Ocean View','150','Available'),(705,'Ocean View','150','Available'),(706,'King','170','Available'),(707,'King','170','Available'),(708,'Ocean View','150','Available'),(709,'Ocean View','150','Available');
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-01 18:22:13
+-- Dump completed on 2023-01-04  0:27:21

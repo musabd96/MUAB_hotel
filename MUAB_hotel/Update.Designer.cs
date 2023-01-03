@@ -178,6 +178,7 @@
             this.btnCancel.Size = new System.Drawing.Size(122, 42);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -191,6 +192,7 @@
             this.btnSave.Size = new System.Drawing.Size(122, 42);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
