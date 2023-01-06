@@ -36,6 +36,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.19.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.19.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -79,6 +82,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
@@ -123,6 +127,12 @@
     <Compile Include="U_Reception.Designer.cs">
       <DependentUpon>U_Reception.cs</DependentUpon>
     </Compile>
+    <Compile Include="U_Services.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="U_Services.Designer.cs">
+      <DependentUpon>U_Services.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Chech_in_out.resx">
       <DependentUpon>Chech_in_out.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="U_Reception.resx">
       <DependentUpon>U_Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U_Services.resx">
+      <DependentUpon>U_Services.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

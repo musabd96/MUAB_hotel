@@ -21,6 +21,7 @@ namespace MUAB_hotel
             userControl(u_Home);
 
             openMenu();
+            btnHome.Enabled = false;
         }
 
         #region Menu Bar
@@ -36,12 +37,6 @@ namespace MUAB_hotel
             pnlBlack.Location = new Point(182, 0);
             pnl_U.Location = new Point(182, 94);
 
-            btnHome.Enabled = true;
-            btnBooking.Enabled = true;
-            btnBooking.Enabled = true;
-            btnReception.Enabled = true;
-            btnSetting.Enabled = true;
-            btnAdmin.Enabled = true;
 
         }
 
@@ -56,12 +51,6 @@ namespace MUAB_hotel
             pnlBlack.Width = 1305;
             pnl_U.Location = new Point(60, 94);
             pnlBlack.Location = new Point(60, 0);
-            btnHome.Enabled = false;
-            btnBooking.Enabled = false;
-            btnBooking.Enabled = false;
-            btnReception.Enabled = false;
-            btnSetting.Enabled = false;
-            btnAdmin.Enabled = false;
         }
 
 
@@ -93,6 +82,7 @@ namespace MUAB_hotel
             btnHome.Enabled = false;
             btnBooking.Enabled = true;
             btnReception.Enabled = true;
+            btnService.Enabled = true;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
@@ -102,6 +92,7 @@ namespace MUAB_hotel
             btnBooking.Enabled = false;
             btnHome.Enabled = true;
             btnReception.Enabled = true;
+            btnService.Enabled = true;
         }
 
         private void btnReception_Click(object sender, EventArgs e)
@@ -111,17 +102,29 @@ namespace MUAB_hotel
             btnReception.Enabled = false;
             btnBooking.Enabled = true;
             btnHome.Enabled = true;
+            btnService.Enabled = true;
+        }
+
+        
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+            btnHome.Enabled = false;
+        }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            U_Services U_Services = new U_Services();
+            userControl(U_Services);
+            btnService.Enabled = false;
+            btnHome.Enabled = true;
+            btnBooking.Enabled = true;
+            btnReception.Enabled = true;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-            btnHome.Enabled = false;
         }
     }
 }

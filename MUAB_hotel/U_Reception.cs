@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +36,8 @@ namespace MUAB_hotel
         {
             InitializeComponent();
             
-
+            btnChIn.Enabled = false;
+            btnChOut.Enabled = false;
         }
 
         
@@ -72,7 +74,7 @@ namespace MUAB_hotel
 
         internal void U_Reception_Load(object sender, EventArgs e)
         {
-
+            
             db.search(dataGridView3);
             dataGridView3.Focus();
           
@@ -82,8 +84,7 @@ namespace MUAB_hotel
             
             DataGridViewColumn Delete = dataGridView3.Columns[1];
             Delete.DisplayIndex = dataGridView3.ColumnCount - 1;
-            Edit.Width = 50;
-
+            
             
             
         }
@@ -107,42 +108,97 @@ namespace MUAB_hotel
             
         }
 
+
+
+
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            if (dataGridView3.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                
+                // Uncheck all other checkboxes in the same column
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    if (row.Index != e.RowIndex)
+                    {
+                        DataGridViewCheckBoxCell otherCell = (DataGridViewCheckBoxCell)row.Cells[e.ColumnIndex];
+                        otherCell.Value = false;
+
+                    }
+                }
+                
+
+                dataGridView3.CurrentRow.Selected = true;
+                bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
+                FName = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
+                LName = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
+                type = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
+                string roomnr = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
+                checkIn = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
+                checkOut = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
+                status = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
+                roomNr = Convert.ToInt32(roomnr);
+                db.getCustomerData();
+                
+                btnChIn.Enabled = true;
+                btnChOut.Enabled = true;
+            }
 
             
 
-            dataGridView3.CurrentRow.Selected = true;
-            bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
-            FName = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
-            LName = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
-            type = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
-            string roomnr = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
-            checkIn = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
-            checkOut = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
-            status = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
-            roomNr = Convert.ToInt32(roomnr);
+
 
             if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Edit")
             {
-                
-                Update update = new Update();
+                if(roomNr == 0)
+                {
+                    MessageBox.Show("Select a guest");
+                }
+                else
+                {
+                    Update update = new Update();
 
-                
-                update.ShowDialog();
 
-                btnSeach_Click(sender, e);
+                    update.ShowDialog();
+
+                    btnSeach_Click(sender, e);
+                }
+
+                roomNr = 0;
+                btnChIn.Enabled = false;
+                btnChOut.Enabled = false;
+
+
 
 
             }
             else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Cancelled")
             {
-                Chech_in_out.message = "Cancelled?";
-                inout.ShowDialog();
-                
+                if (roomNr == 0)
+                {
+                    MessageBox.Show("Select a guest");
+                }
+                else
+                {
+                    Chech_in_out.message = "Cancelled?";
+                    inout.ShowDialog();
+                    btnSeach_Click(sender, e);
+                }
+
+                roomNr = 0;
+                btnChIn.Enabled = false;
+                btnChOut.Enabled = false;
+
+
+
             }
+            
+            
 
+            
 
+            
         }
 
         
@@ -154,39 +210,50 @@ namespace MUAB_hotel
             
             if (roomNr == 0)
             {
-                MessageBox.Show($"Select a guest");
+                MessageBox.Show("Select a guest");
             }
             else
             {
                 
-                status = "Chech in";
+                status = "ChechIn";
                 Chech_in_out.message = "Check in?";
                 inout.ShowDialog();
                 btnSeach_Click(sender, e);
-
             }
 
+            roomNr = 0;
             
+
+
         }
 
         private void btnChOut_Click(object sender, EventArgs e)
         {
             
-            if (roomNr == 0)
+            if (roomNr == 0 )
             {
-                MessageBox.Show($"Select a guest");
+                MessageBox.Show("Select a guest");
             }
             else
             {
                 
-                status = "Chech out";
+                status = "ChechOut";
                 Chech_in_out.message = "Check out?";
                 inout.ShowDialog();
                 btnSeach_Click(sender, e);
             }
+
+            roomNr = 0;
+
+
+
         }
 
-       
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            btnSeach_Click(sender, e);
+            txtSearch.Focus();
+        }
     }
 
 }

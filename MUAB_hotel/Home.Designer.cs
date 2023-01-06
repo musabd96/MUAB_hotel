@@ -41,7 +41,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnService = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -122,7 +122,7 @@
             this.btnHome.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnHome.Size = new System.Drawing.Size(190, 82);
             this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "        Home";
+            this.btnHome.Text = "       Dashboard";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -210,30 +210,30 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnAdmin);
+            this.panel1.Controls.Add(this.btnService);
             this.panel1.Location = new System.Drawing.Point(-1, 318);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 67);
             this.panel1.TabIndex = 1;
             // 
-            // btnAdmin
+            // btnService
             // 
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
-            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(-13, -12);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(192, 82);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "          Admin";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnSetting_Click);
+            this.btnService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnService.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnService.ForeColor = System.Drawing.Color.White;
+            this.btnService.Image = ((System.Drawing.Image)(resources.GetObject("btnService.Image")));
+            this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnService.Location = new System.Drawing.Point(-16, -9);
+            this.btnService.Name = "btnService";
+            this.btnService.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnService.Size = new System.Drawing.Size(192, 82);
+            this.btnService.TabIndex = 0;
+            this.btnService.Text = "          Admin";
+            this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnService.UseVisualStyleBackColor = false;
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
             // panel8
             // 
@@ -262,7 +262,6 @@
             this.button1.Text = "          Logout";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panel7
             // 
@@ -414,7 +413,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnService;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel7;

@@ -98,7 +98,7 @@ namespace MUAB_hotel
 
             int result = DateTime.Compare(dtCheckout.Value, dtCheckin.Value);
 
-            if (cBRoomTy.SelectedItem.ToString().Contains(" "))
+            if (cBRoomTy.SelectedItem.ToString().Contains("-Select  room type-"))
             {
                 MessageBox.Show("Select a room type");
                 cBRoomTy.ForeColor = Color.Red;
@@ -219,7 +219,7 @@ namespace MUAB_hotel
             db.newbookingid();
             db.newCustomer();
             db.newcustomerid();
-            dbHelper.roomStatus = "BUSY";
+            dbHelper.roomStatus = "Booked";
             db.roomstatus();
             
 

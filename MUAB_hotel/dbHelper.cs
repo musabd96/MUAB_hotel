@@ -24,6 +24,8 @@ namespace MUAB_hotel
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");
 
+
+
         #region BOOKING
 
         //Booking
@@ -39,7 +41,7 @@ namespace MUAB_hotel
         internal void getData(DataGridView dataGridView)
         {
             U_Booking u_Booking = new U_Booking();
-            string Query = "SELECT rooms_nr as 'Room Nr', rooms_type as 'Type', rooms_price as 'Price' FROM hoteldb.rooms where rooms_type ='" + U_Booking.roomsType + "';";
+            string Query = "SELECT rooms_nr as 'Room Nr', rooms_type as 'Type', rooms_price as 'Price' FROM hoteldb.rooms where rooms_type ='" + U_Booking.roomsType + "' AND rooms_status = 'Available';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -62,7 +64,6 @@ namespace MUAB_hotel
             MySqlCommand cmd = new MySqlCommand(Query, conn);
             var ds = new DataSet();
 
-            //cmd.Parameters.AddWithValue("@0", 0);
             cmd.ExecuteReader();
 
             conn.Close();
@@ -107,6 +108,40 @@ namespace MUAB_hotel
 
         #endregion
 
+        #region Home
+
+        internal void homeView(DataGridView dataGridView)
+        {
+            string Query = "SELECT * FROM hoteldb.home_view WHERE Nr = '" + u_Home.roomsNr + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable table = new DataTable();
+            table.Load(reader);
+            dataGridView.DataSource = table;
+            conn.Close();
+        }
+
+
+        internal void roomSt()
+        {
+            string Query = "SELECT * FROM hoteldb.rooms WHERE rooms_nr = '" + u_Home.roomsNr + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                u_Home.roomStatus = (string)reader["rooms_status"];
+            }
+            conn.Close();
+
+        }
+
+        #endregion
 
         #region Customer
 
@@ -174,7 +209,6 @@ namespace MUAB_hotel
 
         internal void roomPrice()
         {
-            MessageBox.Show($"rom {U_Reception.newRoomNr}");
             string Query = "SELECT rooms_price FROM hoteldb.rooms where rooms_nr = '" + U_Reception.newRoomNr + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
@@ -200,42 +234,7 @@ namespace MUAB_hotel
             conn.Close();
         }
 
-        internal void showRoom(DataGridView dataGridView)
-        {
-            u_Home u_Home = new u_Home();
-            
-            if(u_Home.roomsStatus == "- All -")
-            {
-                string Query = "SELECT rooms_nr AS 'Room Nr' FROM hoteldb.rooms;";
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(Query, conn);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                DataTable table = new DataTable();
-                table.Load(reader);
-                dataGridView.DataSource = table;
-                
-                conn.Close();
-            }
-            else
-            {
-                string Query = "SELECT rooms_nr 'Room Nr', rooms_status AS 'Status' FROM hoteldb.rooms WHERE rooms_type = '" + u_Home.roomsStatus + "';";
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(Query, conn);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                DataTable table = new DataTable();
-                table.Load(reader);
-                dataGridView.DataSource = table;
-
-
-                conn.Close();
-            }
-
-
-        }
+        
 
        
         #endregion
@@ -259,8 +258,9 @@ namespace MUAB_hotel
                                               " FROM hoteldb.booking inner join hoteldb.customers on " +
                                               "booking.customers_id = customers.customers_id " +
                                               " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr " +
-                                              "WHERE customers_first_name = '" + U_Reception.search + "' " +
-                                              " OR booking_id = '" + U_Reception.search + "';";
+                                              "WHERE customers_first_name LIKE '" + U_Reception.search + "%' " +
+                                              "OR customers_last_name LIKE '" + U_Reception.search + "%'" +
+                                              " OR booking_id LIKE '" + U_Reception.search + "' OR rooms.rooms_nr LIKE '" + U_Reception.search + "%';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -303,7 +303,7 @@ namespace MUAB_hotel
             U_Reception U_Reception = new U_Reception();
             string Query = "SELECT * FROM hoteldb.booking inner join hoteldb.customers on booking.customers_id = customers.customers_id " +
                            " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr WHERE customers_first_name = '" + U_Reception.search + "' " +
-                           " OR booking_id = '" + U_Reception.search + "';";
+                           " OR booking_id = '" + U_Reception.bookingID + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -321,7 +321,9 @@ namespace MUAB_hotel
         {
             U_Reception u_Reception = new U_Reception();
             string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.status + "' " +
-                                                    "WHERE booking_id = '" + U_Reception.bookingID + "';";
+                                                    "WHERE booking_id = '" + U_Reception.bookingID + "' ;" +
+                           " UPDATE hoteldb.rooms SET rooms_status = '" + U_Reception.status + "'" +
+                                                    "WHERE rooms_nr = '" + U_Reception.roomNr + "';";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -334,8 +336,7 @@ namespace MUAB_hotel
         internal void cancelBooking()
         {
 
-            string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " +
-                           "UPDATE hoteldb.rooms SET rooms_status = 'Available' WHERE rooms_nr = '" + U_Reception.roomNr + "';";
+            string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " ;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -346,7 +347,44 @@ namespace MUAB_hotel
 
         }
 
-        
+
+
+        #endregion
+
+        #region Services
+
+        internal void getRoomSt(DataGridView dataGridView)
+        {
+            U_Services U_Services = new U_Services();
+            string Query = "SELECT rooms_nr AS 'Room Nr' FROM hoteldb.rooms WHERE rooms_status = 'ChechOut';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable table = new DataTable();
+            table.Load(reader);
+            dataGridView.DataSource = table;
+            conn.Close();
+        }
+
+        internal void getCID()
+        {
+            string Query = "SELECT customers_id FROM hoteldb.booking WHERE rooms_nr = '" + dbHelper.roomNr + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                U_Reception.customersID = (int)reader["customers_id"];
+            }
+            conn.Close();
+
+            conn.Close();
+        }
+
+
         #endregion
 
     }

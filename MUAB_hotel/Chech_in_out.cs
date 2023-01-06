@@ -36,9 +36,16 @@ namespace MUAB_hotel
 
             else if (message == "Cancelled?")
             {
+                dbHelper.roomStatus = "Available";
+                db.roomstatus();
                 db.cancelBooking();
                 this.Close();
             }
+
+            lbFullName.Text = "";
+            lbCID.Text = "";
+            lbBookNr.Text = "";
+            lbmessage.Text = "";
             
         }
 

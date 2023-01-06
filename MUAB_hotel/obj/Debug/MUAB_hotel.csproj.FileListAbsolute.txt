@@ -37,3 +37,6 @@ C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.Co
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Reception.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Update.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Chech_in_out.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Services.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenXml.xml
