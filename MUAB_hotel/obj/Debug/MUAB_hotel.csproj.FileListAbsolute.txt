@@ -40,3 +40,5 @@ C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Chech_in_
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Services.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Setting.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Login.resources

@@ -16,7 +16,7 @@ namespace MUAB_hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new Login());
         }
     }
 }

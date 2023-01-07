@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace MUAB_hotel
 {
+
     public partial class Home : Form
     {
-        bool menuExpand;
-
+        Login Login = new Login();
         public Home()
         {
             InitializeComponent();
@@ -21,6 +21,18 @@ namespace MUAB_hotel
             userControl(u_Home);
 
             openMenu();
+            btnHome.Enabled = false;
+        }
+
+        
+        private void Home_Load(object sender, EventArgs e)
+        {
+            if( Login.userName == "admin")
+            {
+                btnBooking.Enabled = false;
+                btnReception.Enabled = false;
+            }
+            
             btnHome.Enabled = false;
         }
 
@@ -53,7 +65,7 @@ namespace MUAB_hotel
             pnlBlack.Location = new Point(60, 0);
         }
 
-
+        //
         #endregion
 
         private void userControl(UserControl userControl)
@@ -80,8 +92,18 @@ namespace MUAB_hotel
             u_Home u_Home = new u_Home();
             userControl(u_Home);
             btnHome.Enabled = false;
-            btnBooking.Enabled = true;
-            btnReception.Enabled = true;
+
+            if (Login.userName == "admin")
+            {
+                btnBooking.Enabled = false;
+                btnReception.Enabled = false;
+            }
+            else
+            {
+                btnBooking.Enabled = true;
+                btnReception.Enabled = true;
+            }
+
             btnService.Enabled = true;
         }
 
@@ -93,6 +115,7 @@ namespace MUAB_hotel
             btnHome.Enabled = true;
             btnReception.Enabled = true;
             btnService.Enabled = true;
+            btnSetting.Enabled = true;
         }
 
         private void btnReception_Click(object sender, EventArgs e)
@@ -103,13 +126,7 @@ namespace MUAB_hotel
             btnBooking.Enabled = true;
             btnHome.Enabled = true;
             btnService.Enabled = true;
-        }
-
-        
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-            btnHome.Enabled = false;
+            btnSetting.Enabled = true;
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -117,12 +134,43 @@ namespace MUAB_hotel
             U_Services U_Services = new U_Services();
             userControl(U_Services);
             btnService.Enabled = false;
+            btnSetting.Enabled = true;
             btnHome.Enabled = true;
-            btnBooking.Enabled = true;
-            btnReception.Enabled = true;
+            if(Login.userName == "admin")
+            {
+                btnBooking.Enabled = false;
+                btnReception.Enabled = false;
+            }
+            else
+            {
+                btnBooking.Enabled = true;
+                btnReception.Enabled = true;
+            }
+            
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
+        {
+            U_Setting U_Setting = new U_Setting();
+            userControl(U_Setting);
+            btnSetting.Enabled = false;
+            btnService.Enabled = true;
+            btnHome.Enabled = true; 
+            if (Login.userName == "admin")
+            {
+                btnBooking.Enabled = false;
+                btnReception.Enabled = false;
+            }
+            else
+            {
+                btnBooking.Enabled = true;
+                btnReception.Enabled = true;
+            }
+
+
+        }
+
+        private void pnlBlack_Paint(object sender, PaintEventArgs e)
         {
 
         }
