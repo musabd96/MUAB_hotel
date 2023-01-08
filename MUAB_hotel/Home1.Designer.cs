@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,6 +95,7 @@
             // pnlMenuBar
             // 
             this.pnlMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlMenuBar.Controls.Add(this.label2);
             this.pnlMenuBar.Controls.Add(this.panel2);
             this.pnlMenuBar.Controls.Add(this.label1);
             this.pnlMenuBar.Controls.Add(this.panel7);
@@ -348,6 +350,17 @@
             this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
             this.pnlBlack.TabIndex = 7;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(2, 777);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
+            // 
             // Home1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +420,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnl_U;
         private System.Windows.Forms.Panel pnlBlack;
+        private System.Windows.Forms.Label label2;
     }
 }

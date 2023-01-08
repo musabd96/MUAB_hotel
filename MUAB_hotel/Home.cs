@@ -62,8 +62,10 @@ namespace MUAB_hotel
             pnlBlack.Location = new Point(60, 0);
         }
 
-        //
         #endregion
+
+
+        //all U_forms controll and show it Panel pnl_U
 
         private void userControl(UserControl userControl)
         {
@@ -84,17 +86,21 @@ namespace MUAB_hotel
             openMenu();
         }
 
+
+        //home button
         private void btnHome_Click(object sender, EventArgs e)
         {
             u_Home u_Home = new u_Home();
             userControl(u_Home);
             btnHome.Enabled = false;
+            btnBooking.Enabled = true;
             btnReception.Enabled = true;
             btnService.Enabled = true;
             btnSetting.Enabled = true;
             btnAdmin.Enabled = true;
         }
 
+        //booking button
         private void btnBooking_Click(object sender, EventArgs e)
         {
             U_Booking u_Booking = new U_Booking();
@@ -107,6 +113,7 @@ namespace MUAB_hotel
             btnAdmin.Enabled = true;
         }
 
+        //reception button
         private void btnReception_Click(object sender, EventArgs e)
         {
             U_Reception U_Reception = new U_Reception();
@@ -120,6 +127,7 @@ namespace MUAB_hotel
 
         }
 
+        //service button
         private void btnService_Click(object sender, EventArgs e)
         {
             U_Services U_Services = new U_Services();
@@ -134,6 +142,7 @@ namespace MUAB_hotel
 
         }
 
+        //setting button
         private void btnSetting_Click(object sender, EventArgs e)
         {
             U_Setting U_Setting = new U_Setting();
@@ -146,7 +155,8 @@ namespace MUAB_hotel
 
 
         }
-
+         
+        //adminstration button
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -161,13 +171,14 @@ namespace MUAB_hotel
             btnAdmin.Enabled = false;
         }
 
-
+        // logout button
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
             Login.Show();
         }
 
+        // form closing
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

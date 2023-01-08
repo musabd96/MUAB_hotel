@@ -21,6 +21,8 @@ namespace MUAB_hotel
             InitializeComponent();
         }
 
+        //Login button
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -30,6 +32,8 @@ namespace MUAB_hotel
                 dbHelper.login();
                 Home1 home1 = new Home1();
                 Home home = new Home();
+
+                //admin login 
                 if (userName == "admin" && password == 1234)
                 {
 
@@ -37,10 +41,11 @@ namespace MUAB_hotel
                     home1.Show();
                     this.Hide();
                 }
-
+                
                 else if (userName == dbHelper.userName && password == dbHelper.password)
                 {
-                    //MessageBox.Show($"{dbHelper.position} pst");
+                    // control if the user is housekeeping position or other position 
+                    // Housekeeping olny access the home1 form other positions can access all
                     if (dbHelper.position == "Housekeeping")
                     {
                         home1.Show();
@@ -97,7 +102,7 @@ namespace MUAB_hotel
             
         }
 
-       
+       //password hide or view 
         private void pBHide_Click(object sender, EventArgs e)
         {
             

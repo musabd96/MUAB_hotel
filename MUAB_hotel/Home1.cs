@@ -53,6 +53,7 @@ namespace MUAB_hotel
             pnlBlack.Location = new Point(60, 0);
         }
 
+        //all U_forms controll and show it Panel pnl_U
         private void userControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -61,6 +62,7 @@ namespace MUAB_hotel
             userControl.BringToFront();
         }
 
+        //Home button
         private void btnHome_Click(object sender, EventArgs e)
         {
             u_Home u_Home = new u_Home();
@@ -70,6 +72,7 @@ namespace MUAB_hotel
             btnSetting.Enabled = true;
         }
 
+        //service button
         private void btnService_Click(object sender, EventArgs e)
         {
             U_Services U_Services = new U_Services();
@@ -79,6 +82,8 @@ namespace MUAB_hotel
             btnSetting.Enabled = true;
         }
 
+
+        //setting button
         private void btnSetting_Click(object sender, EventArgs e)
         {
             U_Setting U_Setting = new U_Setting();
@@ -87,6 +92,7 @@ namespace MUAB_hotel
             btnService.Enabled = true;
             btnSetting.Enabled = false;
         }
+
 
         private void pBCloseBar_Click(object sender, EventArgs e)
         {
