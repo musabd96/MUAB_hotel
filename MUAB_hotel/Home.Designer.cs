@@ -56,9 +56,9 @@
             this.pnlCloseBar = new System.Windows.Forms.Panel();
             this.pBCloseBar = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnAdmin = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlBlack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -169,7 +169,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnHome.Size = new System.Drawing.Size(190, 82);
-            this.btnHome.TabIndex = 0;
+            this.btnHome.TabIndex = 1;
             this.btnHome.Text = "       Dashboard";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnBooking.Size = new System.Drawing.Size(187, 82);
-            this.btnBooking.TabIndex = 0;
+            this.btnBooking.TabIndex = 2;
             this.btnBooking.Text = "        Booking";
             this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBooking.UseVisualStyleBackColor = false;
@@ -223,7 +223,7 @@
             this.btnReception.Name = "btnReception";
             this.btnReception.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnReception.Size = new System.Drawing.Size(195, 82);
-            this.btnReception.TabIndex = 0;
+            this.btnReception.TabIndex = 3;
             this.btnReception.Text = "        Reception";
             this.btnReception.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReception.UseVisualStyleBackColor = false;
@@ -250,7 +250,7 @@
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSetting.Size = new System.Drawing.Size(180, 82);
-            this.btnSetting.TabIndex = 0;
+            this.btnSetting.TabIndex = 5;
             this.btnSetting.Text = "        Setting";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.UseVisualStyleBackColor = false;
@@ -277,7 +277,7 @@
             this.btnService.Name = "btnService";
             this.btnService.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnService.Size = new System.Drawing.Size(203, 82);
-            this.btnService.TabIndex = 0;
+            this.btnService.TabIndex = 4;
             this.btnService.Text = "       Service";
             this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnService.UseVisualStyleBackColor = false;
@@ -306,7 +306,7 @@
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnLogOut.Size = new System.Drawing.Size(192, 82);
-            this.btnLogOut.TabIndex = 0;
+            this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "          Logout";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -416,6 +416,17 @@
             this.pnlMenuBar.Size = new System.Drawing.Size(189, 801);
             this.pnlMenuBar.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(2, 777);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.btnAdmin);
@@ -437,22 +448,11 @@
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(203, 82);
-            this.btnAdmin.TabIndex = 4;
+            this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "          Admin";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(2, 777);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
             // 
             // Home
             // 

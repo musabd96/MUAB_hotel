@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +32,7 @@ namespace MUAB_hotel
         public static int password { get; set; }
         public static string position { get; set; }
         public static string fullName { get; set; }
+        public static int empID { get; set; }
 
 
         internal void login()
@@ -42,6 +45,7 @@ namespace MUAB_hotel
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                empID = (int)reader["employee_id"];
                 userName = (string)reader["employee_user_name"];
                 password = (int)reader["employee_pass"];
                 position = (string)reader["employee_position"];
@@ -123,8 +127,14 @@ namespace MUAB_hotel
         internal void newBooking()
         {
 
-            string query = "UPDATE hoteldb.booking SET booking_check_in = '" + checkIn+ "', booking_check_out = '" + checkOut + "', " +
-                "booking_days = '" + totalDays + "', booking_price = '" + price + "', customers_id = '" + customerId + "', rooms_nr = '" + roomNr + "' WHERE booking_id = '" + bookingId + "'";
+            string query = "UPDATE hoteldb.booking SET booking_check_in = '" + checkIn+ "', " +
+                                                      "booking_check_out = '" + checkOut + "', " +
+                                                      "booking_days = '" + totalDays + "', " +
+                                                      "booking_price = '" + price + "', " +
+                                                      "customers_id = '" + customerId + "', " +
+                                                      "rooms_nr = '" + roomNr + "' , " +
+                                                      "employee_id = '" + empID + "'" +
+                                                      "WHERE booking_id = '" + bookingId + "'";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -255,7 +265,7 @@ namespace MUAB_hotel
 
         internal void roomstatus()
         {
-            string query = "UPDATE hoteldb.rooms SET rooms_status = '" + roomStatus + "' WHERE rooms_nr = '" + roomNr + "'";
+            string query = "UPDATE hoteldb.rooms SET rooms_status = '" + roomStatus + "', employee_id = '" + empID + "'  WHERE rooms_nr = '" + roomNr + "'";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -285,7 +295,8 @@ namespace MUAB_hotel
                                               "booking_check_in AS 'Check in', " +
                                               "booking_check_out AS 'Check out' , " +
                                               "booking_days AS 'Total days' , " +
-                                              "booking_status AS 'Status' " +
+                                              "booking_status AS 'Status'," +
+                                              "booking.employee_id AS 'Emp ID' " +
                                               " FROM hoteldb.booking inner join hoteldb.customers on " +
                                               "booking.customers_id = customers.customers_id " +
                                               " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr " +
@@ -318,7 +329,8 @@ namespace MUAB_hotel
                                                            "rooms_nr = '" + U_Reception.newRoomNr + "', " +
                                                            "booking_days = '" + U_Reception.Days + "', " +
                                                            "booking_price = '" + U_Reception.newPrice + "', " +
-                                                           "booking_status = '" + U_Reception.status + "' " +
+                                                           "booking_status = '" + U_Reception.status + "', " +
+                                                           " employee_id = '" + empID + "' " +
                                                            "WHERE booking_id = '" + U_Reception.bookingID + "';";
 
             conn.Open();
@@ -351,7 +363,8 @@ namespace MUAB_hotel
         internal void chechInOut()
         {
             U_Reception u_Reception = new U_Reception();
-            string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.status + "' " +
+            string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.status + "', " +
+                                                    "employee_id = '" + empID + "' " +
                                                     "WHERE booking_id = '" + U_Reception.bookingID + "' ;" +
                            " UPDATE hoteldb.rooms SET rooms_status = '" + U_Reception.status + "'" +
                                                     "WHERE rooms_nr = '" + U_Reception.roomNr + "';";
@@ -418,7 +431,7 @@ namespace MUAB_hotel
 
         #endregion
 
-        #region Adminstration
+        #region Adminstration / Employee
 
         internal void empView(DataGridView dataGridView)
         {
@@ -440,6 +453,49 @@ namespace MUAB_hotel
             dataGridView.DataSource = table;
             conn.Close();
         }
+
+        internal void getEmp()
+        {
+            string Query = "SELECT * FROM hoteldb.employee WHERE employee_first_name = '" + U_Admin.Name + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                U_Admin.email = (string)reader["employee_email"];
+                U_Admin.Mobile = (string)reader["employee_phone_nr"];
+                U_Admin.EmpId = (int)reader["employee_id"];
+            }
+            conn.Close();
+
+
+        }
+
+        internal void fired()
+        {
+            string query = "DELETE FROM hoteldb.employee WHERE employee_id = '" + U_Admin.EmpId + "'; ";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+            conn.Close();
+        }
+        internal void newEmp()
+        {
+            string query = "INSERT INTO hoteldb.employee (employee_first_name, employee_last_name, employee_position, " +
+                                                         "employee_phone_nr, employee_email, employee_user_name, employee_pass, employee_status)  " +
+                                                         "VALUES ('" + U_Admin.fName + "', '" + U_Admin.lName + "', '" + U_Admin.position + "'," +
+                                                         " '" + U_Admin.mobileNr + "', '" + U_Admin.Email + "', '" + U_Admin.uName + "', 1234, 'Out');";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQueryAsync();
+            conn.Close();
+
+        }
+
+
+
 
         #endregion
 
