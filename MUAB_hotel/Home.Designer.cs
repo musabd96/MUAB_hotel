@@ -31,10 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbPosition = new System.Windows.Forms.Label();
+            this.lbname = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnBooking = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnReception = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -42,7 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnService = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,8 +56,10 @@
             this.pnlCloseBar = new System.Windows.Forms.Panel();
             this.pBCloseBar = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
-            this.btnBooking = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlBlack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -67,6 +73,7 @@
             this.pnlCloseBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_U
@@ -84,12 +91,51 @@
             this.pnlBlack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBlack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlBlack.Controls.Add(this.pictureBox1);
+            this.pnlBlack.Controls.Add(this.lbPosition);
+            this.pnlBlack.Controls.Add(this.lbname);
             this.pnlBlack.Controls.Add(this.label3);
             this.pnlBlack.Location = new System.Drawing.Point(60, 0);
             this.pnlBlack.Name = "pnlBlack";
             this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
             this.pnlBlack.TabIndex = 4;
-            this.pnlBlack.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBlack_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(993, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbPosition
+            // 
+            this.lbPosition.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbPosition.AutoSize = true;
+            this.lbPosition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.ForeColor = System.Drawing.Color.Gray;
+            this.lbPosition.Location = new System.Drawing.Point(1036, 43);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(62, 19);
+            this.lbPosition.TabIndex = 21;
+            this.lbPosition.Tag = "";
+            this.lbPosition.Text = "Position";
+            // 
+            // lbname
+            // 
+            this.lbname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbname.AutoSize = true;
+            this.lbname.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbname.ForeColor = System.Drawing.Color.White;
+            this.lbname.Location = new System.Drawing.Point(1036, 19);
+            this.lbname.Name = "lbname";
+            this.lbname.Size = new System.Drawing.Size(63, 24);
+            this.lbname.TabIndex = 21;
+            this.lbname.Tag = "";
+            this.lbname.Text = "Name";
             // 
             // label3
             // 
@@ -135,6 +181,25 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(176, 67);
             this.panel4.TabIndex = 1;
+            // 
+            // btnBooking
+            // 
+            this.btnBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBooking.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.ForeColor = System.Drawing.Color.White;
+            this.btnBooking.Image = ((System.Drawing.Image)(resources.GetObject("btnBooking.Image")));
+            this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBooking.Location = new System.Drawing.Point(-4, -6);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnBooking.Size = new System.Drawing.Size(187, 82);
+            this.btnBooking.TabIndex = 0;
+            this.btnBooking.Text = "        Booking";
+            this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBooking.UseVisualStyleBackColor = false;
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // panel5
             // 
@@ -207,12 +272,12 @@
             this.btnService.ForeColor = System.Drawing.Color.White;
             this.btnService.Image = ((System.Drawing.Image)(resources.GetObject("btnService.Image")));
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(-16, -9);
+            this.btnService.Location = new System.Drawing.Point(3, -9);
             this.btnService.Name = "btnService";
             this.btnService.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnService.Size = new System.Drawing.Size(203, 82);
             this.btnService.TabIndex = 0;
-            this.btnService.Text = "          Admin";
+            this.btnService.Text = "       Service";
             this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnService.UseVisualStyleBackColor = false;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
@@ -221,29 +286,30 @@
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.btnLogOut);
             this.panel8.Location = new System.Drawing.Point(1, 714);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(176, 67);
             this.panel8.TabIndex = 1;
             // 
-            // button1
+            // btnLogOut
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-13, -12);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(192, 82);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "          Logout";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(-13, -12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(192, 82);
+            this.btnLogOut.TabIndex = 0;
+            this.btnLogOut.Text = "          Logout";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel7
             // 
@@ -330,6 +396,7 @@
             // pnlMenuBar
             // 
             this.pnlMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlMenuBar.Controls.Add(this.panel9);
             this.pnlMenuBar.Controls.Add(this.panel2);
             this.pnlMenuBar.Controls.Add(this.label1);
             this.pnlMenuBar.Controls.Add(this.panel7);
@@ -347,24 +414,32 @@
             this.pnlMenuBar.Size = new System.Drawing.Size(189, 801);
             this.pnlMenuBar.TabIndex = 1;
             // 
-            // btnBooking
+            // panel9
             // 
-            this.btnBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBooking.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.ForeColor = System.Drawing.Color.White;
-            this.btnBooking.Image = ((System.Drawing.Image)(resources.GetObject("btnBooking.Image")));
-            this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.Location = new System.Drawing.Point(-4, -6);
-            this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBooking.Size = new System.Drawing.Size(187, 82);
-            this.btnBooking.TabIndex = 0;
-            this.btnBooking.Text = "        Booking";
-            this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.UseVisualStyleBackColor = false;
-            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
+            this.panel9.Controls.Add(this.btnAdmin);
+            this.panel9.Location = new System.Drawing.Point(-14, 629);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(176, 67);
+            this.panel9.TabIndex = 4;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(-7, -3);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(203, 82);
+            this.btnAdmin.TabIndex = 4;
+            this.btnAdmin.Text = "          Admin";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // Home
             // 
@@ -380,9 +455,11 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Home_Load);
             this.pnlBlack.ResumeLayout(false);
             this.pnlBlack.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -397,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -415,7 +493,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnService;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -426,6 +504,11 @@
         private System.Windows.Forms.PictureBox pBCloseBar;
         private System.Windows.Forms.Panel pnlMenuBar;
         private System.Windows.Forms.Button btnBooking;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Label lbPosition;
+        private System.Windows.Forms.Label lbname;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

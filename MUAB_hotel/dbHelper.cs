@@ -24,7 +24,37 @@ namespace MUAB_hotel
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");
 
+        #region Login
+        
+        public static string userName { get; set; }
+        public static int password { get; set; }
+        public static string position { get; set; }
+        public static string fullName { get; set; }
 
+
+        internal void login()
+        {
+            Login Login = new Login();
+            string Query = "SELECT * FROM hoteldb.employee WHERE employee_user_name = '" + Login.userName + "';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                userName = (string)reader["employee_user_name"];
+                password = (int)reader["employee_pass"];
+                position = (string)reader["employee_position"];
+                string fName = (string)reader["employee_first_name"];
+                string lName = (string)reader["employee_last_name"];
+                fullName = fName + " " + lName;
+            }
+            conn.Close();
+
+
+        }
+
+        #endregion
 
         #region BOOKING
 
@@ -107,6 +137,7 @@ namespace MUAB_hotel
 
 
         #endregion
+
 
         #region Home
 
@@ -381,9 +412,34 @@ namespace MUAB_hotel
             }
             conn.Close();
 
-            conn.Close();
+            
         }
 
+
+        #endregion
+
+        #region Adminstration
+
+        internal void empView(DataGridView dataGridView)
+        {
+            U_Admin U_Admin = new U_Admin();
+
+            string Query = "SELECT employee_first_name AS 'First Name', " +
+                                  "employee_last_name AS 'Last Name', " +
+                                  "employee_email AS 'Email', " +
+                                  "employee_status AS 'Status', " +
+                                  "employee_position AS 'Position' " +
+                                  "FROM hoteldb.employee WHERE employee_first_name LIKE '" + U_Admin.search + "%';";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable table = new DataTable();
+            table.Load(reader);
+            dataGridView.DataSource = table;
+            conn.Close();
+        }
 
         #endregion
 

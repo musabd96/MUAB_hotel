@@ -22,17 +22,14 @@ namespace MUAB_hotel
 
             openMenu();
             btnHome.Enabled = false;
+            lbname.Text = dbHelper.fullName;
+            lbPosition.Text = dbHelper.position;
         }
 
         
         private void Home_Load(object sender, EventArgs e)
         {
-            if( Login.userName == "admin")
-            {
-                btnBooking.Enabled = false;
-                btnReception.Enabled = false;
-            }
-            
+           
             btnHome.Enabled = false;
         }
 
@@ -92,30 +89,22 @@ namespace MUAB_hotel
             u_Home u_Home = new u_Home();
             userControl(u_Home);
             btnHome.Enabled = false;
-
-            if (Login.userName == "admin")
-            {
-                btnBooking.Enabled = false;
-                btnReception.Enabled = false;
-            }
-            else
-            {
-                btnBooking.Enabled = true;
-                btnReception.Enabled = true;
-            }
-
+            btnReception.Enabled = true;
             btnService.Enabled = true;
+            btnSetting.Enabled = true;
+            btnAdmin.Enabled = true;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
             U_Booking u_Booking = new U_Booking();
             userControl(u_Booking);
-            btnBooking.Enabled = false;
             btnHome.Enabled = true;
+            btnBooking.Enabled = false;
             btnReception.Enabled = true;
             btnService.Enabled = true;
             btnSetting.Enabled = true;
+            btnAdmin.Enabled = true;
         }
 
         private void btnReception_Click(object sender, EventArgs e)
@@ -127,52 +116,64 @@ namespace MUAB_hotel
             btnHome.Enabled = true;
             btnService.Enabled = true;
             btnSetting.Enabled = true;
+            btnAdmin.Enabled = true;
+
         }
 
         private void btnService_Click(object sender, EventArgs e)
         {
             U_Services U_Services = new U_Services();
             userControl(U_Services);
+            btnHome.Enabled = true;
+            btnReception.Enabled = true;
             btnService.Enabled = false;
             btnSetting.Enabled = true;
-            btnHome.Enabled = true;
-            if(Login.userName == "admin")
-            {
-                btnBooking.Enabled = false;
-                btnReception.Enabled = false;
-            }
-            else
-            {
-                btnBooking.Enabled = true;
-                btnReception.Enabled = true;
-            }
-            
+            btnAdmin.Enabled = true;
+
+
+
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
             U_Setting U_Setting = new U_Setting();
             userControl(U_Setting);
-            btnSetting.Enabled = false;
+            btnHome.Enabled = true;
+            btnReception.Enabled = true;
             btnService.Enabled = true;
-            btnHome.Enabled = true; 
-            if (Login.userName == "admin")
-            {
-                btnBooking.Enabled = false;
-                btnReception.Enabled = false;
-            }
-            else
-            {
-                btnBooking.Enabled = true;
-                btnReception.Enabled = true;
-            }
+            btnSetting.Enabled = false;
+            btnAdmin.Enabled = true;
 
 
         }
 
-        private void pnlBlack_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            U_Admin U_Admin =new U_Admin();
+
+            userControl(U_Admin);
+            btnHome.Enabled = true;
+            btnBooking.Enabled = true;
+            btnReception.Enabled = true;
+            btnService.Enabled = true;
+            btnSetting.Enabled = true;
+            btnAdmin.Enabled = false;
+        }
+
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login.Show();
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+           
+
+            
         }
     }
 }

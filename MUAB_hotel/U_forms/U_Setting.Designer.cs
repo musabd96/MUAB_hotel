@@ -48,26 +48,26 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnedit = new System.Windows.Forms.Button();
             this.pnledit = new System.Windows.Forms.Panel();
+            this.txtConpass = new System.Windows.Forms.TextBox();
+            this.txtPhNr = new System.Windows.Forms.TextBox();
+            this.txtNpass = new System.Windows.Forms.TextBox();
+            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.txtCpass = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUname = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.lbFnameCh = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.txtUname = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtAdress = new System.Windows.Forms.TextBox();
-            this.txtPhNr = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCpass = new System.Windows.Forms.TextBox();
-            this.txtNpass = new System.Windows.Forms.TextBox();
-            this.txtConpass = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lbFnameCh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnledit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -250,11 +250,11 @@
             // btnedit
             // 
             this.btnedit.ForeColor = System.Drawing.Color.Black;
-            this.btnedit.Location = new System.Drawing.Point(760, 340);
+            this.btnedit.Location = new System.Drawing.Point(753, 340);
             this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(101, 40);
+            this.btnedit.Size = new System.Drawing.Size(110, 40);
             this.btnedit.TabIndex = 31;
-            this.btnedit.Text = "Exit Profile";
+            this.btnedit.Text = "Edit Profile";
             this.btnedit.UseVisualStyleBackColor = true;
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
@@ -280,10 +280,70 @@
             this.pnledit.Controls.Add(this.label26);
             this.pnledit.Controls.Add(this.label29);
             this.pnledit.Controls.Add(this.label31);
-            this.pnledit.Location = new System.Drawing.Point(0, 0);
+            this.pnledit.Location = new System.Drawing.Point(0, 694);
             this.pnledit.Name = "pnledit";
-            this.pnledit.Size = new System.Drawing.Size(1299, 704);
+            this.pnledit.Size = new System.Drawing.Size(1299, 10);
             this.pnledit.TabIndex = 32;
+            // 
+            // txtConpass
+            // 
+            this.txtConpass.Location = new System.Drawing.Point(794, 493);
+            this.txtConpass.Name = "txtConpass";
+            this.txtConpass.Size = new System.Drawing.Size(126, 29);
+            this.txtConpass.TabIndex = 50;
+            // 
+            // txtPhNr
+            // 
+            this.txtPhNr.Location = new System.Drawing.Point(262, 347);
+            this.txtPhNr.Name = "txtPhNr";
+            this.txtPhNr.Size = new System.Drawing.Size(237, 29);
+            this.txtPhNr.TabIndex = 50;
+            // 
+            // txtNpass
+            // 
+            this.txtNpass.Location = new System.Drawing.Point(794, 445);
+            this.txtNpass.Name = "txtNpass";
+            this.txtNpass.Size = new System.Drawing.Size(126, 29);
+            this.txtNpass.TabIndex = 50;
+            // 
+            // txtAdress
+            // 
+            this.txtAdress.Location = new System.Drawing.Point(262, 299);
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(237, 29);
+            this.txtAdress.TabIndex = 50;
+            // 
+            // txtCpass
+            // 
+            this.txtCpass.Location = new System.Drawing.Point(794, 393);
+            this.txtCpass.Name = "txtCpass";
+            this.txtCpass.Size = new System.Drawing.Size(126, 29);
+            this.txtCpass.TabIndex = 50;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(262, 247);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(237, 29);
+            this.txtEmail.TabIndex = 50;
+            // 
+            // txtUname
+            // 
+            this.txtUname.Location = new System.Drawing.Point(262, 151);
+            this.txtUname.Name = "txtUname";
+            this.txtUname.Size = new System.Drawing.Size(237, 29);
+            this.txtUname.TabIndex = 50;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(819, 557);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 40);
+            this.btnCancel.TabIndex = 49;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -316,6 +376,36 @@
             this.label17.TabIndex = 45;
             this.label17.Text = "Phone Nr:";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(550, 493);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(238, 33);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Conform Password:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(597, 441);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(191, 33);
+            this.label18.TabIndex = 39;
+            this.label18.Text = "New Password:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(565, 389);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(223, 33);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "Current Password:";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -335,6 +425,16 @@
             this.label23.Size = new System.Drawing.Size(91, 33);
             this.label23.TabIndex = 39;
             this.label23.Text = "Email:";
+            // 
+            // lbFnameCh
+            // 
+            this.lbFnameCh.AutoSize = true;
+            this.lbFnameCh.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFnameCh.Location = new System.Drawing.Point(262, 196);
+            this.lbFnameCh.Name = "lbFnameCh";
+            this.lbFnameCh.Size = new System.Drawing.Size(136, 33);
+            this.lbFnameCh.TabIndex = 36;
+            this.lbFnameCh.Text = "Full Name";
             // 
             // label26
             // 
@@ -370,106 +470,6 @@
             this.label31.TabIndex = 32;
             this.label31.Text = "Setting";
             // 
-            // txtUname
-            // 
-            this.txtUname.Location = new System.Drawing.Point(262, 151);
-            this.txtUname.Name = "txtUname";
-            this.txtUname.Size = new System.Drawing.Size(237, 29);
-            this.txtUname.TabIndex = 50;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(262, 247);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(237, 29);
-            this.txtEmail.TabIndex = 50;
-            // 
-            // txtAdress
-            // 
-            this.txtAdress.Location = new System.Drawing.Point(262, 299);
-            this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(237, 29);
-            this.txtAdress.TabIndex = 50;
-            // 
-            // txtPhNr
-            // 
-            this.txtPhNr.Location = new System.Drawing.Point(262, 347);
-            this.txtPhNr.Name = "txtPhNr";
-            this.txtPhNr.Size = new System.Drawing.Size(237, 29);
-            this.txtPhNr.TabIndex = 50;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(565, 389);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(223, 33);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "Current Password:";
-            // 
-            // txtCpass
-            // 
-            this.txtCpass.Location = new System.Drawing.Point(794, 393);
-            this.txtCpass.Name = "txtCpass";
-            this.txtCpass.Size = new System.Drawing.Size(126, 29);
-            this.txtCpass.TabIndex = 50;
-            // 
-            // txtNpass
-            // 
-            this.txtNpass.Location = new System.Drawing.Point(794, 445);
-            this.txtNpass.Name = "txtNpass";
-            this.txtNpass.Size = new System.Drawing.Size(126, 29);
-            this.txtNpass.TabIndex = 50;
-            // 
-            // txtConpass
-            // 
-            this.txtConpass.Location = new System.Drawing.Point(794, 493);
-            this.txtConpass.Name = "txtConpass";
-            this.txtConpass.Size = new System.Drawing.Size(126, 29);
-            this.txtConpass.TabIndex = 50;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(819, 557);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 40);
-            this.btnCancel.TabIndex = 49;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(597, 441);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(191, 33);
-            this.label18.TabIndex = 39;
-            this.label18.Text = "New Password:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(550, 493);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(238, 33);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "Conform Password:";
-            // 
-            // lbFnameCh
-            // 
-            this.lbFnameCh.AutoSize = true;
-            this.lbFnameCh.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFnameCh.Location = new System.Drawing.Point(262, 196);
-            this.lbFnameCh.Name = "lbFnameCh";
-            this.lbFnameCh.Size = new System.Drawing.Size(136, 33);
-            this.lbFnameCh.TabIndex = 36;
-            this.lbFnameCh.Text = "Full Name";
-            // 
             // U_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -496,7 +496,7 @@
             this.Controls.Add(this.lbHome);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "U_Setting";
             this.Size = new System.Drawing.Size(1302, 707);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -101,6 +101,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home1.Designer.cs">
+      <DependentUpon>Home1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="forms\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="U_forms\U_Admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="U_forms\U_Admin.Designer.cs">
+      <DependentUpon>U_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="U_forms\U_Booking.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +163,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home1.resx">
+      <DependentUpon>Home1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="forms\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U_forms\U_Admin.resx">
+      <DependentUpon>U_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="U_forms\U_Booking.resx">
       <DependentUpon>U_Booking.cs</DependentUpon>
