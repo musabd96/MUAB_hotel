@@ -18,12 +18,16 @@ namespace MUAB_hotel
         {
             InitializeComponent();
             u_Home u_Home = new u_Home();
+            dbHelper dbHelper = new dbHelper();
             userControl(u_Home);
 
             openMenu();
             btnHome.Enabled = false;
-            lbname.Text = dbHelper.fullName;
-            lbPosition.Text = dbHelper.position;
+
+            // getting the employee's info 
+            dbHelper.getEmployee();
+            lbname.Text = dbHelper.employee_firstName + " " + dbHelper.employee_lastName;
+            lbPosition.Text = dbHelper.role;
         }
 
         

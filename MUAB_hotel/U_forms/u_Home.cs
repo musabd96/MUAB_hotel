@@ -1595,7 +1595,7 @@ namespace MUAB_hotel
             if(pnl1.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb1.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1608,7 +1608,7 @@ namespace MUAB_hotel
             if (pnl2.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb2.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1621,7 +1621,7 @@ namespace MUAB_hotel
             if (pnl3.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb3.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1634,7 +1634,7 @@ namespace MUAB_hotel
             if (pnl4.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb4.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1647,7 +1647,7 @@ namespace MUAB_hotel
             if (pnl5.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb5.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1660,7 +1660,7 @@ namespace MUAB_hotel
             if (pnl6.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb6.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1673,7 +1673,7 @@ namespace MUAB_hotel
             if (pnl7.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb7.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1686,7 +1686,7 @@ namespace MUAB_hotel
             if (pnl8.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb8.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {
@@ -1699,7 +1699,7 @@ namespace MUAB_hotel
             if (pnl9.BackColor != Color.Green)
             {
                 roomsNr = Convert.ToInt32(lb9.Text);
-                db.homeView(dataGridView4);
+                db.dashboardView(dataGridView4);
             }
             else
             {

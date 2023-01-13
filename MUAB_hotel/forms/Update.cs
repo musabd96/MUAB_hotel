@@ -20,7 +20,7 @@ namespace MUAB_hotel
         public static string oldRoomType { get; set; }
         public static string roomNrs { get; set; }
 
-        dbHelper dbHelper= new dbHelper();
+        dbHelper1 dbHelper= new dbHelper1();
         U_Reception u_Reception = new U_Reception();
 
 
@@ -109,7 +109,7 @@ namespace MUAB_hotel
         }
 
         
-        MySqlConnection conn = new MySqlConnection($"SERVER={dbHelper.server};DATABASE={dbHelper.database};UID={dbHelper.user};PASSWORD={dbHelper.pass};");
+        MySqlConnection conn = new MySqlConnection($"SERVER={dbHelper1.server};DATABASE={dbHelper1.database};UID={dbHelper1.user};PASSWORD={dbHelper1.pass};");
 
         internal void allRoom()
         {

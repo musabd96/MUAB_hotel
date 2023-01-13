@@ -88,13 +88,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbHelper.cs" />
     <Compile Include="forms\Chech_in_out.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Chech_in_out.Designer.cs">
       <DependentUpon>Chech_in_out.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbHelper.cs" />
+    <Compile Include="dbHelper1.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>

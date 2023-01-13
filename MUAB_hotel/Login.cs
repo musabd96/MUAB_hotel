@@ -12,32 +12,38 @@ namespace MUAB_hotel
 {
     public partial class Login : Form
     {
-        dbHelper dbHelper = new dbHelper();
-        public static string userName { get; set; }
-        public static int password { get; set; }
         
+        public static string userName { get; set; }
+        public static string password { get; set; }
+        
+
         public Login()
         {
             InitializeComponent();
         }
 
+        #region Login 
+        
         //Login button
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 userName = txtUname.Text;
-                password = Convert.ToInt32(txtPass.Text);
+                password = txtPass.Text;
+
+                dbHelper dbHelper = new dbHelper();
                 dbHelper.login();
+
+                
                 Home1 home1 = new Home1();
                 Home home = new Home();
 
                 //admin login 
-                if (userName == "admin" && password == 1234)
+                if (userName == "admin" && password == "1234")
                 {
 
-                    MessageBox.Show($"{dbHelper.position} pst");
+                    MessageBox.Show($"{dbHelper.role} pst");
                     home1.Show();
                     this.Hide();
                 }
@@ -46,7 +52,7 @@ namespace MUAB_hotel
                 {
                     // control if the user is housekeeping position or other position 
                     // Housekeeping olny access the home1 form other positions can access all
-                    if (dbHelper.position == "Housekeeping")
+                    if (dbHelper.role == "Housekeeping")
                     {
                         home1.Show();
                         this.Hide();
@@ -84,10 +90,11 @@ namespace MUAB_hotel
             }
             catch
             {
-                MessageBox.Show("Invalid field");
+                MessageBox.Show("Invalid fiel d");
             }
             
         }
+
 
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
@@ -96,13 +103,24 @@ namespace MUAB_hotel
                 btnLogin_Click(sender, e);
             }
         }
-
-        private void Login_Load(object sender, EventArgs e)
+        private void txtUname_TextChanged(object sender, EventArgs e)
         {
-            
+            pnlAccNr.BackColor = Color.DodgerBlue;
+            txtUname.ForeColor = Color.White;
+            lbError.Text = "";
         }
 
-       //password hide or view 
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            pnlPass.BackColor = Color.DodgerBlue;
+            txtPass.ForeColor = Color.White;
+            lbError.Text = "";
+        }
+
+        #endregion
+
+        #region pass hide or view button
+
         private void pBHide_Click(object sender, EventArgs e)
         {
             
@@ -122,18 +140,8 @@ namespace MUAB_hotel
             }
         }
 
-        private void txtUname_TextChanged(object sender, EventArgs e)
-        {
-            pnlAccNr.BackColor = Color.DodgerBlue;
-            txtUname.ForeColor = Color.White;
-            lbError.Text = "";
-        }
+        #endregion
 
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-            pnlPass.BackColor = Color.DodgerBlue;
-            txtPass.ForeColor = Color.White;
-            lbError.Text = "";
-        }
+
     }
 }

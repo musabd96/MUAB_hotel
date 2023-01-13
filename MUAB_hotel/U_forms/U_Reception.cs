@@ -29,7 +29,7 @@ namespace MUAB_hotel
         public static string Price { get; set; }
         public static string newPrice { get; set; }
 
-        dbHelper db = new dbHelper();
+        dbHelper1 db = new dbHelper1();
         Chech_in_out inout = new Chech_in_out();
 
         public U_Reception()

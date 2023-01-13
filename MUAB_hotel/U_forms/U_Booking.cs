@@ -90,11 +90,11 @@ namespace MUAB_hotel
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            dbHelper db = new dbHelper();
+            dbHelper1 db = new dbHelper1();
             db.LastBookingId();
             db.LastcustomerId();
-            txtCusId.Text = dbHelper.customerId.ToString();
-            txtBookId.Text = dbHelper.bookingId;
+            txtCusId.Text = dbHelper1.customerId.ToString();
+            txtBookId.Text = dbHelper1.bookingId;
 
             int result = DateTime.Compare(dtCheckout.Value, dtCheckin.Value);
 
@@ -201,25 +201,25 @@ namespace MUAB_hotel
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            dbHelper db = new dbHelper();
+            dbHelper1 db = new dbHelper1();
 
-            dbHelper.roomNr = txtRoomNr.Text;
-            dbHelper.roomType = txtRoomType.Text;
-            dbHelper.totalDays = txtTotalNght.Text;
-            dbHelper.checkIn = txtChIn.Text;
-            dbHelper.checkOut = txtChOut.Text;
-            dbHelper.firstName= txtFirstName.Text;
-            dbHelper.lastName = txtLastname.Text;
-            dbHelper.phoneNr = txtPhoneNr.Text;
-            dbHelper.address = txtAddress.Text;
-            dbHelper.price = txtPrice.Text;
+            dbHelper1.roomNr = txtRoomNr.Text;
+            dbHelper1.roomType = txtRoomType.Text;
+            dbHelper1.totalDays = txtTotalNght.Text;
+            dbHelper1.checkIn = txtChIn.Text;
+            dbHelper1.checkOut = txtChOut.Text;
+            dbHelper1.firstName= txtFirstName.Text;
+            dbHelper1.lastName = txtLastname.Text;
+            dbHelper1.phoneNr = txtPhoneNr.Text;
+            dbHelper1.address = txtAddress.Text;
+            dbHelper1.price = txtPrice.Text;
 
 
             db.newBooking();
             db.newbookingid();
             db.newCustomer();
             db.newcustomerid();
-            dbHelper.roomStatus = "Booked";
+            dbHelper1.roomStatus = "Booked";
             db.roomstatus();
             
 

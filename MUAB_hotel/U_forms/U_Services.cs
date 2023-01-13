@@ -12,7 +12,7 @@ namespace MUAB_hotel
 {
     public partial class U_Services : UserControl
     {
-        dbHelper db = new dbHelper();
+        dbHelper1 db = new dbHelper1();
         public static string status { get; set; }
         public static int roomNr { get; set; }
 
@@ -69,8 +69,8 @@ namespace MUAB_hotel
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            dbHelper.roomNr = lbRNr.Text;
-            dbHelper.roomStatus = "Available";
+            dbHelper1.roomNr = lbRNr.Text;
+            dbHelper1.roomStatus = "Available";
             db.getCID();
             db.roomstatus();
             db.cancelBooking();

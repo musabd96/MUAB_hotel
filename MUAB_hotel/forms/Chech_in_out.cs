@@ -12,7 +12,7 @@ namespace MUAB_hotel
 {
     public partial class Chech_in_out : Form
     {
-        dbHelper db = new dbHelper();
+        dbHelper1 db = new dbHelper1();
         public static string message;
         public Chech_in_out()
         {
@@ -36,7 +36,7 @@ namespace MUAB_hotel
 
             else if (message == "Cancelled?")
             {
-                dbHelper.roomStatus = "Available";
+                dbHelper1.roomStatus = "Available";
                 db.roomstatus();
                 db.cancelBooking();
                 this.Close();

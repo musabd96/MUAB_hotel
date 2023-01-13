@@ -12,7 +12,7 @@ namespace MUAB_hotel
 {
     public partial class U_Admin : UserControl
     {
-        dbHelper dbHelper = new dbHelper();
+        dbHelper1 dbHelper = new dbHelper1();
         public static string search { get; set; }
         public static string Name { get; set; }
         public static string email { get; set; }
@@ -80,7 +80,7 @@ namespace MUAB_hotel
         {
             
             dbHelper.empView(dataGridView6);
-            if(dbHelper.position == "Manager")
+            if(dbHelper1.position == "Manager")
             {
                 pBFired.Visible = true;
                 btnNewEmp.Visible = true;
