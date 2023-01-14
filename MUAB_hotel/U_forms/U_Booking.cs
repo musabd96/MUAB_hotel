@@ -90,11 +90,35 @@ namespace MUAB_hotel
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            dbHelper1 db = new dbHelper1();
+            dbHelper db = new dbHelper();
+
+            // Check booking table if it was a available booking_id or create new one
             db.LastBookingId();
-            db.LastcustomerId();
-            txtCusId.Text = dbHelper1.customerId.ToString();
-            txtBookId.Text = dbHelper1.bookingId;
+            if(dbHelper.checkIn != "0")
+            {
+                MessageBox.Show($"är null ids");
+                db.newBookingid();
+                db.LastBookingId();
+            }
+            
+
+
+            // Check guests table if it was a available guests_id or create new one
+            db.LastguestsId();
+            if(dbHelper.guests_firstName != "0")
+            {
+                db.newGuestsId();
+                db.LastguestsId();
+
+
+            }
+
+            
+
+
+
+            txtCusId.Text = dbHelper.guestsId.ToString();
+            txtBookId.Text = dbHelper.bookingId;
 
             int result = DateTime.Compare(dtCheckout.Value, dtCheckin.Value);
 
@@ -111,7 +135,7 @@ namespace MUAB_hotel
                     pnlSelectRoom.Visible = true;
                     pnlSelectRoom.Height = 707;
                     pnlSelectRoom.Location = new Point(0, 0);
-                    db.getData(dataGridView1);
+                    db.availableRooms(dataGridView1);
                     dataGridView1.Focus();
                 }
 
@@ -143,6 +167,7 @@ namespace MUAB_hotel
         private void btnCancel_Click(object sender, EventArgs e)
         {
             pnlSelectRoom.Visible=false;
+            checkBox1.Checked = false;
             pnlSelectRoom.Height = 0;
         }
 
@@ -155,8 +180,9 @@ namespace MUAB_hotel
                     dataGridView1.CurrentRow.Selected = true;
                     txtRoomNr.Text = dataGridView1.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
                     txtRoomType.Text = dataGridView1.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
-                    string roomPrice = dataGridView1.Rows[e.RowIndex].Cells["Price"].FormattedValue.ToString();
-
+                    decimal roomPrice = (decimal)dataGridView1.Rows[e.RowIndex].Cells["Price"].Value;
+                    
+                    
                     txtChIn.Text = dtCheckin.Text;
                     txtChOut.Text = dtCheckout.Text;
 
@@ -171,7 +197,7 @@ namespace MUAB_hotel
 
                     int nights = Convert.ToInt32(days);
 
-                    int total = nights * (Convert.ToInt32(roomPrice));
+                    decimal total = nights * roomPrice;
                     txtPrice.Text = total.ToString();
 
                     ;
@@ -201,26 +227,28 @@ namespace MUAB_hotel
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            dbHelper1 db = new dbHelper1();
+            dbHelper db = new dbHelper();
 
-            dbHelper1.roomNr = txtRoomNr.Text;
-            dbHelper1.roomType = txtRoomType.Text;
-            dbHelper1.totalDays = txtTotalNght.Text;
-            dbHelper1.checkIn = txtChIn.Text;
-            dbHelper1.checkOut = txtChOut.Text;
-            dbHelper1.firstName= txtFirstName.Text;
-            dbHelper1.lastName = txtLastname.Text;
-            dbHelper1.phoneNr = txtPhoneNr.Text;
-            dbHelper1.address = txtAddress.Text;
-            dbHelper1.price = txtPrice.Text;
+            dbHelper.guests_firstName= txtFirstName.Text;
+            dbHelper.guests_lastName = txtLastname.Text;
+            dbHelper.guests_mobile = Convert.ToInt32( txtMobile.Text );
+            dbHelper.guests_email = txtEmail.Text;
+            dbHelper.roomType = txtRoomType.Text;
+            dbHelper.checkIn = txtChIn.Text;
+            dbHelper.checkOut = txtChOut.Text;
+            dbHelper.roomsCapacity =Convert.ToInt32( lbAdultCount.Text + lbChildrenCount.Text);
+            MessageBox.Show($"{dbHelper.roomsCapacity} people");
 
+            dbHelper.roomNr = Convert.ToInt32( txtRoomNr.Text );
+            dbHelper.totalDays = Convert.ToInt32( txtTotalNght.Text );
+            dbHelper.totalPrice = Convert.ToDecimal( txtPrice.Text );
 
+            dbHelper.roomStatus = "Booked";
+
+            db.newGuest();
             db.newBooking();
-            db.newbookingid();
-            db.newCustomer();
-            db.newcustomerid();
-            dbHelper1.roomStatus = "Booked";
-            db.roomstatus();
+            
+            
             
 
             MessageBox.Show("booking success");
@@ -233,10 +261,11 @@ namespace MUAB_hotel
             cBRoomTy.SelectedItem = "-Select  room type-";
             lbAdultCount.Text = "0";
             lbChildrenCount.Text = "0";
+            checkBox1.Checked = false;
             txtFirstName.Clear();
             txtLastname.Clear();
-            txtPhoneNr.Clear();
-            txtAddress.Clear();
+            txtMobile.Clear();
+            txtEmail.Clear();
 
 
 

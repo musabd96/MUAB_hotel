@@ -77,10 +77,12 @@ namespace MUAB_hotel
         public static string checkOut { get; set; }
 
 
-        internal void getData(DataGridView dataGridView)
+        internal void availableRooms(DataGridView dataGridView)
         {
             U_Booking u_Booking = new U_Booking();
-            string Query = "SELECT rooms_nr as 'Room Nr', rooms_type as 'Type', rooms_price as 'Price' FROM hoteldb.rooms where rooms_type ='" + U_Booking.roomsType + "' AND rooms_status = 'Available';";
+            string Query = "SELECT rooms_nr as 'Room Nr', rooms_type as 'Type', " +
+                             "rooms_price as 'Price' FROM hoteldb.rooms " +
+                                "where rooms_type ='" + U_Booking.roomsType + "' AND rooms_status = 'Available';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -154,40 +156,7 @@ namespace MUAB_hotel
         #endregion
 
 
-        #region Home
-
-        internal void homeView(DataGridView dataGridView)
-        {
-            string Query = "SELECT * FROM hoteldb.home_view WHERE Nr = '" + u_Home.roomsNr + "';";
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(Query, conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable table = new DataTable();
-            table.Load(reader);
-            dataGridView.DataSource = table;
-            conn.Close();
-        }
-
-
-        internal void roomSt()
-        {
-            string Query = "SELECT * FROM hoteldb.rooms WHERE rooms_nr = '" + u_Home.roomsNr + "';";
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(Query, conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                u_Home.roomStatus = (string)reader["rooms_status"];
-            }
-            conn.Close();
-
-        }
-
-        #endregion
+        
 
         #region Customer
 
