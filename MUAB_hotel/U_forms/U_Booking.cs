@@ -96,7 +96,6 @@ namespace MUAB_hotel
             db.LastBookingId();
             if(dbHelper.checkIn != "0")
             {
-                MessageBox.Show($"är null ids");
                 db.newBookingid();
                 db.LastBookingId();
             }
