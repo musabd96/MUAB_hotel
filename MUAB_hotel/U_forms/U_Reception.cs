@@ -99,17 +99,18 @@ namespace MUAB_hotel
             {
                 pBX.Visible = true;
                 pBl.Visible = true;
-                dbHelper.searchBooking(dataGridView3);
-                dataGridView3.Focus();
-
-
-                txtSearch.Focus();
             }
             else
             {
                 pBX.Visible = false;
                 pBl.Visible = false;
+                
             }
+            dbHelper.searchBooking(dataGridView3);
+            dataGridView3.Focus();
+
+
+            txtSearch.Focus();
             
         }
 

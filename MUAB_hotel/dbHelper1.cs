@@ -416,7 +416,7 @@ namespace MUAB_hotel
                                   "employee_email AS 'Email', " +
                                   "employee_status AS 'Status', " +
                                   "employee_position AS 'Position' " +
-                                  "FROM hoteldb.employee WHERE employee_first_name LIKE '" + U_Admin.search + "%';";
+                                  "FROM hoteldb.employee WHERE employee_first_name LIKE '" + U_Admin.searchEmp + "%';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -439,7 +439,7 @@ namespace MUAB_hotel
             {
                 U_Admin.email = (string)reader["employee_email"];
                 U_Admin.Mobile = (string)reader["employee_phone_nr"];
-                U_Admin.EmpId = (int)reader["employee_id"];
+                U_Admin.employee_id = (int)reader["employee_id"];
             }
             conn.Close();
 
@@ -448,7 +448,7 @@ namespace MUAB_hotel
 
         internal void fired()
         {
-            string query = "DELETE FROM hoteldb.employee WHERE employee_id = '" + U_Admin.EmpId + "'; ";
+            string query = "DELETE FROM hoteldb.employee WHERE employee_id = '" + U_Admin.employee_id + "'; ";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -459,8 +459,8 @@ namespace MUAB_hotel
         {
             string query = "INSERT INTO hoteldb.employee (employee_first_name, employee_last_name, employee_position, " +
                                                          "employee_phone_nr, employee_email, employee_user_name, employee_pass, employee_status)  " +
-                                                         "VALUES ('" + U_Admin.fName + "', '" + U_Admin.lName + "', '" + U_Admin.position + "'," +
-                                                         " '" + U_Admin.mobileNr + "', '" + U_Admin.Email + "', '" + U_Admin.uName + "', 1234, 'Out');";
+                                                         "VALUES ('" + U_Admin.firstName + "', '" + U_Admin.lastName + "', '" + U_Admin.role + "'," +
+                                                         " '" + U_Admin.mobile + "', '" + U_Admin.Email + "', '" + U_Admin.userName + "', 1234, 'Out');";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQueryAsync();

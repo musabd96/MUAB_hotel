@@ -514,5 +514,71 @@ namespace MUAB_hotel
             conn.Close();
         }
         #endregion
+
+
+        #region Employees
+
+        internal void viewEmployees(DataGridView dataGridView)
+        {
+            string query = "muabhotel.viewEmployees";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$searchEmp", U_Admin.searchEmp);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                DataTable table = new DataTable();
+                table.Load(reader);
+                dataGridView.DataSource = table;
+            }
+            conn.Close();
+        }
+
+        internal void newEmployee()
+        {
+            string query = "muabhotel.newEmployee";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$firstName", U_Admin.firstName);
+            cmd.Parameters.AddWithValue("$lastName", U_Admin.lastName);
+            cmd.Parameters.AddWithValue("$role", U_Admin.role);
+            cmd.Parameters.AddWithValue("$mobile", U_Admin.mobile);
+            cmd.Parameters.AddWithValue("$Email", U_Admin.Email);
+            cmd.Parameters.AddWithValue("$userName", U_Admin.userName);
+            cmd.Parameters.AddWithValue("$Salary", U_Admin.salary);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+        internal void termination()
+        {
+            string query = "muabhotel.termination";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$employee_id", U_Admin.employee_id);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+        #endregion
+
     }
 }

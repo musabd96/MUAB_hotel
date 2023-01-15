@@ -119,7 +119,6 @@
             this.txtUname.Name = "txtUname";
             this.txtUname.Size = new System.Drawing.Size(246, 22);
             this.txtUname.TabIndex = 1;
-            this.txtUname.Text = "mustafa.abdulle";
             this.txtUname.TextChanged += new System.EventHandler(this.txtUname_TextChanged);
             // 
             // pnlPass
@@ -150,7 +149,6 @@
             this.txtPass.Size = new System.Drawing.Size(246, 22);
             this.txtPass.TabIndex = 2;
             this.txtPass.Tag = "";
-            this.txtPass.Text = "1234";
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             // 
