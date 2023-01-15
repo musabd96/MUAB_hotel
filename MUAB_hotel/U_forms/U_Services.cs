@@ -45,14 +45,19 @@ namespace MUAB_hotel
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     checkedListBox1.SetItemChecked(i, checkBox1.Checked);
+                    
                 }
+                btnSave.Enabled = true;
+                pBsearch_Click(sender, e);
             }
             else
             {
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     checkedListBox1.SetItemChecked(i, false);
+                    
                 }
+                btnSave.Enabled = false;
             }
 
         }
