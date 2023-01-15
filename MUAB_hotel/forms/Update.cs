@@ -22,7 +22,7 @@ namespace MUAB_hotel
         public static string roomNrs { get; set; }
         private ComboBox comboBox1 = new ComboBox();
 
-        dbHelper db= new dbHelper();
+        dbHelper dbHelper = new dbHelper();
         U_Reception u_Reception = new U_Reception();
 
 
@@ -66,10 +66,10 @@ namespace MUAB_hotel
             U_Reception.Days = days.ToString();
 
             int nights = Convert.ToInt32(days);
-            db.roomSt();
+            dbHelper.roomSt();
             decimal total = nights * U_Reception.Price;
             U_Reception.newPrice = total.ToString();
-            db.editBooking();
+            dbHelper.editBooking();
             this.Close();
 
 
@@ -85,7 +85,7 @@ namespace MUAB_hotel
 
             //when the roomType changed room nr combox gets all the room type
             newRoomType = cBRmTyp.Text;
-            cBRmNr.DataSource = db.newroomType();
+            cBRmNr.DataSource = dbHelper.newroomType();
             if (oldRoomType == newRoomType)
             {
                 cBRmNr.Text = U_Reception.roomNr.ToString();

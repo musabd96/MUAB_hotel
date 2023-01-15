@@ -126,7 +126,7 @@ namespace MUAB_hotel
             else
             {
                 
-                roomStatus = "ChechIn";
+                roomStatus = "CheckIn";
                 Chech_in_out.message = "Check in?";
                 inout.ShowDialog();
                 pBsearch_Click(sender, e);
@@ -149,7 +149,7 @@ namespace MUAB_hotel
             else
             {
                 
-                roomStatus = "ChechOut";
+                roomStatus = "CheckOut";
                 Chech_in_out.message = "Check out?";
                 inout.ShowDialog();
                 pBsearch_Click(sender, e);

@@ -220,7 +220,7 @@ namespace MUAB_hotel
 
         #region Rooms
 
-        public static string roomStatus { get; set; }
+        public static string service { get; set; }
 
         internal void roomPrice()
         {
@@ -239,7 +239,7 @@ namespace MUAB_hotel
 
         internal void roomstatus()
         {
-            string query = "UPDATE hoteldb.rooms SET rooms_status = '" + roomStatus + "', employee_id = '" + empID + "'  WHERE rooms_nr = '" + roomNr + "'";
+            string query = "UPDATE hoteldb.rooms SET rooms_status = '" + service + "', employee_id = '" + empID + "'  WHERE rooms_nr = '" + roomNr + "'";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);

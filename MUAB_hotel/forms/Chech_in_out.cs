@@ -37,7 +37,7 @@ namespace MUAB_hotel
 
             else if (message == "Cancelled?")
             {
-                dbHelper1.roomStatus = "Available";
+                dbHelper1.service = "Available";
                 dbHelper.cancelledBooking();
                 //db.cancelBooking();
                 this.Close();

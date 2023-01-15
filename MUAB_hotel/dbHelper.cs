@@ -292,6 +292,24 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+        internal void getCheckOut(DataGridView dataGridView)
+        {
+            string query = "muabhotel.getCheckOut";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                DataTable table = new DataTable();
+                table.Load(reader);
+                dataGridView.DataSource = table;
+            }
+            conn.Close();
+        }
+
         internal void cancelledBooking()
         {
             string query = "muabhotel.cancelledBooking";
@@ -389,8 +407,7 @@ namespace MUAB_hotel
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("$FName", U_Reception.FName);
-            cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
+            cmd.Parameters.AddWithValue("$roomNr", U_Reception.roomNr);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -433,31 +450,6 @@ namespace MUAB_hotel
             conn.Close();
         }
 
-        internal void newRoomType()
-        {
-            List<string> data = new List<string>();
-            string query = "muabhotel.newRoomType";
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("$newRoomType", Update.newRoomType);
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    Update.roomNrs = reader.GetString(0);
-                    data.Add(reader.GetString(1));
-                    
-
-                }
-            }
-            conn.Close();
-        }
-
 
         public List<string> newroomType()
         {
@@ -485,7 +477,42 @@ namespace MUAB_hotel
             return data;
         }
 
+        internal void roomService()
+        {
+            string query = "muabhotel.roomService";
+            conn.Open();
 
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$guestId", U_Services.service);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+        internal void searchRoom(DataGridView dataGridView)
+        {
+            string query = "muabhotel.searchRoom";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$roomNr", U_Services.roomNr);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                DataTable table = new DataTable();
+                table.Load(reader);
+                dataGridView.DataSource = table;
+            }
+            conn.Close();
+        }
         #endregion
     }
 }
