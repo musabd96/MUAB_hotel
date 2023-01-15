@@ -117,29 +117,10 @@ namespace MUAB_hotel
             
         }
 
-        internal void roomSt()
-        {
-            string query = "muabhotel.roomSt";
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("$roomsNr", u_Home.roomsNr);
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    u_Home.roomStatus = reader.GetString(4);
-                    
-                }
-            }
-            conn.Close();
-        }
+        
 
         #endregion
+
 
         #region Booking
 
@@ -215,7 +196,6 @@ namespace MUAB_hotel
         //new booking
         internal void newBooking()
         {
-            MessageBox.Show($"{totalDays} BID");
             string query = "muabhotel.newBooking";
             conn.Open();
 
@@ -241,7 +221,98 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+
+        internal void searchBooking(DataGridView dataGridView)
+        {
+            string query = "muabhotel.searchBooking";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$search", U_Reception.search);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                DataTable table = new DataTable();
+                table.Load(reader);
+                dataGridView.DataSource = table;
+            }
+            conn.Close();
+        }
+
+
+        internal void chechInOut()
+        {
+            string query = "muabhotel.chechInOut";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$roomStatus", U_Reception.roomStatus);
+            cmd.Parameters.AddWithValue("$employee_id", employee_id);
+            cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
+            cmd.Parameters.AddWithValue("$roomNr", U_Reception.roomNr);
+
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+        internal void editBooking()
+        {
+            string query = "muabhotel.editBooking";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$FName", U_Reception.FName);
+            cmd.Parameters.AddWithValue("$LName", U_Reception.LName);
+            cmd.Parameters.AddWithValue("$guestsId", U_Reception.guestId);
+            cmd.Parameters.AddWithValue("$roomNr", U_Reception.roomNr);
+            cmd.Parameters.AddWithValue("$newRoomNr", U_Reception.newRoomNr);
+            cmd.Parameters.AddWithValue("$checkIn", U_Reception.checkIn);
+            cmd.Parameters.AddWithValue("$checkOut", U_Reception.checkOut);
+            cmd.Parameters.AddWithValue("$days", U_Reception.Days);
+            cmd.Parameters.AddWithValue("$newPrice", U_Reception.newPrice);
+            cmd.Parameters.AddWithValue("$employee_id", employee_id);
+            cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
+
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+        internal void cancelledBooking()
+        {
+            string query = "muabhotel.cancelledBooking";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$guestId", U_Reception.guestId);
+            cmd.Parameters.AddWithValue("$roomNr", U_Reception.roomNr);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
+
+
         #endregion
+
 
         #region Guests
 
@@ -308,7 +379,113 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+
+        internal void getGuest()
+        {
+            string query = "muabhotel.getGuest";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$FName", U_Reception.FName);
+            cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    U_Reception.guestId = reader.GetInt32(8);
+                }
+            }
+            conn.Close();
+        }
+
+
         #endregion
 
+
+        #region Rooms
+
+
+
+        internal void roomSt()
+        {
+            string query = "muabhotel.roomSt";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$roomsNr", u_Home.roomsNr);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    u_Home.roomStatus = reader.GetString(4);
+                    U_Reception.Price = reader.GetDecimal(3);
+
+                }
+            }
+            conn.Close();
+        }
+
+        internal void newRoomType()
+        {
+            List<string> data = new List<string>();
+            string query = "muabhotel.newRoomType";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$newRoomType", Update.newRoomType);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Update.roomNrs = reader.GetString(0);
+                    data.Add(reader.GetString(1));
+                    
+
+                }
+            }
+            conn.Close();
+        }
+
+
+        public List<string> newroomType()
+        {
+            List<string> data = new List<string>();
+            string query = "muabhotel.newRoomType";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$newRoomType", Update.newRoomType);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Update.roomNrs = reader.GetString(0);
+                    data.Add(reader.GetString(0));
+
+
+                }
+            }
+            conn.Close();
+            return data;
+        }
+
+
+        #endregion
     }
 }

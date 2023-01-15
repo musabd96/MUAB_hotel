@@ -14,6 +14,7 @@ namespace MUAB_hotel
 {
     public partial class U_Reception : UserControl
     {
+        
         public static string search { get; set; }
         public static string FName { get; set; }
         public static int roomNr { get; set; }
@@ -22,14 +23,15 @@ namespace MUAB_hotel
         public static string LName { get; set; }
         public static string checkIn { get; set; }
         public static string checkOut { get; set; }
-        public static string bookingID { get; set; }
-        public static int customersID { get; set; }
-        public static string status { get; set; }
+        public static string bookingId { get; set; }
+        public static int guestId { get; set; }
+        public static string roomStatus { get; set; }
         public static string Days { get; set; }
-        public static string Price { get; set; }
+        public static decimal Price { get; set; }
         public static string newPrice { get; set; }
 
-        dbHelper1 db = new dbHelper1();
+        //dbHelper1 db = new dbHelper1();
+        dbHelper dbHelper = new dbHelper();
         Chech_in_out inout = new Chech_in_out();
 
         public U_Reception()
@@ -40,77 +42,132 @@ namespace MUAB_hotel
             btnChOut.Enabled = false;
         }
 
-        
-
-        private void btnSeach_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                search = txtSearch.Text;
-
-                db.search(dataGridView3);
-                dataGridView3.Focus();
-                db.getCustomerData();
-
-                if (dataGridView3.RowCount == 0)
-                {
-                    MessageBox.Show("Not Found it");
-                    txtSearch.ForeColor = Color.Red;
-                    txtSearch.SelectAll();
-                    txtSearch.Focus();
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Invalid Field");
-
-            }
-
-        }
-
-
 
         internal void U_Reception_Load(object sender, EventArgs e)
         {
-            
-            db.search(dataGridView3);
-            dataGridView3.Focus();
-          
+            pBsearch_Click(sender, e);
+            txtSearch.Focus();
+            pBl.Visible = false;
+            pBX.Visible = false;
             DataGridViewColumn Edit = dataGridView3.Columns[0];
             Edit.DisplayIndex = dataGridView3.ColumnCount - 1;
             Edit.Width = 50;
             
-            DataGridViewColumn Delete = dataGridView3.Columns[1];
-            Delete.DisplayIndex = dataGridView3.ColumnCount - 1;
+            DataGridViewColumn X = dataGridView3.Columns[1];
+            X.DisplayIndex = dataGridView3.ColumnCount - 1;
+            X.Width = 40;
+
+            Select.Width = 45;
             
-            
-            
+
+
         }
 
 
+        #region Buttons
 
-
-
+        
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             txtSearch.ForeColor = Color.Black;
 
             if (e.KeyCode == Keys.Enter)
             {
-                btnSeach_Click(sender, e);
 
+                dbHelper.searchBooking(dataGridView3);
+                dataGridView3.Focus();
+
+                if (dataGridView3.RowCount == 0)
+                {
+                    MessageBox.Show($"NOT FOUND (-> {txtSearch.Text} <-)" +
+                        $" \nIN THE SYSTEM \n\n TRY AGAIN!!!");
+                    txtSearch.ForeColor = Color.Red;
+                    txtSearch.SelectAll();
+                    txtSearch.Focus();
+
+                }
 
             }
             
             
             
         }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            search = txtSearch.Text;
+            if(txtSearch.Text != "")
+            {
+                pBX.Visible = true;
+                pBl.Visible = true;
+                dbHelper.searchBooking(dataGridView3);
+                dataGridView3.Focus();
+
+
+                txtSearch.Focus();
+            }
+            else
+            {
+                pBX.Visible = false;
+                pBl.Visible = false;
+            }
+            
+        }
+
+
+
+        //Check in button
+        private void btnChIn_Click(object sender, EventArgs e)
+        {
+            
+            if (roomNr == 0)
+            {
+                MessageBox.Show("Select a guest");
+            }
+            else
+            {
+                
+                roomStatus = "ChechIn";
+                Chech_in_out.message = "Check in?";
+                inout.ShowDialog();
+                pBsearch_Click(sender, e);
+            }
+
+            roomNr = 0;
+            
+
+
+        }
+
+        //Check out button
+        private void btnChOut_Click(object sender, EventArgs e)
+        {
+            
+            if (roomNr == 0 )
+            {
+                MessageBox.Show("Select a guest");
+            }
+            else
+            {
+                
+                roomStatus = "ChechOut";
+                Chech_in_out.message = "Check out?";
+                inout.ShowDialog();
+                pBsearch_Click(sender, e);
+            }
+
+            roomNr = 0;
+
+
+
+        }
+
+        #endregion
 
 
 
 
+        #region Datagredview
+        //datagredview
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -130,17 +187,17 @@ namespace MUAB_hotel
                 
 
                 dataGridView3.CurrentRow.Selected = true;
-                bookingID = dataGridView3.Rows[e.RowIndex].Cells["Book ID"].FormattedValue.ToString();
-                FName = dataGridView3.Rows[e.RowIndex].Cells["First Name"].FormattedValue.ToString();
-                LName = dataGridView3.Rows[e.RowIndex].Cells["Last Name"].FormattedValue.ToString();
+                bookingId = dataGridView3.Rows[e.RowIndex].Cells["bookId"].FormattedValue.ToString();
+                FName = dataGridView3.Rows[e.RowIndex].Cells["firstName"].FormattedValue.ToString();
+                LName = dataGridView3.Rows[e.RowIndex].Cells["lastName"].FormattedValue.ToString();
                 type = dataGridView3.Rows[e.RowIndex].Cells["Type"].FormattedValue.ToString();
-                string roomnr = dataGridView3.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
-                checkIn = dataGridView3.Rows[e.RowIndex].Cells["Check in"].FormattedValue.ToString();
-                checkOut = dataGridView3.Rows[e.RowIndex].Cells["Check out"].FormattedValue.ToString();
-                status = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
+                string roomnr = dataGridView3.Rows[e.RowIndex].Cells["roomNr"].FormattedValue.ToString();
+                checkIn = dataGridView3.Rows[e.RowIndex].Cells["check In"].FormattedValue.ToString();
+                checkOut = dataGridView3.Rows[e.RowIndex].Cells["check Out"].FormattedValue.ToString();
+                roomStatus = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
                 roomNr = Convert.ToInt32(roomnr);
-                db.getCustomerData();
-                
+                dbHelper.getGuest();
+
                 btnChIn.Enabled = true;
                 btnChOut.Enabled = true;
             }
@@ -162,7 +219,7 @@ namespace MUAB_hotel
 
                     update.ShowDialog();
 
-                    btnSeach_Click(sender, e);
+                    pBsearch_Click(sender, e);
                 }
 
                 roomNr = 0;
@@ -173,7 +230,7 @@ namespace MUAB_hotel
 
 
             }
-            else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Cancelled")
+            else if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "X")
             {
                 if (roomNr == 0)
                 {
@@ -183,7 +240,7 @@ namespace MUAB_hotel
                 {
                     Chech_in_out.message = "Cancelled?";
                     inout.ShowDialog();
-                    btnSeach_Click(sender, e);
+                    pBsearch_Click(sender, e);
                 }
 
                 roomNr = 0;
@@ -201,58 +258,21 @@ namespace MUAB_hotel
             
         }
 
-        
 
-       
+        #endregion
 
-        private void btnChIn_Click(object sender, EventArgs e)
+        private void pBsearch_Click(object sender, EventArgs e)
         {
-            
-            if (roomNr == 0)
-            {
-                MessageBox.Show("Select a guest");
-            }
-            else
-            {
-                
-                status = "ChechIn";
-                Chech_in_out.message = "Check in?";
-                inout.ShowDialog();
-                btnSeach_Click(sender, e);
-            }
-
-            roomNr = 0;
-            
-
-
+            search = txtSearch.Text;
+            dbHelper.searchBooking(dataGridView3);
+            dataGridView3.Focus();
         }
 
-        private void btnChOut_Click(object sender, EventArgs e)
+        private void pBX_Click(object sender, EventArgs e)
         {
-            
-            if (roomNr == 0 )
-            {
-                MessageBox.Show("Select a guest");
-            }
-            else
-            {
-                
-                status = "ChechOut";
-                Chech_in_out.message = "Check out?";
-                inout.ShowDialog();
-                btnSeach_Click(sender, e);
-            }
-
-            roomNr = 0;
-
-
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            btnSeach_Click(sender, e);
-            txtSearch.Focus();
+            txtSearch.Clear();
+            pBX.Visible = false;
+            pBl.Visible = false;
         }
     }
 

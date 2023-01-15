@@ -356,45 +356,54 @@ namespace MUAB_hotel
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            dbHelper db = new dbHelper();
+            try
+            {
+                dbHelper db = new dbHelper();
 
-            dbHelper.guests_firstName= txtFirstName.Text;
-            dbHelper.guests_lastName = txtLastname.Text;
-            dbHelper.guests_mobile = Convert.ToInt32( txtMobile.Text );
-            dbHelper.guests_email = txtEmail.Text;
-            dbHelper.roomType = txtRoomType.Text;
-            dbHelper.checkIn = txtChIn.Text;
-            dbHelper.checkOut = txtChOut.Text;
-            dbHelper.roomsCapacity =Convert.ToInt32( lbAdultCount.Text + lbChildrenCount.Text);
-            MessageBox.Show($"{dbHelper.roomsCapacity} people");
+                dbHelper.guests_firstName = txtFirstName.Text;
+                dbHelper.guests_lastName = txtLastname.Text;
+                dbHelper.guests_mobile = Convert.ToInt32(txtMobile.Text);
+                dbHelper.guests_email = txtEmail.Text;
+                dbHelper.roomType = txtRoomType.Text;
+                dbHelper.checkIn = txtChIn.Text;
+                dbHelper.checkOut = txtChOut.Text;
+                dbHelper.roomsCapacity = Convert.ToInt32(lbAdultCount.Text + lbChildrenCount.Text);
+                MessageBox.Show($"{dbHelper.roomsCapacity} people");
 
-            dbHelper.roomNr = Convert.ToInt32( txtRoomNr.Text );
-            dbHelper.totalDays = Convert.ToInt32( txtTotalNght.Text );
-            dbHelper.totalPrice = Convert.ToDecimal( txtPrice.Text );
+                dbHelper.roomNr = Convert.ToInt32(txtRoomNr.Text);
+                dbHelper.totalDays = Convert.ToInt32(txtTotalNght.Text);
+                dbHelper.totalPrice = Convert.ToDecimal(txtPrice.Text);
 
-            dbHelper.roomStatus = "Booked";
+                dbHelper.roomStatus = "Booked";
 
-            db.newGuest();
-            db.newBooking();
-            
-            
-            
-
-            MessageBox.Show("booking success");
+                db.newGuest();
+                db.newBooking();
 
 
-            pnlSelectRoom.Visible = false;
-            pnlSelectRoom.Height = 0;
-            dtCheckout.Value = DateTime.Now;
-            dtCheckin.Value = DateTime.Now;
-            cBRoomTy.SelectedItem = "-Select  room type-";
-            lbAdultCount.Text = "0";
-            lbChildrenCount.Text = "0";
-            checkBox1.Checked = false;
-            txtFirstName.Clear();
-            txtLastname.Clear();
-            txtMobile.Clear();
-            txtEmail.Clear();
+
+
+                MessageBox.Show("booking success");
+
+
+                pnlSelectRoom.Visible = false;
+                pnlSelectRoom.Height = 0;
+                dtCheckout.Value = DateTime.Now;
+                dtCheckin.Value = DateTime.Now;
+                cBRoomTy.SelectedItem = "-Select  room type-";
+                lbAdultCount.Text = "0";
+                lbChildrenCount.Text = "0";
+                checkBox1.Checked = false;
+                txtFirstName.Clear();
+                txtLastname.Clear();
+                txtMobile.Clear();
+                txtEmail.Clear();
+
+            }
+            catch
+            {
+
+            }
+
 
 
 

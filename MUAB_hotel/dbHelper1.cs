@@ -232,7 +232,7 @@ namespace MUAB_hotel
 
             while (reader.Read())
             {
-                U_Reception.Price = (string)reader["rooms_price"];
+                //U_Reception.Price = (string)reader["rooms_price"];
             }
             conn.Close();
         }
@@ -267,8 +267,8 @@ namespace MUAB_hotel
                                               "rooms.rooms_type AS 'Type' , " +
                                               "booking_price AS 'Price', " +
                                               "booking_check_in AS 'Check in', " +
-                                              "booking_check_out AS 'Check out' , " +
-                                              "booking_days AS 'Total days' , " +
+                                              "booking_check_out AS 'Check out', " +
+                                              "booking_days AS 'Total days', " +
                                               "booking_status AS 'Status'," +
                                               "booking.employee_id AS 'Emp ID' " +
                                               " FROM hoteldb.booking inner join hoteldb.customers on " +
@@ -295,7 +295,7 @@ namespace MUAB_hotel
 
             string query = " UPDATE  hoteldb.customers SET customers_first_name = '" + U_Reception.FName + "'," +
                                                            "customers_last_name = '" + U_Reception.LName + "' " +
-                                                           "WHERE customers_id = '" + U_Reception.customersID + "' ;" +
+                                                           "WHERE customers_id = '" + U_Reception.guestId + "' ;" +
                            " UPDATE  hoteldb.rooms SET rooms_status = 'Available' WHERE rooms_nr = '" + U_Reception.roomNr + "' ;" +
                            " UPDATE  hoteldb.rooms SET rooms_status = 'Booked' WHERE rooms_nr = '" + U_Reception.newRoomNr + "' ;" +
                            " UPDATE  hoteldb.booking SET booking_check_in = '" + U_Reception.checkIn + "'," +
@@ -303,9 +303,9 @@ namespace MUAB_hotel
                                                            "rooms_nr = '" + U_Reception.newRoomNr + "', " +
                                                            "booking_days = '" + U_Reception.Days + "', " +
                                                            "booking_price = '" + U_Reception.newPrice + "', " +
-                                                           "booking_status = '" + U_Reception.status + "', " +
+                                                           "booking_status = '" + U_Reception.roomStatus + "', " +
                                                            " employee_id = '" + empID + "' " +
-                                                           "WHERE booking_id = '" + U_Reception.bookingID + "';";
+                                                           "WHERE booking_id = '" + U_Reception.bookingId + "';";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -320,7 +320,7 @@ namespace MUAB_hotel
             U_Reception U_Reception = new U_Reception();
             string Query = "SELECT * FROM hoteldb.booking inner join hoteldb.customers on booking.customers_id = customers.customers_id " +
                            " inner join hoteldb.rooms on booking.rooms_nr = rooms.rooms_nr WHERE customers_first_name = '" + U_Reception.search + "' " +
-                           " OR booking_id = '" + U_Reception.bookingID + "';";
+                           " OR booking_id = '" + U_Reception.bookingId + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -328,7 +328,7 @@ namespace MUAB_hotel
 
             while (reader.Read())
             {
-                U_Reception.customersID = (int)reader["customers_id"];
+                U_Reception.guestId = (int)reader["customers_id"];
             }
             conn.Close();
         }
@@ -337,10 +337,10 @@ namespace MUAB_hotel
         internal void chechInOut()
         {
             U_Reception u_Reception = new U_Reception();
-            string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.status + "', " +
+            string query = " UPDATE  hoteldb.booking SET booking_status = '" + U_Reception.roomStatus + "', " +
                                                     "employee_id = '" + empID + "' " +
-                                                    "WHERE booking_id = '" + U_Reception.bookingID + "' ;" +
-                           " UPDATE hoteldb.rooms SET rooms_status = '" + U_Reception.status + "'" +
+                                                    "WHERE booking_id = '" + U_Reception.bookingId + "' ;" +
+                           " UPDATE hoteldb.rooms SET rooms_status = '" + U_Reception.roomStatus + "'" +
                                                     "WHERE rooms_nr = '" + U_Reception.roomNr + "';";
 
             conn.Open();
@@ -354,7 +354,7 @@ namespace MUAB_hotel
         internal void cancelBooking()
         {
 
-            string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.customersID + "'; " ;
+            string query = "DELETE FROM hoteldb.customers WHERE customers_id = '" + U_Reception.guestId + "'; " ;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -395,7 +395,7 @@ namespace MUAB_hotel
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                U_Reception.customersID = (int)reader["customers_id"];
+                U_Reception.guestId = (int)reader["customers_id"];
             }
             conn.Close();
 

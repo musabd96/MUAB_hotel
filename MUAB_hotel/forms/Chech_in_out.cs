@@ -13,6 +13,7 @@ namespace MUAB_hotel
     public partial class Chech_in_out : Form
     {
         dbHelper1 db = new dbHelper1();
+        dbHelper dbHelper = new dbHelper();
         public static string message;
         public Chech_in_out()
         {
@@ -25,20 +26,20 @@ namespace MUAB_hotel
         {
             if (message == "Check in?")
             {
-                db.chechInOut();
+                dbHelper.chechInOut();
                 this.Close();
             }
             else if (message == "Check out?")
             {
-                db.chechInOut();
+                dbHelper.chechInOut();
                 this.Close();
             }
 
             else if (message == "Cancelled?")
             {
                 dbHelper1.roomStatus = "Available";
-                db.roomstatus();
-                db.cancelBooking();
+                dbHelper.cancelledBooking();
+                //db.cancelBooking();
                 this.Close();
             }
 
@@ -58,8 +59,8 @@ namespace MUAB_hotel
         {
             lbmessage.Text = message;
             lbFullName.Text = U_Reception.FName + " " +U_Reception.LName;
-            lbCID.Text = U_Reception.customersID.ToString();
-            lbBookNr.Text = U_Reception.bookingID;
+            lbCID.Text = U_Reception.guestId.ToString();
+            lbBookNr.Text = U_Reception.bookingId;
         }
     }
 }

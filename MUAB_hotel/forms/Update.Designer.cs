@@ -63,12 +63,11 @@
             this.cBRmTyp.FormattingEnabled = true;
             this.cBRmTyp.ItemHeight = 31;
             this.cBRmTyp.Items.AddRange(new object[] {
-            "-Select  room type-",
+            "-Select room type-",
             "Double",
             "King",
-            "Balcony",
-            "Ocean View",
-            "Garden View",
+            "President Suite",
+            "Twin",
             "Single",
             "Family"});
             this.cBRmTyp.Location = new System.Drawing.Point(187, 163);

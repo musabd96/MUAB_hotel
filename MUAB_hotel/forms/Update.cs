@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace MUAB_hotel
 {
@@ -19,8 +20,9 @@ namespace MUAB_hotel
         public static string newRoomType { get; set; }
         public static string oldRoomType { get; set; }
         public static string roomNrs { get; set; }
+        private ComboBox comboBox1 = new ComboBox();
 
-        dbHelper1 dbHelper= new dbHelper1();
+        dbHelper db= new dbHelper();
         U_Reception u_Reception = new U_Reception();
 
 
@@ -28,14 +30,11 @@ namespace MUAB_hotel
         {
             InitializeComponent();
 
-
+            this.Controls.Add(cBRmNr);
         }
         private void Update_Load(object sender, EventArgs e)
         {
-
-
-            
-
+            //all textbox field a old data 
             oldRoomType = U_Reception.type;
 
             txtFName.Text = U_Reception.FName;
@@ -48,6 +47,7 @@ namespace MUAB_hotel
             
         }
 
+        //Save the new data into database
         private void btnSave_Click(object sender, EventArgs e)
         {
             U_Reception.FName = txtFName.Text;
@@ -55,7 +55,7 @@ namespace MUAB_hotel
             U_Reception.newRoomNr = Convert.ToInt32(cBRmNr.Text);
             U_Reception.checkIn = dtCheckin.Text;
             U_Reception.checkOut = dtCheckout.Text;
-
+            
             TimeSpan diff = dtCheckout.Value.Subtract(dtCheckin.Value);
             double days = diff.TotalDays;
 
@@ -66,13 +66,11 @@ namespace MUAB_hotel
             U_Reception.Days = days.ToString();
 
             int nights = Convert.ToInt32(days);
-            dbHelper.roomPrice();
-            int total = nights * (Convert.ToInt32(U_Reception.Price));
+            db.roomSt();
+            decimal total = nights * U_Reception.Price;
             U_Reception.newPrice = total.ToString();
-            dbHelper.editCustomer();
+            db.editBooking();
             this.Close();
-
-            
 
 
         }
@@ -85,11 +83,9 @@ namespace MUAB_hotel
         private void cBRmTyp_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
+            //when the roomType changed room nr combox gets all the room type
             newRoomType = cBRmTyp.Text;
-
-            cBRmNr.Items.Clear();
-            allRoom();
+            cBRmNr.DataSource = db.newroomType();
             if (oldRoomType == newRoomType)
             {
                 cBRmNr.Text = U_Reception.roomNr.ToString();
@@ -102,40 +98,11 @@ namespace MUAB_hotel
 
 
             }
-            
-
-            
+           
 
         }
 
         
-        MySqlConnection conn = new MySqlConnection($"SERVER={dbHelper1.server};DATABASE={dbHelper1.database};UID={dbHelper1.user};PASSWORD={dbHelper1.pass};");
-
-        internal void allRoom()
-        {
-            string Query = "SELECT * FROM hoteldb.rooms WHERE rooms_type = '" + newRoomType + "';";
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(Query, conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
-            while (reader.Read())
-            {
-
-                roomNrs = reader.GetString("rooms_nr");
-                
-                cBRmNr.Items.Add(roomNrs);
-
-                
-
-            }
-
-            
-
-
-            conn.Close();
-        }
 
     }
 }
