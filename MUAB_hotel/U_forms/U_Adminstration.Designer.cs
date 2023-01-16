@@ -1,6 +1,6 @@
 ﻿namespace MUAB_hotel
 {
-    partial class U_Admin
+    partial class U_Adminstration
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U_Admin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U_Adminstration));
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.lbHome = new System.Windows.Forms.Label();
             this.btnNewEmp = new System.Windows.Forms.Button();
@@ -159,11 +159,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHome.AutoSize = true;
-            this.lbHome.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHome.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHome.ForeColor = System.Drawing.Color.White;
-            this.lbHome.Location = new System.Drawing.Point(395, 12);
+            this.lbHome.Location = new System.Drawing.Point(3, 0);
             this.lbHome.Name = "lbHome";
-            this.lbHome.Size = new System.Drawing.Size(574, 93);
+            this.lbHome.Size = new System.Drawing.Size(173, 28);
             this.lbHome.TabIndex = 55;
             this.lbHome.Text = "Adminstration";
             // 
@@ -438,9 +438,9 @@
             this.pnlNewEmp.Controls.Add(this.label29);
             this.pnlNewEmp.Controls.Add(this.label31);
             this.pnlNewEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlNewEmp.Location = new System.Drawing.Point(2, 0);
+            this.pnlNewEmp.Location = new System.Drawing.Point(2, 697);
             this.pnlNewEmp.Name = "pnlNewEmp";
-            this.pnlNewEmp.Size = new System.Drawing.Size(1299, 707);
+            this.pnlNewEmp.Size = new System.Drawing.Size(1299, 10);
             this.pnlNewEmp.TabIndex = 67;
             // 
             // txtSalary
@@ -696,15 +696,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(421, 13);
+            this.label31.Location = new System.Drawing.Point(3, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(574, 93);
+            this.label31.Size = new System.Drawing.Size(173, 28);
             this.label31.TabIndex = 32;
             this.label31.Text = "Adminstration";
             // 
-            // U_Admin
+            // U_Adminstration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

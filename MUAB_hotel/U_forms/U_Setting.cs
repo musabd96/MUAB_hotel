@@ -15,28 +15,21 @@ namespace MUAB_hotel
         public U_Setting()
         {
             InitializeComponent();
-            pnledit.Visible = false;
         }
-
+        dbHelper dbHelper = new dbHelper();
         private void btnedit_Click(object sender, EventArgs e)
         {
-            pnledit.Visible = true;
-            pnledit.Height = 704;
-            pnledit.Location = new Point(0, 0);
+            
+            
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void U_Setting_Load(object sender, EventArgs e)
         {
-            pnledit.Visible = false;
-            pnledit.Height = 0;
-            pnledit.Location = new Point(0, 694);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            pnledit.Visible = false;
-            pnledit.Height = 0;
-            pnledit.Location = new Point(0, 694);
+            dbHelper.getEmployee();
+            lbUname.Text = dbHelper.userName;
+            lbFullName.Text = (dbHelper.employee_firstName + ' ' + dbHelper.employee_lastName);
+            lbEmail.Text = dbHelper.employee_email;
+            lbMobile.Text = dbHelper.employee_mobile;
         }
     }
 }

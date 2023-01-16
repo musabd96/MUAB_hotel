@@ -164,7 +164,7 @@ namespace MUAB_hotel
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            U_Admin U_Admin =new U_Admin();
+            U_Adminstration U_Admin =new U_Adminstration();
 
             userControl(U_Admin);
             btnHome.Enabled = true;

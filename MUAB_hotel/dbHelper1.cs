@@ -409,14 +409,14 @@ namespace MUAB_hotel
 
         internal void empView(DataGridView dataGridView)
         {
-            U_Admin U_Admin = new U_Admin();
+            U_Adminstration U_Admin = new U_Adminstration();
 
             string Query = "SELECT employee_first_name AS 'First Name', " +
                                   "employee_last_name AS 'Last Name', " +
                                   "employee_email AS 'Email', " +
                                   "employee_status AS 'Status', " +
                                   "employee_position AS 'Position' " +
-                                  "FROM hoteldb.employee WHERE employee_first_name LIKE '" + U_Admin.searchEmp + "%';";
+                                  "FROM hoteldb.employee WHERE employee_first_name LIKE '" + U_Adminstration.searchEmp + "%';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
@@ -430,16 +430,16 @@ namespace MUAB_hotel
 
         internal void getEmp()
         {
-            string Query = "SELECT * FROM hoteldb.employee WHERE employee_first_name = '" + U_Admin.Name + "';";
+            string Query = "SELECT * FROM hoteldb.employee WHERE employee_first_name = '" + U_Adminstration.Name + "';";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, conn);
 
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                U_Admin.email = (string)reader["employee_email"];
-                U_Admin.Mobile = (string)reader["employee_phone_nr"];
-                U_Admin.employee_id = (int)reader["employee_id"];
+                U_Adminstration.email = (string)reader["employee_email"];
+                U_Adminstration.Mobile = (string)reader["employee_phone_nr"];
+                U_Adminstration.employee_id = (int)reader["employee_id"];
             }
             conn.Close();
 
@@ -448,7 +448,7 @@ namespace MUAB_hotel
 
         internal void fired()
         {
-            string query = "DELETE FROM hoteldb.employee WHERE employee_id = '" + U_Admin.employee_id + "'; ";
+            string query = "DELETE FROM hoteldb.employee WHERE employee_id = '" + U_Adminstration.employee_id + "'; ";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -459,8 +459,8 @@ namespace MUAB_hotel
         {
             string query = "INSERT INTO hoteldb.employee (employee_first_name, employee_last_name, employee_position, " +
                                                          "employee_phone_nr, employee_email, employee_user_name, employee_pass, employee_status)  " +
-                                                         "VALUES ('" + U_Admin.firstName + "', '" + U_Admin.lastName + "', '" + U_Admin.role + "'," +
-                                                         " '" + U_Admin.mobile + "', '" + U_Admin.Email + "', '" + U_Admin.userName + "', 1234, 'Out');";
+                                                         "VALUES ('" + U_Adminstration.firstName + "', '" + U_Adminstration.lastName + "', '" + U_Adminstration.role + "'," +
+                                                         " '" + U_Adminstration.mobile + "', '" + U_Adminstration.Email + "', '" + U_Adminstration.userName + "', 1234, 'Out');";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQueryAsync();

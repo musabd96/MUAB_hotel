@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MUAB_hotel
 {
-    public partial class U_Admin : UserControl
+    public partial class U_Adminstration : UserControl
     {
         dbHelper1 db = new dbHelper1();
         dbHelper dbHelper = new dbHelper();
@@ -32,7 +32,7 @@ namespace MUAB_hotel
         public static decimal salary { get; set; }
 
 
-        public U_Admin()
+        public U_Adminstration()
         {
             InitializeComponent();
             pnlNewEmp.Visible = false;

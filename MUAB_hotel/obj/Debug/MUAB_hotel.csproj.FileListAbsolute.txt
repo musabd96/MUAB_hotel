@@ -42,5 +42,5 @@ C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenX
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Setting.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Login.resources
-C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Admin.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Home1.resources
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Adminstration.resources

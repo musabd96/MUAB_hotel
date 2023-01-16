@@ -63,11 +63,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHome.AutoSize = true;
-            this.lbHome.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHome.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHome.ForeColor = System.Drawing.Color.White;
-            this.lbHome.Location = new System.Drawing.Point(421, 13);
+            this.lbHome.Location = new System.Drawing.Point(3, 0);
             this.lbHome.Name = "lbHome";
-            this.lbHome.Size = new System.Drawing.Size(360, 93);
+            this.lbHome.Size = new System.Drawing.Size(107, 28);
             this.lbHome.TabIndex = 27;
             this.lbHome.Text = "Services";
             // 
