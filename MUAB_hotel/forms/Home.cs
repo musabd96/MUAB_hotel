@@ -138,6 +138,7 @@ namespace MUAB_hotel
             U_Services U_Services = new U_Services();
             userControl(U_Services);
             btnHome.Enabled = true;
+            btnBooking.Enabled = true;
             btnReception.Enabled = true;
             btnService.Enabled = false;
             btnSetting.Enabled = true;
@@ -179,7 +180,7 @@ namespace MUAB_hotel
         // logout button
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Login.Show();
         }
 

@@ -12,7 +12,6 @@ namespace MUAB_hotel
 {
     public partial class Chech_in_out : Form
     {
-        dbHelper1 db = new dbHelper1();
         dbHelper dbHelper = new dbHelper();
         public static string message;
         public Chech_in_out()
@@ -22,6 +21,8 @@ namespace MUAB_hotel
             
         }
 
+
+        //Check in/out and cancelled 
         private void btnYes_Click(object sender, EventArgs e)
         {
             if (message == "Check in?")
@@ -37,7 +38,6 @@ namespace MUAB_hotel
 
             else if (message == "Cancelled?")
             {
-                dbHelper1.service = "Available";
                 dbHelper.cancelledBooking();
                 //db.cancelBooking();
                 this.Close();

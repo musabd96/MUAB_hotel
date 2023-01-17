@@ -146,5 +146,10 @@ namespace MUAB_hotel
         }
 
         #endregion
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

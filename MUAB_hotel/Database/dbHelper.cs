@@ -18,7 +18,7 @@ namespace MUAB_hotel
         public static string server = "localhost";
         public static string database = "cusdata";
         public static string user = "root";
-        public static string pass = "allia";
+        public static string pass = "0909";
 
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");
@@ -188,7 +188,7 @@ namespace MUAB_hotel
         
         internal void notAvailable()
         {
-            string query = "SELECT SUM('Out OF Order'AND 'Not Available') FROM muabhotel.roomsview;";
+            string query = "SELECT SUM(CheckIn + checkout) FROM muabhotel.roomsview;";
             conn.Open();
 
             MySqlCommand cmd = new MySqlCommand(query, conn);

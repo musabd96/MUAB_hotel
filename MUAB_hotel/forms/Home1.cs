@@ -17,8 +17,8 @@ namespace MUAB_hotel
             InitializeComponent();
             openMenu();
             btnHome.Enabled = false;
-            lbname.Text = dbHelper1.fullName;
-            lbPosition.Text = dbHelper1.position;
+            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
+            lbPosition.Text = dbHelper.employeeRole;
             timer1.Start();
         }
 
@@ -105,7 +105,7 @@ namespace MUAB_hotel
         private void button1_Click(object sender, EventArgs e)
         {
             Login login = new Login();
-            this.Close();
+            this.Hide();
             login.Show();
         }
 

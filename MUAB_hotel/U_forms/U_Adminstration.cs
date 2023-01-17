@@ -12,7 +12,6 @@ namespace MUAB_hotel
 {
     public partial class U_Adminstration : UserControl
     {
-        dbHelper1 db = new dbHelper1();
         dbHelper dbHelper = new dbHelper();
         public static string searchEmp { get; set; }
         public static string Name { get; set; }

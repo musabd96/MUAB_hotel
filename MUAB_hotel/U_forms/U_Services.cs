@@ -14,7 +14,6 @@ namespace MUAB_hotel
 {
     public partial class U_Services : UserControl
     {
-        dbHelper1 db = new dbHelper1();
         dbHelper dbHelper = new dbHelper();
         public static string roomStatus { get; set; }
         public static string service { get; set; }
@@ -48,7 +47,6 @@ namespace MUAB_hotel
                     
                 }
                 btnSave.Enabled = true;
-                pBsearch_Click(sender, e);
             }
             else
             {
@@ -69,6 +67,7 @@ namespace MUAB_hotel
             if (checkedListBox1.CheckedItems.Count == 1 && e.NewValue == CheckState.Unchecked)
             {
                 checkBox1.Checked = false;
+                btnSave.Enabled = false;
             }
             else if (checkedListBox1.CheckedItems.Count == checkedListBox1.Items.Count - 1 && e.NewValue == CheckState.Checked)
             {
@@ -177,7 +176,9 @@ namespace MUAB_hotel
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            U_Services_Load(sender, e);
+            pnlService.Visible = false;
+            checkBox1.Checked = false;
+
         }
 
 
