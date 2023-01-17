@@ -157,11 +157,11 @@
     <Compile Include="U_forms\U_Services.Designer.cs">
       <DependentUpon>U_Services.cs</DependentUpon>
     </Compile>
-    <Compile Include="U_forms\U_Setting.cs">
+    <Compile Include="U_forms\U_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="U_forms\U_Setting.Designer.cs">
-      <DependentUpon>U_Setting.cs</DependentUpon>
+    <Compile Include="U_forms\U_Profile.Designer.cs">
+      <DependentUpon>U_Profile.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="forms\Chech_in_out.resx">
       <DependentUpon>Chech_in_out.cs</DependentUpon>
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="U_forms\U_Services.resx">
       <DependentUpon>U_Services.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="U_forms\U_Setting.resx">
-      <DependentUpon>U_Setting.cs</DependentUpon>
+    <EmbeddedResource Include="U_forms\U_Profile.resx">
+      <DependentUpon>U_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

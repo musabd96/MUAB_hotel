@@ -30,15 +30,16 @@ namespace MUAB_hotel
 
         Login Login = new Login();
 
-        public static string userName { get; set; }
-        public static string password { get; set; }
-        public static int employee_id { get; set; }
-        public static string employee_firstName { get; set; }
-        public static string employee_lastName { get; set; }
-        public static string employee_email { get; set; }
-        public static string employee_mobile { get; set; }
-        public static string employee_status { get; set; }
-        public static string role { get; set; }
+        public static int usesId { get; set; }
+        public static string employeeUserName { get; set; }
+        public static string employeePassword { get; set; }
+        public static int employeeId { get; set; }
+        public static string employeeFname { get; set; }
+        public static string employeeLname { get; set; }
+        public static string employeeEmail { get; set; }
+        public static string employeeMobile { get; set; }
+        public static string employeeStatus { get; set; }
+        public static string employeeRole { get; set; }
 
         //Login 
         internal void login()
@@ -54,9 +55,10 @@ namespace MUAB_hotel
             {
                 while (reader.Read())
                 {
-                    userName = reader.GetString(1);
-                    password = reader.GetString(2);
-                    employee_id = reader.GetInt32(3);
+                    usesId = reader.GetInt32(0);
+                    employeeUserName = reader.GetString(1);
+                    employeePassword = reader.GetString(2);
+                    employeeId = reader.GetInt32(3);
                 }
             }
             conn.Close();
@@ -72,23 +74,40 @@ namespace MUAB_hotel
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("$employee_id", employee_id);
+            cmd.Parameters.AddWithValue("$employee_id", employeeId);
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    employee_firstName = reader.GetString(1);
-                    employee_lastName = reader.GetString(2);
-                    employee_email = reader.GetString(3);
-                    employee_mobile = reader.GetString(5);
-                    employee_status = reader.GetString(6);
-                    role = reader.GetString(9);
+                    employeeFname = reader.GetString(1);
+                    employeeLname = reader.GetString(2);
+                    employeeEmail = reader.GetString(3);
+                    employeeMobile = reader.GetString(5);
+                    employeeStatus = reader.GetString(6);
+                    employeeRole = reader.GetString(9);
                 }
             }
             conn.Close();
 
         }
 
+        internal void newemployeepassword()
+        {
+            string query = "muabhotel.newemployeepassword";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$newemployeepassword", U_Profile.newEmployeePassword);
+            cmd.Parameters.AddWithValue("$usesId", usesId);
+            var ds = new DataSet();
+
+            cmd.ExecuteReader();
+
+            conn.Close();
+        }
 
         #endregion
 
@@ -280,7 +299,7 @@ namespace MUAB_hotel
             cmd.Parameters.AddWithValue("$totalPrice", totalPrice);
             cmd.Parameters.AddWithValue("$totalDays", totalDays);
             cmd.Parameters.AddWithValue("$guestsId", guestsId);
-            cmd.Parameters.AddWithValue("$employeeId", employee_id);
+            cmd.Parameters.AddWithValue("$employeeId", employeeId);
             cmd.Parameters.AddWithValue("$bookingId", bookingId);
             cmd.Parameters.AddWithValue("$roomStatus", roomStatus);
 
@@ -323,7 +342,7 @@ namespace MUAB_hotel
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("$roomStatus", U_Reception.roomStatus);
-            cmd.Parameters.AddWithValue("$employee_id", employee_id);
+            cmd.Parameters.AddWithValue("$employee_id", employeeId);
             cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
             cmd.Parameters.AddWithValue("$roomNr", U_Reception.roomNr);
 
@@ -352,7 +371,7 @@ namespace MUAB_hotel
             cmd.Parameters.AddWithValue("$checkOut", U_Reception.checkOut);
             cmd.Parameters.AddWithValue("$days", U_Reception.Days);
             cmd.Parameters.AddWithValue("$newPrice", U_Reception.newPrice);
-            cmd.Parameters.AddWithValue("$employee_id", employee_id);
+            cmd.Parameters.AddWithValue("$employee_id", employeeId);
             cmd.Parameters.AddWithValue("$bookingId", U_Reception.bookingId);
 
             var ds = new DataSet();

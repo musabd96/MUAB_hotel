@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
@@ -59,6 +60,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnAdmin = new System.Windows.Forms.Button();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbDate = new System.Windows.Forms.Label();
             this.pnlBlack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -92,6 +96,8 @@
             this.pnlBlack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBlack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlBlack.Controls.Add(this.lbDate);
+            this.pnlBlack.Controls.Add(this.lbTime);
             this.pnlBlack.Controls.Add(this.pictureBox1);
             this.pnlBlack.Controls.Add(this.lbPosition);
             this.pnlBlack.Controls.Add(this.lbname);
@@ -251,7 +257,7 @@
             this.btnSetting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSetting.Size = new System.Drawing.Size(180, 82);
             this.btnSetting.TabIndex = 5;
-            this.btnSetting.Text = "        Setting";
+            this.btnSetting.Text = "        Profile";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -454,6 +460,36 @@
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.White;
+            this.lbTime.Location = new System.Drawing.Point(574, 49);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(97, 42);
+            this.lbTime.TabIndex = 32;
+            this.lbTime.Tag = "";
+            this.lbTime.Text = "Time";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbDate
+            // 
+            this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.White;
+            this.lbDate.Location = new System.Drawing.Point(561, 9);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(92, 42);
+            this.lbDate.TabIndex = 32;
+            this.lbDate.Tag = "";
+            this.lbDate.Text = "Date";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +559,9 @@
         private System.Windows.Forms.Label lbname;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbDate;
     }
 }
 

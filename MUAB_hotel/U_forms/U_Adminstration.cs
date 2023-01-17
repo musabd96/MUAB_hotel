@@ -157,7 +157,7 @@ namespace MUAB_hotel
             txtSearch_TextChanged(sender, e);
             pBl.Visible = false;
             pBX.Visible = false;
-            if (dbHelper.role == "Manager")
+            if (dbHelper.employeeRole == "Manager")
             {
                 pBFired.Visible = true;
                 btnNewEmp.Visible = true;

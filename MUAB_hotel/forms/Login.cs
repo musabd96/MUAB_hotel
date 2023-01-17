@@ -43,16 +43,16 @@ namespace MUAB_hotel
                 if (userName == "admin" && password == "1234")
                 {
 
-                    MessageBox.Show($"{dbHelper.role} pst");
+                    MessageBox.Show($"{dbHelper.employeeRole} pst");
                     home1.Show();
                     this.Hide();
                 }
                 
-                else if (userName == dbHelper.userName && password == dbHelper.password)
+                else if (userName == dbHelper.employeeUserName && password == dbHelper.employeePassword)
                 {
                     // control if the user is housekeeping position or other position 
                     // Housekeeping olny access the home1 form other positions can access all
-                    if (dbHelper.role == "Housekeeping")
+                    if (dbHelper.employeeRole == "Housekeeping")
                     {
                         home1.Show();
                         this.Hide();
@@ -66,7 +66,7 @@ namespace MUAB_hotel
                 }
                 else
                 {
-                    if(userName == dbHelper.userName)
+                    if(userName == dbHelper.employeeUserName)
                     {
 
                         lbError.Text = "Wrong password!";
@@ -124,24 +124,27 @@ namespace MUAB_hotel
         private void pBHide_Click(object sender, EventArgs e)
         {
             
-            if (txtPass.PasswordChar == '*')
+            if (txtPass.PasswordChar == '\0')
             {
                 pBView.BringToFront();
+                txtPass.PasswordChar = '*';
+            }
+
+        }
+
+       
+       
+
+
+        private void pBView_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar == '*')
+            {
+                pBHide.BringToFront();
                 txtPass.PasswordChar = '\0';
             }
         }
 
-        private void pBView_Click(object sender, EventArgs e)
-        {
-            if (txtPass.PasswordChar == '\0')
-            {
-                pBHide.BringToFront();
-                txtPass.PasswordChar = '*';
-            }
-        }
-
         #endregion
-
-
     }
 }

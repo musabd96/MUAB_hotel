@@ -19,12 +19,10 @@ namespace MUAB_hotel
             btnHome.Enabled = false;
             lbname.Text = dbHelper1.fullName;
             lbPosition.Text = dbHelper1.position;
+            timer1.Start();
         }
 
-        private void Home1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Open Menu bar
         public void openMenu()
@@ -86,7 +84,7 @@ namespace MUAB_hotel
         //setting button
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            U_Setting U_Setting = new U_Setting();
+            U_Profile U_Setting = new U_Profile();
             userControl(U_Setting);
             btnHome.Enabled = true;
             btnService.Enabled = true;
@@ -115,6 +113,12 @@ namespace MUAB_hotel
         {
             Application.Exit();
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbDate.Text = DateTime.Now.ToString("dd-MM-yyy");
+            lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

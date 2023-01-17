@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbname = new System.Windows.Forms.Label();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenuBarIcon = new System.Windows.Forms.Panel();
             this.pBMenuBarIcon = new System.Windows.Forms.PictureBox();
@@ -52,7 +54,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +114,17 @@
             this.pnlMenuBar.Name = "pnlMenuBar";
             this.pnlMenuBar.Size = new System.Drawing.Size(189, 801);
             this.pnlMenuBar.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(2, 777);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
             // 
             // panel2
             // 
@@ -271,7 +286,7 @@
             this.btnSetting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSetting.Size = new System.Drawing.Size(180, 82);
             this.btnSetting.TabIndex = 0;
-            this.btnSetting.Text = "        Setting";
+            this.btnSetting.Text = "        Profile";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -341,6 +356,8 @@
             this.pnlBlack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBlack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlBlack.Controls.Add(this.lbDate);
+            this.pnlBlack.Controls.Add(this.lbTime);
             this.pnlBlack.Controls.Add(this.pictureBox1);
             this.pnlBlack.Controls.Add(this.lbPosition);
             this.pnlBlack.Controls.Add(this.lbname);
@@ -350,16 +367,35 @@
             this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
             this.pnlBlack.TabIndex = 7;
             // 
-            // label2
+            // timer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(2, 777);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbDate
+            // 
+            this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.White;
+            this.lbDate.Location = new System.Drawing.Point(561, 9);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(92, 42);
+            this.lbDate.TabIndex = 33;
+            this.lbDate.Tag = "";
+            this.lbDate.Text = "Date";
+            // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.White;
+            this.lbTime.Location = new System.Drawing.Point(574, 49);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(97, 42);
+            this.lbTime.TabIndex = 34;
+            this.lbTime.Tag = "";
+            this.lbTime.Text = "Time";
             // 
             // Home1
             // 
@@ -375,7 +411,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home1_FormClosing);
-            this.Load += new System.EventHandler(this.Home1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
@@ -421,5 +456,8 @@
         private System.Windows.Forms.Panel pnl_U;
         private System.Windows.Forms.Panel pnlBlack;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Label lbTime;
     }
 }

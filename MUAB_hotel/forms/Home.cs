@@ -26,8 +26,9 @@ namespace MUAB_hotel
 
             // getting the employee's info 
             dbHelper.getEmployee();
-            lbname.Text = dbHelper.employee_firstName + " " + dbHelper.employee_lastName;
-            lbPosition.Text = dbHelper.role;
+            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
+            lbPosition.Text = dbHelper.employeeRole;
+            timer1.Start();
         }
 
         
@@ -149,7 +150,7 @@ namespace MUAB_hotel
         //setting button
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            U_Setting U_Setting = new U_Setting();
+            U_Profile U_Setting = new U_Profile();
             userControl(U_Setting);
             btnHome.Enabled = true;
             btnReception.Enabled = true;
@@ -189,6 +190,12 @@ namespace MUAB_hotel
            
 
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbDate.Text = DateTime.Now.ToString("dd-MM-yyy");
+            lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

@@ -33,20 +33,20 @@
             this.lbUname = new System.Windows.Forms.Label();
             this.lbPass = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.pnlAccNr = new System.Windows.Forms.Panel();
-            this.txtUname = new System.Windows.Forms.TextBox();
-            this.pnlPass = new System.Windows.Forms.Panel();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.pBView = new System.Windows.Forms.PictureBox();
-            this.pBHide = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbError = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlAccNr.SuspendLayout();
-            this.pnlPass.SuspendLayout();
+            this.pBView = new System.Windows.Forms.PictureBox();
+            this.pBHide = new System.Windows.Forms.PictureBox();
+            this.txtUname = new System.Windows.Forms.TextBox();
+            this.pnlPass = new System.Windows.Forms.Panel();
+            this.pnlAccNr = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlPass.SuspendLayout();
+            this.pnlAccNr.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,47 +93,6 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // pnlAccNr
-            // 
-            this.pnlAccNr.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnlAccNr.Controls.Add(this.txtUname);
-            this.pnlAccNr.ForeColor = System.Drawing.Color.White;
-            this.pnlAccNr.Location = new System.Drawing.Point(81, 125);
-            this.pnlAccNr.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAccNr.Name = "pnlAccNr";
-            this.pnlAccNr.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.pnlAccNr.Size = new System.Drawing.Size(246, 25);
-            this.pnlAccNr.TabIndex = 1;
-            // 
-            // txtUname
-            // 
-            this.txtUname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.txtUname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUname.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUname.ForeColor = System.Drawing.Color.White;
-            this.txtUname.Location = new System.Drawing.Point(0, 0);
-            this.txtUname.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUname.Name = "txtUname";
-            this.txtUname.Size = new System.Drawing.Size(246, 22);
-            this.txtUname.TabIndex = 1;
-            this.txtUname.Text = "mustafa.abdulle";
-            this.txtUname.TextChanged += new System.EventHandler(this.txtUname_TextChanged);
-            // 
-            // pnlPass
-            // 
-            this.pnlPass.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnlPass.Controls.Add(this.txtPass);
-            this.pnlPass.ForeColor = System.Drawing.Color.White;
-            this.pnlPass.Location = new System.Drawing.Point(81, 205);
-            this.pnlPass.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlPass.Name = "pnlPass";
-            this.pnlPass.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.pnlPass.Size = new System.Drawing.Size(246, 25);
-            this.pnlPass.TabIndex = 2;
-            // 
             // txtPass
             // 
             this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -153,28 +112,6 @@
             this.txtPass.Text = "1234";
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
-            // 
-            // pBView
-            // 
-            this.pBView.Image = ((System.Drawing.Image)(resources.GetObject("pBView.Image")));
-            this.pBView.Location = new System.Drawing.Point(332, 190);
-            this.pBView.Name = "pBView";
-            this.pBView.Size = new System.Drawing.Size(24, 24);
-            this.pBView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBView.TabIndex = 5;
-            this.pBView.TabStop = false;
-            this.pBView.Click += new System.EventHandler(this.pBView_Click);
-            // 
-            // pBHide
-            // 
-            this.pBHide.Image = ((System.Drawing.Image)(resources.GetObject("pBHide.Image")));
-            this.pBHide.Location = new System.Drawing.Point(332, 190);
-            this.pBHide.Name = "pBHide";
-            this.pBHide.Size = new System.Drawing.Size(24, 24);
-            this.pBHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBHide.TabIndex = 5;
-            this.pBHide.TabStop = false;
-            this.pBHide.Click += new System.EventHandler(this.pBHide_Click);
             // 
             // pictureBox1
             // 
@@ -207,6 +144,69 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
             // 
+            // pBView
+            // 
+            this.pBView.Image = ((System.Drawing.Image)(resources.GetObject("pBView.Image")));
+            this.pBView.Location = new System.Drawing.Point(332, 201);
+            this.pBView.Name = "pBView";
+            this.pBView.Size = new System.Drawing.Size(24, 24);
+            this.pBView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBView.TabIndex = 5;
+            this.pBView.TabStop = false;
+            this.pBView.Click += new System.EventHandler(this.pBView_Click);
+            // 
+            // pBHide
+            // 
+            this.pBHide.Image = ((System.Drawing.Image)(resources.GetObject("pBHide.Image")));
+            this.pBHide.Location = new System.Drawing.Point(332, 201);
+            this.pBHide.Name = "pBHide";
+            this.pBHide.Size = new System.Drawing.Size(24, 24);
+            this.pBHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBHide.TabIndex = 5;
+            this.pBHide.TabStop = false;
+            this.pBHide.Click += new System.EventHandler(this.pBHide_Click);
+            // 
+            // txtUname
+            // 
+            this.txtUname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
+            this.txtUname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUname.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUname.ForeColor = System.Drawing.Color.White;
+            this.txtUname.Location = new System.Drawing.Point(0, 0);
+            this.txtUname.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUname.Name = "txtUname";
+            this.txtUname.Size = new System.Drawing.Size(246, 22);
+            this.txtUname.TabIndex = 1;
+            this.txtUname.Text = "mustafa.abdulle";
+            this.txtUname.TextChanged += new System.EventHandler(this.txtUname_TextChanged);
+            // 
+            // pnlPass
+            // 
+            this.pnlPass.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnlPass.Controls.Add(this.txtPass);
+            this.pnlPass.ForeColor = System.Drawing.Color.White;
+            this.pnlPass.Location = new System.Drawing.Point(81, 205);
+            this.pnlPass.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlPass.Name = "pnlPass";
+            this.pnlPass.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.pnlPass.Size = new System.Drawing.Size(246, 25);
+            this.pnlPass.TabIndex = 2;
+            // 
+            // pnlAccNr
+            // 
+            this.pnlAccNr.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnlAccNr.Controls.Add(this.txtUname);
+            this.pnlAccNr.ForeColor = System.Drawing.Color.White;
+            this.pnlAccNr.Location = new System.Drawing.Point(81, 125);
+            this.pnlAccNr.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAccNr.Name = "pnlAccNr";
+            this.pnlAccNr.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.pnlAccNr.Size = new System.Drawing.Size(246, 25);
+            this.pnlAccNr.TabIndex = 1;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -214,8 +214,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(794, 353);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pBHide);
             this.Controls.Add(this.pBView);
+            this.Controls.Add(this.pBHide);
             this.Controls.Add(this.pnlPass);
             this.Controls.Add(this.pnlAccNr);
             this.Controls.Add(this.btnLogin);
@@ -232,13 +232,13 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.pnlAccNr.ResumeLayout(false);
-            this.pnlAccNr.PerformLayout();
-            this.pnlPass.ResumeLayout(false);
-            this.pnlPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlPass.ResumeLayout(false);
+            this.pnlPass.PerformLayout();
+            this.pnlAccNr.ResumeLayout(false);
+            this.pnlAccNr.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,14 +250,14 @@
         private System.Windows.Forms.Label lbUname;
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Panel pnlAccNr;
-        private System.Windows.Forms.TextBox txtUname;
-        private System.Windows.Forms.Panel pnlPass;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.PictureBox pBView;
-        private System.Windows.Forms.PictureBox pBHide;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbError;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pBView;
+        private System.Windows.Forms.PictureBox pBHide;
+        private System.Windows.Forms.TextBox txtUname;
+        private System.Windows.Forms.Panel pnlPass;
+        private System.Windows.Forms.Panel pnlAccNr;
     }
 }
