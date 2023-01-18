@@ -31,17 +31,17 @@ namespace MUAB_hotel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U_Reception));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U_Reception));
             this.lbHome = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.btnChIn = new System.Windows.Forms.Button();
-            this.btnChOut = new System.Windows.Forms.Button();
+            this.btnService = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.X = new System.Windows.Forms.DataGridViewImageColumn();
@@ -50,6 +50,10 @@ namespace MUAB_hotel
             this.pBl = new System.Windows.Forms.PictureBox();
             this.pBsearch = new System.Windows.Forms.PictureBox();
             this.pBX = new System.Windows.Forms.PictureBox();
+            this.btnChOut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBsearch)).BeginInit();
@@ -95,26 +99,28 @@ namespace MUAB_hotel
             this.btnChIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnChIn.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChIn.ForeColor = System.Drawing.Color.Green;
-            this.btnChIn.Location = new System.Drawing.Point(704, 158);
+            this.btnChIn.Image = ((System.Drawing.Image)(resources.GetObject("btnChIn.Image")));
+            this.btnChIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChIn.Location = new System.Drawing.Point(749, 67);
             this.btnChIn.Name = "btnChIn";
-            this.btnChIn.Size = new System.Drawing.Size(137, 42);
+            this.btnChIn.Size = new System.Drawing.Size(76, 97);
             this.btnChIn.TabIndex = 11;
-            this.btnChIn.Text = "Check in";
             this.btnChIn.UseVisualStyleBackColor = true;
             this.btnChIn.Click += new System.EventHandler(this.btnChIn_Click);
             // 
-            // btnChOut
+            // btnService
             // 
-            this.btnChOut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChOut.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChOut.ForeColor = System.Drawing.Color.Red;
-            this.btnChOut.Location = new System.Drawing.Point(879, 158);
-            this.btnChOut.Name = "btnChOut";
-            this.btnChOut.Size = new System.Drawing.Size(137, 42);
-            this.btnChOut.TabIndex = 11;
-            this.btnChOut.Text = "Check out";
-            this.btnChOut.UseVisualStyleBackColor = true;
-            this.btnChOut.Click += new System.EventHandler(this.btnChOut_Click);
+            this.btnService.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnService.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnService.ForeColor = System.Drawing.Color.Blue;
+            this.btnService.Image = ((System.Drawing.Image)(resources.GetObject("btnService.Image")));
+            this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnService.Location = new System.Drawing.Point(910, 67);
+            this.btnService.Name = "btnService";
+            this.btnService.Size = new System.Drawing.Size(76, 97);
+            this.btnService.TabIndex = 11;
+            this.btnService.UseVisualStyleBackColor = true;
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
             // dataGridView3
             // 
@@ -243,6 +249,56 @@ namespace MUAB_hotel
             this.pBX.TabStop = false;
             this.pBX.Click += new System.EventHandler(this.pBX_Click);
             // 
+            // btnChOut
+            // 
+            this.btnChOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChOut.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChOut.ForeColor = System.Drawing.Color.Red;
+            this.btnChOut.Image = ((System.Drawing.Image)(resources.GetObject("btnChOut.Image")));
+            this.btnChOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChOut.Location = new System.Drawing.Point(1078, 67);
+            this.btnChOut.Name = "btnChOut";
+            this.btnChOut.Size = new System.Drawing.Size(76, 97);
+            this.btnChOut.TabIndex = 11;
+            this.btnChOut.UseVisualStyleBackColor = true;
+            this.btnChOut.Click += new System.EventHandler(this.btnChOut_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(754, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Check In";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(904, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Room Service";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(1080, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Check out";
+            // 
             // U_Reception
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,8 +310,12 @@ namespace MUAB_hotel
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnChOut);
+            this.Controls.Add(this.btnService);
             this.Controls.Add(this.btnChIn);
             this.Controls.Add(this.lbFirstName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbHome);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "U_Reception";
@@ -276,7 +336,7 @@ namespace MUAB_hotel
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Button btnChIn;
-        private System.Windows.Forms.Button btnChOut;
+        private System.Windows.Forms.Button btnService;
         private DataGridView dataGridView3;
         private ImageList imageList1;
         private DataGridViewImageColumn Edit;
@@ -285,5 +345,9 @@ namespace MUAB_hotel
         private PictureBox pBl;
         private PictureBox pBsearch;
         private PictureBox pBX;
+        private Button btnChOut;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

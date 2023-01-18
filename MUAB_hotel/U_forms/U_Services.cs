@@ -15,9 +15,10 @@ namespace MUAB_hotel
     public partial class U_Services : UserControl
     {
         dbHelper dbHelper = new dbHelper();
+        //public static string search { get; set; }
         public static string roomStatus { get; set; }
         public static string service { get; set; }
-        public static int roomNr { get; set; }
+        public static string roomNr { get; set; }
 
         public U_Services()
         {
@@ -30,7 +31,7 @@ namespace MUAB_hotel
             pBX.Visible = false;
             pBl.Visible = false;
             pnlService.Visible = false;
-            pBsearch_Click(sender, e);
+            txtSearch_TextChanged(sender, e);
 
         }
 
@@ -84,12 +85,13 @@ namespace MUAB_hotel
 
         private void dataGridView5_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-            lbRNr.Text = dataGridView5.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
+            try
+            {
+                lbRNr.Text = dataGridView5.Rows[e.RowIndex].Cells["Room Nr"].FormattedValue.ToString();
             roomStatus = dataGridView5.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
 
 
-            roomNr = Convert.ToInt32(lbRNr.Text);
+            roomNr = lbRNr.Text;
 
             if (roomStatus == "CheckOut")
             {
@@ -116,7 +118,7 @@ namespace MUAB_hotel
                 checkedListBox1.Items.Add("Guests Order2");
                 checkedListBox1.Items.Add("Guests Order3");
             }
-            else if (roomStatus == "Booked")
+            else if (roomStatus == "Room Service")
             {
                 pnlService.Visible = true;
                 lbSerType.Text = "Guests Requirments";
@@ -128,27 +130,19 @@ namespace MUAB_hotel
                 checkedListBox1.Items.Add("Guests Reguest3");
             }
 
+            }
+            catch
+            {
+
+            }
+            
 
         }
 
         #region Buttons
 
         
-        private void pBsearch_Click(object sender, EventArgs e)
-        {
-            if (txtSearch.Text != "")
-            {
-                pBX.Visible = true;
-                pBl.Visible = true;
-                dbHelper.searchRoom(dataGridView5);
-            }
-            else
-            {
-                pBX.Visible = false;
-                pBl.Visible = false;
-                dbHelper.searchRoom(dataGridView5);
-            }
-        }
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -159,7 +153,7 @@ namespace MUAB_hotel
             }
             else if (roomStatus == "CheckOut")
             {
-                U_Reception.roomNr = roomNr;
+                U_Reception.roomNr = Convert.ToInt32(roomNr);
                 dbHelper.getGuest();
                 dbHelper.cancelledBooking();
                 // In Future create a table that stored the old booking details
@@ -172,7 +166,6 @@ namespace MUAB_hotel
                 MessageBox.Show("Room service is seccussfull");
             }
             checkBox1.Checked = false;
-            U_Services_Load(sender, e);
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -187,5 +180,37 @@ namespace MUAB_hotel
 
         #endregion
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            pBsearch_Click(sender, e);
+        }
+
+        
+
+        private void pBsearch_Click(object sender, EventArgs e)
+        {
+            roomNr = txtSearch.Text;
+            if (roomNr != "")
+            {
+                pBX.Visible = true;
+                pBl.Visible = true;
+                //roomNr = Convert.ToInt32(roomNr);
+                dbHelper.searchRoom(dataGridView5);
+            }
+            else
+            {
+                pBX.Visible = false;
+                pBl.Visible = false;
+                dbHelper.searchRoom(dataGridView5);
+                
+            }
+        }
+
+        private void pBX_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            pBX.Visible = false;
+            pBl.Visible = false;
+        }
     }
 }

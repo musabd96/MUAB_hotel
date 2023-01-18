@@ -47,7 +47,7 @@
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.label3.Location = new System.Drawing.Point(89, 209);
+            this.label3.Location = new System.Drawing.Point(132, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 31);
             this.label3.TabIndex = 42;
@@ -60,7 +60,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.label5.Location = new System.Drawing.Point(65, 153);
+            this.label5.Location = new System.Drawing.Point(108, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 31);
             this.label5.TabIndex = 43;
@@ -73,7 +73,7 @@
             this.label1.BackColor = System.Drawing.Color.Gainsboro;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(77, 106);
+            this.label1.Location = new System.Drawing.Point(120, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 31);
             this.label1.TabIndex = 44;
@@ -86,7 +86,7 @@
             this.lbBookNr.BackColor = System.Drawing.Color.Gainsboro;
             this.lbBookNr.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBookNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.lbBookNr.Location = new System.Drawing.Point(224, 106);
+            this.lbBookNr.Location = new System.Drawing.Point(267, 106);
             this.lbBookNr.Name = "lbBookNr";
             this.lbBookNr.Size = new System.Drawing.Size(141, 31);
             this.lbBookNr.TabIndex = 44;
@@ -99,7 +99,7 @@
             this.lbCID.BackColor = System.Drawing.Color.Gainsboro;
             this.lbCID.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.lbCID.Location = new System.Drawing.Point(224, 153);
+            this.lbCID.Location = new System.Drawing.Point(267, 153);
             this.lbCID.Name = "lbCID";
             this.lbCID.Size = new System.Drawing.Size(153, 31);
             this.lbCID.TabIndex = 43;
@@ -112,7 +112,7 @@
             this.lbFullName.BackColor = System.Drawing.Color.Gainsboro;
             this.lbFullName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.lbFullName.Location = new System.Drawing.Point(224, 209);
+            this.lbFullName.Location = new System.Drawing.Point(267, 209);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(129, 31);
             this.lbFullName.TabIndex = 42;
@@ -123,7 +123,7 @@
             this.btnNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNo.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.Black;
-            this.btnNo.Location = new System.Drawing.Point(265, 285);
+            this.btnNo.Location = new System.Drawing.Point(308, 285);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(122, 42);
             this.btnNo.TabIndex = 46;
@@ -136,7 +136,7 @@
             this.btnYes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnYes.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.ForeColor = System.Drawing.Color.Black;
-            this.btnYes.Location = new System.Drawing.Point(83, 285);
+            this.btnYes.Location = new System.Drawing.Point(126, 285);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(122, 42);
             this.btnYes.TabIndex = 45;
@@ -151,7 +151,7 @@
             this.label7.BackColor = System.Drawing.Color.Gainsboro;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.label7.Location = new System.Drawing.Point(23, 26);
+            this.label7.Location = new System.Drawing.Point(53, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(241, 42);
             this.label7.TabIndex = 44;
@@ -164,7 +164,7 @@
             this.lbmessage.BackColor = System.Drawing.Color.Gainsboro;
             this.lbmessage.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbmessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.lbmessage.Location = new System.Drawing.Point(270, 26);
+            this.lbmessage.Location = new System.Drawing.Point(300, 26);
             this.lbmessage.Name = "lbmessage";
             this.lbmessage.Size = new System.Drawing.Size(66, 42);
             this.lbmessage.TabIndex = 44;
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(458, 346);
+            this.ClientSize = new System.Drawing.Size(544, 346);
             this.ControlBox = false;
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);

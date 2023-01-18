@@ -27,19 +27,23 @@ namespace MUAB_hotel
         {
             if (message == "Check in?")
             {
-                dbHelper.chechInOut();
+                dbHelper.chechInOutService();
                 this.Close();
             }
             else if (message == "Check out?")
             {
-                dbHelper.chechInOut();
+                dbHelper.chechInOutService();
+                this.Close();
+            }
+            else if (message == "Room Service?")
+            {
+                dbHelper.chechInOutService();
                 this.Close();
             }
 
             else if (message == "Cancelled?")
             {
                 dbHelper.cancelledBooking();
-                //db.cancelBooking();
                 this.Close();
             }
 

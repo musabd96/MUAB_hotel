@@ -18,7 +18,7 @@ namespace MUAB_hotel
         public static string server = "localhost";
         public static string database = "muabhotel";
         public static string user = "root";
-        public static string pass = "0909";
+        public static string pass = "allia";
 
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");
@@ -198,11 +198,21 @@ namespace MUAB_hotel
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
+                    data.Add("Room Nr                Service");
+                    data.Add(" ");
                 while (reader.Read())
                 {
                     string roomsNr = reader["rooms_nr"].ToString();
                     string roomsStatus = reader["rooms_status"].ToString();
-                    data.Add(" Cleaning       " + roomsNr);
+                    if(roomsStatus == "Room Service")
+                    {
+                        data.Add("    " + roomsNr + "               Room Service");
+                    }
+                    else if (roomsStatus == "CheckOut")
+                    {
+
+                        data.Add("    " +roomsNr + "                   Cleaning");
+                    }
 
 
                 }
@@ -358,7 +368,7 @@ namespace MUAB_hotel
         }
 
 
-        internal void chechInOut()
+        internal void chechInOutService()
         {
             string query = "muabhotel.chechInOut";
             conn.Open();
@@ -452,7 +462,7 @@ namespace MUAB_hotel
         public static int guestsId { get; set; }
         public static string guests_firstName { get; set; }
         public static string guests_lastName { get; set; }
-        public static int guests_mobile { get; set; }
+        public static string guests_mobile { get; set; }
         public static string guests_email { get; set; }
 
         //Create new guest

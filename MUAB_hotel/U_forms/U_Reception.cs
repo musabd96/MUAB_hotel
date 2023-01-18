@@ -38,8 +38,7 @@ namespace MUAB_hotel
         {
             InitializeComponent();
             
-            btnChIn.Enabled = false;
-            btnChOut.Enabled = false;
+            
         }
 
 
@@ -123,6 +122,7 @@ namespace MUAB_hotel
             if (roomNr == 0)
             {
                 MessageBox.Show("Select a guest");
+                
             }
             else
             {
@@ -160,6 +160,23 @@ namespace MUAB_hotel
 
 
 
+        }
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            if (roomNr == 0)
+            {
+                MessageBox.Show("Select a guest");
+            }
+            else
+            {
+
+                roomStatus = "Room Service";
+                Chech_in_out.message = "Room Service?";
+                inout.ShowDialog();
+                pBsearch_Click(sender, e);
+            }
+
+            roomNr = 0;
         }
 
         #endregion
@@ -200,7 +217,7 @@ namespace MUAB_hotel
                 dbHelper.getGuest();
 
                 btnChIn.Enabled = true;
-                btnChOut.Enabled = true;
+                btnService.Enabled = true;
             }
 
             
@@ -225,7 +242,7 @@ namespace MUAB_hotel
 
                 roomNr = 0;
                 btnChIn.Enabled = false;
-                btnChOut.Enabled = false;
+                btnService.Enabled = false;
 
 
 
@@ -246,7 +263,7 @@ namespace MUAB_hotel
 
                 roomNr = 0;
                 btnChIn.Enabled = false;
-                btnChOut.Enabled = false;
+                btnService.Enabled = false;
 
 
 
@@ -275,6 +292,7 @@ namespace MUAB_hotel
             pBX.Visible = false;
             pBl.Visible = false;
         }
+
     }
 
 }

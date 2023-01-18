@@ -29,8 +29,7 @@ namespace MUAB_hotel
         {
             
             InitializeComponent();
-            pnlSelectRoom.Height = 0;
-            pnlSelectRoom.Visible = false;
+            
             
         }
 
@@ -113,6 +112,7 @@ namespace MUAB_hotel
 
 
             //Mobile textbox error provider
+
             if (string.IsNullOrEmpty(txtMobile.Text.Trim()))
             {
                 txtMobileError.SetError(txtMobile, "Mobile is required");
@@ -271,11 +271,12 @@ namespace MUAB_hotel
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            
             txtFirstName.Text = "";
             txtLastname.Text = "";
             txtMobile.Text = "";
             txtEmail.Text = "";
-            cBRoomTy.SelectedItem = "Select a room type";
+            cBRoomTy.SelectedItem = "-Select room type-";
             lbAdultCount.Text = "0";
             lbChildrenCount.Text = "0";
             dtCheckin.Value = DateTime.Now;
@@ -291,6 +292,7 @@ namespace MUAB_hotel
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            
             pnlSelectRoom.Visible=false;
             checkBox1.Checked = false;
             pnlSelectRoom.Height = 0;
@@ -338,7 +340,8 @@ namespace MUAB_hotel
         private void U_Booking_Load(object sender, EventArgs e)
         {
             txtFirstName.Focus();
-            
+            pnlSelectRoom.Height = 0;
+            pnlSelectRoom.Visible = false;
             txtCusId.Enabled= false;
             txtBookId.Enabled= false;
             txtRoomNr.Enabled= false;
@@ -356,26 +359,25 @@ namespace MUAB_hotel
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 dbHelper db = new dbHelper();
 
                 dbHelper.guests_firstName = txtFirstName.Text;
                 dbHelper.guests_lastName = txtLastname.Text;
-                dbHelper.guests_mobile = Convert.ToInt32(txtMobile.Text);
+                dbHelper.guests_mobile = txtMobile.Text;
                 dbHelper.guests_email = txtEmail.Text;
                 dbHelper.roomType = txtRoomType.Text;
                 dbHelper.checkIn = txtChIn.Text;
                 dbHelper.checkOut = txtChOut.Text;
                 dbHelper.roomsCapacity = Convert.ToInt32(lbAdultCount.Text + lbChildrenCount.Text);
-                MessageBox.Show($"{dbHelper.roomsCapacity} people");
 
                 dbHelper.roomNr = Convert.ToInt32(txtRoomNr.Text);
                 dbHelper.totalDays = Convert.ToInt32(txtTotalNght.Text);
                 dbHelper.totalPrice = Convert.ToDecimal(txtPrice.Text);
 
                 dbHelper.roomStatus = "Booked";
-
                 db.newGuest();
                 db.newBooking();
 
@@ -383,25 +385,13 @@ namespace MUAB_hotel
 
 
                 MessageBox.Show("booking success");
-
-
-                pnlSelectRoom.Visible = false;
-                pnlSelectRoom.Height = 0;
-                dtCheckout.Value = DateTime.Now;
-                dtCheckin.Value = DateTime.Now;
-                cBRoomTy.SelectedItem = "-Select  room type-";
-                lbAdultCount.Text = "0";
-                lbChildrenCount.Text = "0";
-                checkBox1.Checked = false;
-                txtFirstName.Clear();
-                txtLastname.Clear();
-                txtMobile.Clear();
-                txtEmail.Clear();
+                btnCancel_Click(sender, e);
+                btnReset_Click(sender, e);
 
             }
             catch
             {
-
+                MessageBox.Show("not booked");
             }
 
 
