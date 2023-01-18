@@ -32,22 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbPosition = new System.Windows.Forms.Label();
             this.lbname = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnBooking = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnReception = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnService = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,20 +47,32 @@
             this.pnlCloseBar = new System.Windows.Forms.Panel();
             this.pBCloseBar = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.pBAdmin = new System.Windows.Forms.PictureBox();
+            this.lbAdmin = new System.Windows.Forms.Label();
+            this.pnlLogout = new System.Windows.Forms.Panel();
+            this.pBLogout = new System.Windows.Forms.PictureBox();
+            this.lbLogout = new System.Windows.Forms.Label();
+            this.pnlProfile = new System.Windows.Forms.Panel();
+            this.pBProfile = new System.Windows.Forms.PictureBox();
+            this.lbProfile = new System.Windows.Forms.Label();
+            this.pnlService = new System.Windows.Forms.Panel();
+            this.pBService = new System.Windows.Forms.PictureBox();
+            this.lbService = new System.Windows.Forms.Label();
+            this.pnlReception = new System.Windows.Forms.Panel();
+            this.pBReception = new System.Windows.Forms.PictureBox();
+            this.lbReception = new System.Windows.Forms.Label();
+            this.pnlBooking = new System.Windows.Forms.Panel();
+            this.pBBooking = new System.Windows.Forms.PictureBox();
+            this.lbBooking = new System.Windows.Forms.Label();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.pBDash = new System.Windows.Forms.PictureBox();
+            this.lbDash = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbDate = new System.Windows.Forms.Label();
+            this.MouseDetect = new System.Windows.Forms.Timer(this.components);
             this.pnlBlack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenuBarIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).BeginInit();
@@ -78,17 +80,30 @@
             this.pnlCloseBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAdmin)).BeginInit();
+            this.pnlLogout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogout)).BeginInit();
+            this.pnlProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBProfile)).BeginInit();
+            this.pnlService.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBService)).BeginInit();
+            this.pnlReception.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReception)).BeginInit();
+            this.pnlBooking.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBBooking)).BeginInit();
+            this.pnlDash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDash)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_U
             // 
-            this.pnl_U.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_U.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_U.BackColor = System.Drawing.Color.White;
             this.pnl_U.ForeColor = System.Drawing.Color.Black;
-            this.pnl_U.Location = new System.Drawing.Point(60, 94);
+            this.pnl_U.Location = new System.Drawing.Point(205, 94);
             this.pnl_U.Name = "pnl_U";
-            this.pnl_U.Size = new System.Drawing.Size(1302, 707);
+            this.pnl_U.Size = new System.Drawing.Size(1157, 707);
             this.pnl_U.TabIndex = 0;
             // 
             // pnlBlack
@@ -102,16 +117,42 @@
             this.pnlBlack.Controls.Add(this.lbPosition);
             this.pnlBlack.Controls.Add(this.lbname);
             this.pnlBlack.Controls.Add(this.label3);
-            this.pnlBlack.Location = new System.Drawing.Point(60, 0);
+            this.pnlBlack.Location = new System.Drawing.Point(208, 0);
             this.pnlBlack.Name = "pnlBlack";
-            this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
+            this.pnlBlack.Size = new System.Drawing.Size(1154, 94);
             this.pnlBlack.TabIndex = 4;
+            // 
+            // lbDate
+            // 
+            this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.White;
+            this.lbDate.Location = new System.Drawing.Point(487, 9);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(92, 42);
+            this.lbDate.TabIndex = 32;
+            this.lbDate.Tag = "";
+            this.lbDate.Text = "Date";
+            // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.White;
+            this.lbTime.Location = new System.Drawing.Point(500, 49);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(97, 42);
+            this.lbTime.TabIndex = 32;
+            this.lbTime.Tag = "";
+            this.lbTime.Text = "Time";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(993, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(919, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,7 +165,7 @@
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPosition.ForeColor = System.Drawing.Color.Gray;
-            this.lbPosition.Location = new System.Drawing.Point(1036, 43);
+            this.lbPosition.Location = new System.Drawing.Point(962, 43);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(62, 19);
             this.lbPosition.TabIndex = 21;
@@ -137,7 +178,7 @@
             this.lbname.AutoSize = true;
             this.lbname.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbname.ForeColor = System.Drawing.Color.White;
-            this.lbname.Location = new System.Drawing.Point(1036, 19);
+            this.lbname.Location = new System.Drawing.Point(962, 19);
             this.lbname.Name = "lbname";
             this.lbname.Size = new System.Drawing.Size(63, 24);
             this.lbname.TabIndex = 21;
@@ -153,170 +194,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnHome);
-            this.panel3.Location = new System.Drawing.Point(1, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 67);
-            this.panel3.TabIndex = 1;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-4, -6);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(190, 82);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "       Dashboard";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnBooking);
-            this.panel4.Location = new System.Drawing.Point(1, 166);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(176, 67);
-            this.panel4.TabIndex = 1;
-            // 
-            // btnBooking
-            // 
-            this.btnBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBooking.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.ForeColor = System.Drawing.Color.White;
-            this.btnBooking.Image = ((System.Drawing.Image)(resources.GetObject("btnBooking.Image")));
-            this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.Location = new System.Drawing.Point(-4, -6);
-            this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBooking.Size = new System.Drawing.Size(187, 82);
-            this.btnBooking.TabIndex = 2;
-            this.btnBooking.Text = "        Booking";
-            this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.UseVisualStyleBackColor = false;
-            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnReception);
-            this.panel5.Location = new System.Drawing.Point(1, 236);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(176, 67);
-            this.panel5.TabIndex = 1;
-            // 
-            // btnReception
-            // 
-            this.btnReception.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnReception.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReception.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReception.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReception.ForeColor = System.Drawing.Color.White;
-            this.btnReception.Image = ((System.Drawing.Image)(resources.GetObject("btnReception.Image")));
-            this.btnReception.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReception.Location = new System.Drawing.Point(-4, -6);
-            this.btnReception.Name = "btnReception";
-            this.btnReception.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnReception.Size = new System.Drawing.Size(195, 82);
-            this.btnReception.TabIndex = 3;
-            this.btnReception.Text = "        Reception";
-            this.btnReception.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReception.UseVisualStyleBackColor = false;
-            this.btnReception.Click += new System.EventHandler(this.btnReception_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnSetting);
-            this.panel6.Location = new System.Drawing.Point(-2, 391);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 67);
-            this.panel6.TabIndex = 1;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
-            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(-2, -6);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSetting.Size = new System.Drawing.Size(180, 82);
-            this.btnSetting.TabIndex = 5;
-            this.btnSetting.Text = "        Profile";
-            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.UseVisualStyleBackColor = false;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnService);
-            this.panel1.Location = new System.Drawing.Point(-1, 318);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 67);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnService
-            // 
-            this.btnService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnService.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnService.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnService.ForeColor = System.Drawing.Color.White;
-            this.btnService.Image = ((System.Drawing.Image)(resources.GetObject("btnService.Image")));
-            this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(3, -9);
-            this.btnService.Name = "btnService";
-            this.btnService.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnService.Size = new System.Drawing.Size(203, 82);
-            this.btnService.TabIndex = 4;
-            this.btnService.Text = "       Service";
-            this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.UseVisualStyleBackColor = false;
-            this.btnService.Click += new System.EventHandler(this.btnService_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel8.Controls.Add(this.btnLogOut);
-            this.panel8.Location = new System.Drawing.Point(1, 714);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(176, 67);
-            this.panel8.TabIndex = 1;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(-13, -12);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(192, 82);
-            this.btnLogOut.TabIndex = 7;
-            this.btnLogOut.Text = "          Logout";
-            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel7
             // 
@@ -342,9 +219,10 @@
             this.panel2.Controls.Add(this.pBLOGO);
             this.panel2.Controls.Add(this.pnlCloseBar);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(177, 99);
+            this.panel2.Size = new System.Drawing.Size(59, 99);
             this.panel2.TabIndex = 0;
             // 
             // pnlMenuBarIcon
@@ -403,92 +281,329 @@
             // pnlMenuBar
             // 
             this.pnlMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlMenuBar.Controls.Add(this.pnlAdmin);
+            this.pnlMenuBar.Controls.Add(this.pnlLogout);
+            this.pnlMenuBar.Controls.Add(this.pnlProfile);
+            this.pnlMenuBar.Controls.Add(this.pnlService);
+            this.pnlMenuBar.Controls.Add(this.pnlReception);
+            this.pnlMenuBar.Controls.Add(this.pnlBooking);
+            this.pnlMenuBar.Controls.Add(this.pnlDash);
             this.pnlMenuBar.Controls.Add(this.label2);
-            this.pnlMenuBar.Controls.Add(this.panel9);
             this.pnlMenuBar.Controls.Add(this.panel2);
             this.pnlMenuBar.Controls.Add(this.label1);
             this.pnlMenuBar.Controls.Add(this.panel7);
-            this.pnlMenuBar.Controls.Add(this.panel8);
-            this.pnlMenuBar.Controls.Add(this.panel1);
-            this.pnlMenuBar.Controls.Add(this.panel6);
-            this.pnlMenuBar.Controls.Add(this.panel5);
-            this.pnlMenuBar.Controls.Add(this.panel4);
-            this.pnlMenuBar.Controls.Add(this.panel3);
             this.pnlMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuBar.MaximumSize = new System.Drawing.Size(189, 801);
-            this.pnlMenuBar.MinimumSize = new System.Drawing.Size(60, 801);
             this.pnlMenuBar.Name = "pnlMenuBar";
-            this.pnlMenuBar.Size = new System.Drawing.Size(189, 801);
+            this.pnlMenuBar.Size = new System.Drawing.Size(59, 801);
             this.pnlMenuBar.TabIndex = 1;
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.Controls.Add(this.pBAdmin);
+            this.pnlAdmin.Controls.Add(this.lbAdmin);
+            this.pnlAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 656);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(59, 65);
+            this.pnlAdmin.TabIndex = 8;
+            this.pnlAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            // 
+            // pBAdmin
+            // 
+            this.pBAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pBAdmin.Image")));
+            this.pBAdmin.Location = new System.Drawing.Point(11, 9);
+            this.pBAdmin.Name = "pBAdmin";
+            this.pBAdmin.Size = new System.Drawing.Size(45, 45);
+            this.pBAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBAdmin.TabIndex = 0;
+            this.pBAdmin.TabStop = false;
+            this.pBAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            // 
+            // lbAdmin
+            // 
+            this.lbAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAdmin.AutoSize = true;
+            this.lbAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbAdmin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdmin.ForeColor = System.Drawing.Color.White;
+            this.lbAdmin.Location = new System.Drawing.Point(68, 19);
+            this.lbAdmin.Name = "lbAdmin";
+            this.lbAdmin.Size = new System.Drawing.Size(93, 31);
+            this.lbAdmin.TabIndex = 32;
+            this.lbAdmin.Tag = "";
+            this.lbAdmin.Text = "Admin";
+            this.lbAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            // 
+            // pnlLogout
+            // 
+            this.pnlLogout.Controls.Add(this.pBLogout);
+            this.pnlLogout.Controls.Add(this.lbLogout);
+            this.pnlLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlLogout.Location = new System.Drawing.Point(0, 721);
+            this.pnlLogout.Name = "pnlLogout";
+            this.pnlLogout.Size = new System.Drawing.Size(59, 65);
+            this.pnlLogout.TabIndex = 7;
+            this.pnlLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            // 
+            // pBLogout
+            // 
+            this.pBLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBLogout.Image = ((System.Drawing.Image)(resources.GetObject("pBLogout.Image")));
+            this.pBLogout.Location = new System.Drawing.Point(11, 9);
+            this.pBLogout.Name = "pBLogout";
+            this.pBLogout.Size = new System.Drawing.Size(45, 45);
+            this.pBLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLogout.TabIndex = 0;
+            this.pBLogout.TabStop = false;
+            this.pBLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            // 
+            // lbLogout
+            // 
+            this.lbLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLogout.AutoSize = true;
+            this.lbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbLogout.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogout.ForeColor = System.Drawing.Color.White;
+            this.lbLogout.Location = new System.Drawing.Point(68, 19);
+            this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Size = new System.Drawing.Size(97, 31);
+            this.lbLogout.TabIndex = 32;
+            this.lbLogout.Tag = "";
+            this.lbLogout.Text = "Logout";
+            this.lbLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            // 
+            // pnlProfile
+            // 
+            this.pnlProfile.Controls.Add(this.pBProfile);
+            this.pnlProfile.Controls.Add(this.lbProfile);
+            this.pnlProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProfile.Location = new System.Drawing.Point(0, 359);
+            this.pnlProfile.Name = "pnlProfile";
+            this.pnlProfile.Size = new System.Drawing.Size(59, 65);
+            this.pnlProfile.TabIndex = 6;
+            this.pnlProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            // 
+            // pBProfile
+            // 
+            this.pBProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBProfile.Image = ((System.Drawing.Image)(resources.GetObject("pBProfile.Image")));
+            this.pBProfile.Location = new System.Drawing.Point(11, 9);
+            this.pBProfile.Name = "pBProfile";
+            this.pBProfile.Size = new System.Drawing.Size(45, 45);
+            this.pBProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBProfile.TabIndex = 0;
+            this.pBProfile.TabStop = false;
+            this.pBProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            // 
+            // lbProfile
+            // 
+            this.lbProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbProfile.AutoSize = true;
+            this.lbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbProfile.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProfile.ForeColor = System.Drawing.Color.White;
+            this.lbProfile.Location = new System.Drawing.Point(68, 19);
+            this.lbProfile.Name = "lbProfile";
+            this.lbProfile.Size = new System.Drawing.Size(94, 31);
+            this.lbProfile.TabIndex = 32;
+            this.lbProfile.Tag = "";
+            this.lbProfile.Text = "Profile";
+            this.lbProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            // 
+            // pnlService
+            // 
+            this.pnlService.Controls.Add(this.pBService);
+            this.pnlService.Controls.Add(this.lbService);
+            this.pnlService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlService.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlService.Location = new System.Drawing.Point(0, 294);
+            this.pnlService.Name = "pnlService";
+            this.pnlService.Size = new System.Drawing.Size(59, 65);
+            this.pnlService.TabIndex = 6;
+            this.pnlService.Click += new System.EventHandler(this.pBService_Click);
+            // 
+            // pBService
+            // 
+            this.pBService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBService.Image = ((System.Drawing.Image)(resources.GetObject("pBService.Image")));
+            this.pBService.Location = new System.Drawing.Point(11, 9);
+            this.pBService.Name = "pBService";
+            this.pBService.Size = new System.Drawing.Size(45, 45);
+            this.pBService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBService.TabIndex = 0;
+            this.pBService.TabStop = false;
+            this.pBService.Click += new System.EventHandler(this.pBService_Click);
+            // 
+            // lbService
+            // 
+            this.lbService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbService.AutoSize = true;
+            this.lbService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbService.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbService.ForeColor = System.Drawing.Color.White;
+            this.lbService.Location = new System.Drawing.Point(68, 19);
+            this.lbService.Name = "lbService";
+            this.lbService.Size = new System.Drawing.Size(99, 31);
+            this.lbService.TabIndex = 32;
+            this.lbService.Tag = "";
+            this.lbService.Text = "Service";
+            this.lbService.Click += new System.EventHandler(this.pBService_Click);
+            // 
+            // pnlReception
+            // 
+            this.pnlReception.Controls.Add(this.pBReception);
+            this.pnlReception.Controls.Add(this.lbReception);
+            this.pnlReception.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlReception.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlReception.Location = new System.Drawing.Point(0, 229);
+            this.pnlReception.Name = "pnlReception";
+            this.pnlReception.Size = new System.Drawing.Size(59, 65);
+            this.pnlReception.TabIndex = 6;
+            this.pnlReception.Click += new System.EventHandler(this.pBReception_Click);
+            // 
+            // pBReception
+            // 
+            this.pBReception.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBReception.Image = ((System.Drawing.Image)(resources.GetObject("pBReception.Image")));
+            this.pBReception.Location = new System.Drawing.Point(11, 9);
+            this.pBReception.Name = "pBReception";
+            this.pBReception.Size = new System.Drawing.Size(45, 45);
+            this.pBReception.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBReception.TabIndex = 0;
+            this.pBReception.TabStop = false;
+            this.pBReception.Click += new System.EventHandler(this.pBReception_Click);
+            // 
+            // lbReception
+            // 
+            this.lbReception.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbReception.AutoSize = true;
+            this.lbReception.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbReception.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReception.ForeColor = System.Drawing.Color.White;
+            this.lbReception.Location = new System.Drawing.Point(68, 19);
+            this.lbReception.Name = "lbReception";
+            this.lbReception.Size = new System.Drawing.Size(131, 31);
+            this.lbReception.TabIndex = 32;
+            this.lbReception.Tag = "";
+            this.lbReception.Text = "Reception";
+            this.lbReception.Click += new System.EventHandler(this.pBReception_Click);
+            // 
+            // pnlBooking
+            // 
+            this.pnlBooking.Controls.Add(this.pBBooking);
+            this.pnlBooking.Controls.Add(this.lbBooking);
+            this.pnlBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlBooking.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBooking.Location = new System.Drawing.Point(0, 164);
+            this.pnlBooking.Name = "pnlBooking";
+            this.pnlBooking.Size = new System.Drawing.Size(59, 65);
+            this.pnlBooking.TabIndex = 6;
+            this.pnlBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            // 
+            // pBBooking
+            // 
+            this.pBBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBBooking.Image = ((System.Drawing.Image)(resources.GetObject("pBBooking.Image")));
+            this.pBBooking.Location = new System.Drawing.Point(11, 9);
+            this.pBBooking.Name = "pBBooking";
+            this.pBBooking.Size = new System.Drawing.Size(45, 45);
+            this.pBBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBBooking.TabIndex = 0;
+            this.pBBooking.TabStop = false;
+            this.pBBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            // 
+            // lbBooking
+            // 
+            this.lbBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBooking.AutoSize = true;
+            this.lbBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbBooking.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBooking.ForeColor = System.Drawing.Color.White;
+            this.lbBooking.Location = new System.Drawing.Point(68, 19);
+            this.lbBooking.Name = "lbBooking";
+            this.lbBooking.Size = new System.Drawing.Size(111, 31);
+            this.lbBooking.TabIndex = 32;
+            this.lbBooking.Tag = "";
+            this.lbBooking.Text = "Booking";
+            this.lbBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.Controls.Add(this.pBDash);
+            this.pnlDash.Controls.Add(this.lbDash);
+            this.pnlDash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlDash.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDash.Location = new System.Drawing.Point(0, 99);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(59, 65);
+            this.pnlDash.TabIndex = 6;
+            this.pnlDash.Click += new System.EventHandler(this.pBDash_Click);
+            // 
+            // pBDash
+            // 
+            this.pBDash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBDash.Image = ((System.Drawing.Image)(resources.GetObject("pBDash.Image")));
+            this.pBDash.Location = new System.Drawing.Point(11, 9);
+            this.pBDash.Name = "pBDash";
+            this.pBDash.Size = new System.Drawing.Size(45, 45);
+            this.pBDash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBDash.TabIndex = 0;
+            this.pBDash.TabStop = false;
+            this.pBDash.Click += new System.EventHandler(this.pBDash_Click);
+            // 
+            // lbDash
+            // 
+            this.lbDash.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDash.AutoSize = true;
+            this.lbDash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbDash.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDash.ForeColor = System.Drawing.Color.White;
+            this.lbDash.Location = new System.Drawing.Point(68, 19);
+            this.lbDash.Name = "lbDash";
+            this.lbDash.Size = new System.Drawing.Size(144, 31);
+            this.lbDash.TabIndex = 32;
+            this.lbDash.Tag = "";
+            this.lbDash.Text = "Dashboard";
+            this.lbDash.Click += new System.EventHandler(this.pBDash_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(2, 777);
+            this.label2.Location = new System.Drawing.Point(0, 741);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Copyright © 2023 MUAB™ Hotel";
             // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btnAdmin);
-            this.panel9.Location = new System.Drawing.Point(-14, 629);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(176, 67);
-            this.panel9.TabIndex = 4;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
-            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(-7, -3);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(203, 82);
-            this.btnAdmin.TabIndex = 6;
-            this.btnAdmin.Text = "          Admin";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // lbTime
-            // 
-            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.Color.White;
-            this.lbTime.Location = new System.Drawing.Point(574, 49);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(97, 42);
-            this.lbTime.TabIndex = 32;
-            this.lbTime.Tag = "";
-            this.lbTime.Text = "Time";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lbDate
+            // MouseDetect
             // 
-            this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.White;
-            this.lbDate.Location = new System.Drawing.Point(561, 9);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(92, 42);
-            this.lbDate.TabIndex = 32;
-            this.lbDate.Tag = "";
-            this.lbDate.Text = "Date";
+            this.MouseDetect.Enabled = true;
             // 
             // Home
             // 
@@ -509,12 +624,6 @@
             this.pnlBlack.ResumeLayout(false);
             this.pnlBlack.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlMenuBarIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).EndInit();
@@ -523,7 +632,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
-            this.panel9.ResumeLayout(false);
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAdmin)).EndInit();
+            this.pnlLogout.ResumeLayout(false);
+            this.pnlLogout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogout)).EndInit();
+            this.pnlProfile.ResumeLayout(false);
+            this.pnlProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBProfile)).EndInit();
+            this.pnlService.ResumeLayout(false);
+            this.pnlService.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBService)).EndInit();
+            this.pnlReception.ResumeLayout(false);
+            this.pnlReception.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReception)).EndInit();
+            this.pnlBooking.ResumeLayout(false);
+            this.pnlBooking.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBBooking)).EndInit();
+            this.pnlDash.ResumeLayout(false);
+            this.pnlDash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDash)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,17 +661,6 @@
         private System.Windows.Forms.Panel pnl_U;
         private System.Windows.Forms.Panel pnlBlack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnReception;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnService;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -552,9 +670,6 @@
         private System.Windows.Forms.Panel pnlCloseBar;
         private System.Windows.Forms.PictureBox pBCloseBar;
         private System.Windows.Forms.Panel pnlMenuBar;
-        private System.Windows.Forms.Button btnBooking;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Label lbPosition;
         private System.Windows.Forms.Label lbname;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -562,6 +677,28 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Panel pnlDash;
+        private System.Windows.Forms.PictureBox pBDash;
+        private System.Windows.Forms.Label lbDash;
+        private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.PictureBox pBAdmin;
+        private System.Windows.Forms.Label lbAdmin;
+        private System.Windows.Forms.Panel pnlLogout;
+        private System.Windows.Forms.PictureBox pBLogout;
+        private System.Windows.Forms.Label lbLogout;
+        private System.Windows.Forms.Panel pnlProfile;
+        private System.Windows.Forms.PictureBox pBProfile;
+        private System.Windows.Forms.Label lbProfile;
+        private System.Windows.Forms.Panel pnlService;
+        private System.Windows.Forms.PictureBox pBService;
+        private System.Windows.Forms.Label lbService;
+        private System.Windows.Forms.Panel pnlReception;
+        private System.Windows.Forms.PictureBox pBReception;
+        private System.Windows.Forms.Label lbReception;
+        private System.Windows.Forms.Panel pnlBooking;
+        private System.Windows.Forms.PictureBox pBBooking;
+        private System.Windows.Forms.Label lbBooking;
+        private System.Windows.Forms.Timer MouseDetect;
     }
 }
 
