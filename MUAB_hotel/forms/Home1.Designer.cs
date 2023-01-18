@@ -54,9 +54,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -367,10 +367,6 @@
             this.pnlBlack.Size = new System.Drawing.Size(1302, 94);
             this.pnlBlack.TabIndex = 7;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // lbDate
             // 
             this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -397,6 +393,10 @@
             this.lbTime.Tag = "";
             this.lbTime.Text = "Time";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Home1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +411,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home1_FormClosing);
+            this.Load += new System.EventHandler(this.Home1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();

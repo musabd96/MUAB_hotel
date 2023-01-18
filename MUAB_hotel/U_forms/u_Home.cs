@@ -41,11 +41,13 @@ namespace MUAB_hotel
             lbtotalBooked.Text = totalBooked.ToString();
             dbHelper.notAvailable();
             lbNotAvai.Text = notAvailable.ToString();
+
+            if(dbHelper.employeeRole == "Housekeeping")
+            {
+
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

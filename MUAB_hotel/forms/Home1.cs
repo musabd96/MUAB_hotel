@@ -12,13 +12,14 @@ namespace MUAB_hotel
 {
     public partial class Home1 : Form
     {
+        dbHelper dbHelper = new dbHelper();
+        u_Home u_Home = new u_Home();
         public Home1()
         {
             InitializeComponent();
+            userControl(u_Home);
             openMenu();
             btnHome.Enabled = false;
-            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
-            lbPosition.Text = dbHelper.employeeRole;
             timer1.Start();
         }
 
@@ -119,6 +120,14 @@ namespace MUAB_hotel
         {
             lbDate.Text = DateTime.Now.ToString("dd-MM-yyy");
             lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void Home1_Load(object sender, EventArgs e)
+        {
+            // getting the employee's info 
+            dbHelper.getEmployee();
+            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
+            lbPosition.Text = dbHelper.employeeRole;
         }
     }
 }

@@ -549,9 +549,9 @@
             this.pnlSelectRoom.Controls.Add(this.label12);
             this.pnlSelectRoom.Controls.Add(this.label3);
             this.pnlSelectRoom.Controls.Add(this.label1);
-            this.pnlSelectRoom.Location = new System.Drawing.Point(0, 694);
+            this.pnlSelectRoom.Location = new System.Drawing.Point(0, 304);
             this.pnlSelectRoom.Name = "pnlSelectRoom";
-            this.pnlSelectRoom.Size = new System.Drawing.Size(1302, 10);
+            this.pnlSelectRoom.Size = new System.Drawing.Size(1302, 400);
             this.pnlSelectRoom.TabIndex = 59;
             // 
             // label14
@@ -560,7 +560,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, -345);
+            this.label14.Location = new System.Drawing.Point(3, -150);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 26);
             this.label14.TabIndex = 7;
@@ -598,7 +598,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(64, -120);
+            this.dataGridView1.Location = new System.Drawing.Point(64, 75);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -628,7 +628,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(956, 193);
+            this.checkBox1.Location = new System.Drawing.Point(956, 388);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Padding = new System.Windows.Forms.Padding(20);
             this.checkBox1.Size = new System.Drawing.Size(148, 67);
@@ -641,7 +641,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(1114, 289);
+            this.btnCancel.Location = new System.Drawing.Point(1114, 484);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 37);
             this.btnCancel.TabIndex = 4;
@@ -653,7 +653,7 @@
             // 
             this.btnBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBook.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBook.Location = new System.Drawing.Point(957, 289);
+            this.btnBook.Location = new System.Drawing.Point(957, 484);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(106, 37);
             this.btnBook.TabIndex = 4;
@@ -666,7 +666,7 @@
             this.txtChOut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtChOut.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtChOut.Location = new System.Drawing.Point(1074, 153);
+            this.txtChOut.Location = new System.Drawing.Point(1074, 348);
             this.txtChOut.Name = "txtChOut";
             this.txtChOut.Size = new System.Drawing.Size(146, 32);
             this.txtChOut.TabIndex = 3;
@@ -676,7 +676,7 @@
             this.txtChIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtChIn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtChIn.Location = new System.Drawing.Point(1074, 115);
+            this.txtChIn.Location = new System.Drawing.Point(1074, 310);
             this.txtChIn.Name = "txtChIn";
             this.txtChIn.Size = new System.Drawing.Size(146, 32);
             this.txtChIn.TabIndex = 3;
@@ -686,7 +686,7 @@
             this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtPrice.Location = new System.Drawing.Point(1074, 77);
+            this.txtPrice.Location = new System.Drawing.Point(1074, 272);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(146, 32);
             this.txtPrice.TabIndex = 3;
@@ -696,7 +696,7 @@
             this.txtTotalNght.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalNght.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalNght.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtTotalNght.Location = new System.Drawing.Point(1074, 39);
+            this.txtTotalNght.Location = new System.Drawing.Point(1074, 234);
             this.txtTotalNght.Name = "txtTotalNght";
             this.txtTotalNght.Size = new System.Drawing.Size(146, 32);
             this.txtTotalNght.TabIndex = 3;
@@ -706,7 +706,7 @@
             this.txtRoomType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRoomType.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtRoomType.Location = new System.Drawing.Point(1074, 1);
+            this.txtRoomType.Location = new System.Drawing.Point(1074, 196);
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.Size = new System.Drawing.Size(146, 32);
             this.txtRoomType.TabIndex = 3;
@@ -716,7 +716,7 @@
             this.txtCusId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCusId.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtCusId.Location = new System.Drawing.Point(1074, -112);
+            this.txtCusId.Location = new System.Drawing.Point(1074, 83);
             this.txtCusId.Name = "txtCusId";
             this.txtCusId.Size = new System.Drawing.Size(146, 32);
             this.txtCusId.TabIndex = 3;
@@ -726,7 +726,7 @@
             this.txtBookId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBookId.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtBookId.Location = new System.Drawing.Point(1074, -74);
+            this.txtBookId.Location = new System.Drawing.Point(1074, 121);
             this.txtBookId.Name = "txtBookId";
             this.txtBookId.Size = new System.Drawing.Size(146, 32);
             this.txtBookId.TabIndex = 3;
@@ -736,7 +736,7 @@
             this.txtRoomNr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRoomNr.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.txtRoomNr.Location = new System.Drawing.Point(1074, -37);
+            this.txtRoomNr.Location = new System.Drawing.Point(1074, 158);
             this.txtRoomNr.Name = "txtRoomNr";
             this.txtRoomNr.Size = new System.Drawing.Size(146, 32);
             this.txtRoomNr.TabIndex = 3;
@@ -747,7 +747,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(958, 157);
+            this.label11.Location = new System.Drawing.Point(958, 352);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 23);
             this.label11.TabIndex = 2;
@@ -759,7 +759,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(970, 119);
+            this.label10.Location = new System.Drawing.Point(970, 314);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 23);
             this.label10.TabIndex = 2;
@@ -771,7 +771,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1000, 81);
+            this.label9.Location = new System.Drawing.Point(1000, 276);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 23);
             this.label9.TabIndex = 2;
@@ -783,7 +783,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(940, 49);
+            this.label6.Location = new System.Drawing.Point(940, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 23);
             this.label6.TabIndex = 2;
@@ -795,7 +795,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(920, -103);
+            this.label13.Location = new System.Drawing.Point(920, 92);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 23);
             this.label13.TabIndex = 2;
@@ -807,7 +807,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(947, 11);
+            this.label7.Location = new System.Drawing.Point(947, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 23);
             this.label7.TabIndex = 2;
@@ -819,7 +819,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(964, -70);
+            this.label12.Location = new System.Drawing.Point(964, 125);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 23);
             this.label12.TabIndex = 2;
@@ -831,7 +831,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(964, -33);
+            this.label3.Location = new System.Drawing.Point(964, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 2;
@@ -843,7 +843,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(303, -178);
+            this.label1.Location = new System.Drawing.Point(303, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 31);
             this.label1.TabIndex = 1;

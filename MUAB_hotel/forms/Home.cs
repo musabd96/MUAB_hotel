@@ -14,27 +14,28 @@ namespace MUAB_hotel
     public partial class Home : Form
     {
         Login Login = new Login();
+        u_Home u_Home = new u_Home();
+        dbHelper dbHelper = new dbHelper();
         public Home()
         {
             InitializeComponent();
-            u_Home u_Home = new u_Home();
-            dbHelper dbHelper = new dbHelper();
             userControl(u_Home);
 
             openMenu();
             btnHome.Enabled = false;
 
-            // getting the employee's info 
-            dbHelper.getEmployee();
-            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
-            lbPosition.Text = dbHelper.employeeRole;
+            
             timer1.Start();
         }
 
         
         private void Home_Load(object sender, EventArgs e)
         {
-           
+            // getting the employee's info 
+            dbHelper.getEmployee();
+            lbname.Text = dbHelper.employeeFname + " " + dbHelper.employeeLname;
+            lbPosition.Text = dbHelper.employeeRole;
+
             btnHome.Enabled = false;
         }
 

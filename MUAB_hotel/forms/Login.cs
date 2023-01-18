@@ -43,7 +43,6 @@ namespace MUAB_hotel
                 if (userName == "admin" && password == "1234")
                 {
 
-                    MessageBox.Show($"{dbHelper.employeeRole} pst");
                     home1.Show();
                     this.Hide();
                 }
@@ -52,6 +51,7 @@ namespace MUAB_hotel
                 {
                     // control if the user is housekeeping position or other position 
                     // Housekeeping olny access the home1 form other positions can access all
+                    dbHelper.getEmployee();
                     if (dbHelper.employeeRole == "Housekeeping")
                     {
                         home1.Show();

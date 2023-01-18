@@ -44,7 +44,11 @@ namespace MUAB_hotel
             cBRmTyp.Text = U_Reception.type;
             dtCheckin.Text = U_Reception.checkIn;
             dtCheckout.Text = U_Reception.checkOut;
-            
+
+            //Geting this rooms price
+            dbHelper.roomSt();
+            MessageBox.Show($"{U_Reception. Price}Test");
+
         }
 
         //Save the new data into database
@@ -66,7 +70,7 @@ namespace MUAB_hotel
             U_Reception.Days = days.ToString();
 
             int nights = Convert.ToInt32(days);
-            dbHelper.roomSt();
+            dbHelper.oldRoomPrice();
             decimal total = nights * U_Reception.Price;
             U_Reception.newPrice = total.ToString();
             dbHelper.editBooking();

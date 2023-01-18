@@ -16,7 +16,7 @@ namespace MUAB_hotel
         // Database connection variable
 
         public static string server = "localhost";
-        public static string database = "cusdata";
+        public static string database = "muabhotel";
         public static string user = "root";
         public static string pass = "0909";
 
@@ -184,8 +184,33 @@ namespace MUAB_hotel
             conn.Close();
         }
 
+        public List<string> employeeTasks()
+        {
+            List<string> data = new List<string>();
+            string query = "muabhotel.employeeTasks";
+            conn.Open();
 
-        
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$newRoomType", Update.newRoomType);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string roomsNr = reader["rooms_nr"].ToString();
+                    string roomsStatus = reader["rooms_status"].ToString();
+                    data.Add(" Cleaning       " + roomsNr);
+
+
+                }
+            }
+            conn.Close();
+            return data;
+        }
+       
         internal void notAvailable()
         {
             string query = "SELECT SUM(CheckIn + checkout) FROM muabhotel.roomsview;";
@@ -216,6 +241,7 @@ namespace MUAB_hotel
         public static string bookingId { get; set; }
         public static int roomNr { get; set; }
         public static string roomType { get; set; }
+        public static decimal roomPrice { get; set; }
         public static int totalDays { get; set; }
         public static string checkIn { get; set; }
         public static string checkOut { get; set; }
@@ -538,6 +564,30 @@ namespace MUAB_hotel
             }
             conn.Close();
         }
+
+
+        internal void oldRoomPrice()
+        {
+            string query = "muabhotel.roomSt";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("$roomsNr", U_Reception.roomNr);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    U_Reception.Price = reader.GetDecimal(3);
+
+                }
+            }
+            conn.Close();
+        }
+
 
 
         public List<string> newroomType()
