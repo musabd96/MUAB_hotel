@@ -38,7 +38,6 @@ namespace MUAB_hotel
         {
             InitializeComponent();
             
-            
         }
 
 
@@ -57,7 +56,9 @@ namespace MUAB_hotel
             X.Width = 40;
 
             Select.Width = 45;
-            
+            btnChIn.Enabled = false;
+            btnChOut.Enabled = false;
+            btnService.Enabled = false;
 
 
         }
@@ -134,7 +135,11 @@ namespace MUAB_hotel
             }
 
             roomNr = 0;
-            
+            MessageBox.Show($"{roomNr}");
+            btnChIn.Enabled = false;
+            btnChOut.Enabled = false;
+            btnService.Enabled = false;
+
 
 
         }
@@ -157,7 +162,10 @@ namespace MUAB_hotel
             }
 
             roomNr = 0;
-
+            MessageBox.Show($"{roomNr}");
+            btnChIn.Enabled = false;
+            btnChOut.Enabled = false;
+            btnService.Enabled = false;
 
 
         }
@@ -177,6 +185,10 @@ namespace MUAB_hotel
             }
 
             roomNr = 0;
+            MessageBox.Show($"{roomNr}");
+            btnChIn.Enabled = false;
+            btnChOut.Enabled = false;
+            btnService.Enabled = false;
         }
 
         #endregion
@@ -189,9 +201,38 @@ namespace MUAB_hotel
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+            
+
+            
+        }
+
+
+        #endregion
+
+        private void pBsearch_Click(object sender, EventArgs e)
+        {
+            search = txtSearch.Text;
+            dbHelper.searchBooking(dataGridView3);
+            dataGridView3.Focus();
+        }
+
+        private void pBX_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            pBX.Visible = false;
+            pBl.Visible = false;
+        }
+
+        private void dataGridView3_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (dataGridView3.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                
+
                 // Uncheck all other checkboxes in the same column
                 foreach (DataGridViewRow row in dataGridView3.Rows)
                 {
@@ -202,7 +243,7 @@ namespace MUAB_hotel
 
                     }
                 }
-                
+
 
                 dataGridView3.CurrentRow.Selected = true;
                 bookingId = dataGridView3.Rows[e.RowIndex].Cells["bookId"].FormattedValue.ToString();
@@ -215,20 +256,20 @@ namespace MUAB_hotel
                 roomStatus = dataGridView3.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
                 roomNr = Convert.ToInt32(roomnr);
                 dbHelper.getGuest();
-
                 btnChIn.Enabled = true;
+                btnChOut.Enabled = true;
                 btnService.Enabled = true;
             }
-
-            
-
 
 
             if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "Edit")
             {
-                if(roomNr == 0)
+                if (roomNr == 0)
                 {
                     MessageBox.Show("Select a guest");
+                    btnChIn.Enabled = false;
+                    btnChOut.Enabled = false;
+                    btnService.Enabled = false;
                 }
                 else
                 {
@@ -253,6 +294,7 @@ namespace MUAB_hotel
                 if (roomNr == 0)
                 {
                     MessageBox.Show("Select a guest");
+                    
                 }
                 else
                 {
@@ -261,38 +303,19 @@ namespace MUAB_hotel
                     pBsearch_Click(sender, e);
                 }
 
-                roomNr = 0;
-                btnChIn.Enabled = false;
-                btnService.Enabled = false;
+                
 
 
 
             }
-            
-            
 
-            
 
-            
+
+
+
         }
 
-
-        #endregion
-
-        private void pBsearch_Click(object sender, EventArgs e)
-        {
-            search = txtSearch.Text;
-            dbHelper.searchBooking(dataGridView3);
-            dataGridView3.Focus();
-        }
-
-        private void pBX_Click(object sender, EventArgs e)
-        {
-            txtSearch.Clear();
-            pBX.Visible = false;
-            pBl.Visible = false;
-        }
-
+       
     }
 
 }
