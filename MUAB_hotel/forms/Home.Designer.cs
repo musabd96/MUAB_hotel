@@ -43,9 +43,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenuBarIcon = new System.Windows.Forms.Panel();
             this.pBMenuBarIcon = new System.Windows.Forms.PictureBox();
-            this.pBLOGO = new System.Windows.Forms.PictureBox();
-            this.pnlCloseBar = new System.Windows.Forms.Panel();
-            this.pBCloseBar = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.pBAdmin = new System.Windows.Forms.PictureBox();
@@ -71,14 +68,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MouseDetect = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.sidebartimer = new System.Windows.Forms.Timer(this.components);
+            this.pBLogo2 = new System.Windows.Forms.PictureBox();
+            this.pBLOGO = new System.Windows.Forms.PictureBox();
             this.pnlBlack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlMenuBarIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
-            this.pnlCloseBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdmin)).BeginInit();
@@ -94,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBBooking)).BeginInit();
             this.pnlDash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDash)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_U
@@ -101,9 +101,9 @@
             this.pnl_U.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_U.BackColor = System.Drawing.Color.White;
             this.pnl_U.ForeColor = System.Drawing.Color.Black;
-            this.pnl_U.Location = new System.Drawing.Point(205, 94);
+            this.pnl_U.Location = new System.Drawing.Point(60, 99);
             this.pnl_U.Name = "pnl_U";
-            this.pnl_U.Size = new System.Drawing.Size(1157, 707);
+            this.pnl_U.Size = new System.Drawing.Size(1302, 702);
             this.pnl_U.TabIndex = 0;
             // 
             // pnlBlack
@@ -111,15 +111,16 @@
             this.pnlBlack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBlack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.pnlBlack.Controls.Add(this.pBLogo2);
             this.pnlBlack.Controls.Add(this.lbDate);
             this.pnlBlack.Controls.Add(this.lbTime);
             this.pnlBlack.Controls.Add(this.pictureBox1);
             this.pnlBlack.Controls.Add(this.lbPosition);
             this.pnlBlack.Controls.Add(this.lbname);
             this.pnlBlack.Controls.Add(this.label3);
-            this.pnlBlack.Location = new System.Drawing.Point(208, 0);
+            this.pnlBlack.Location = new System.Drawing.Point(60, 0);
             this.pnlBlack.Name = "pnlBlack";
-            this.pnlBlack.Size = new System.Drawing.Size(1154, 94);
+            this.pnlBlack.Size = new System.Drawing.Size(1302, 99);
             this.pnlBlack.TabIndex = 4;
             // 
             // lbDate
@@ -128,7 +129,7 @@
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.White;
-            this.lbDate.Location = new System.Drawing.Point(487, 9);
+            this.lbDate.Location = new System.Drawing.Point(561, 11);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(92, 42);
             this.lbDate.TabIndex = 32;
@@ -141,7 +142,7 @@
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.White;
-            this.lbTime.Location = new System.Drawing.Point(500, 49);
+            this.lbTime.Location = new System.Drawing.Point(574, 51);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(97, 42);
             this.lbTime.TabIndex = 32;
@@ -152,7 +153,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(919, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(993, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +166,7 @@
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPosition.ForeColor = System.Drawing.Color.Gray;
-            this.lbPosition.Location = new System.Drawing.Point(962, 43);
+            this.lbPosition.Location = new System.Drawing.Point(1036, 45);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(62, 19);
             this.lbPosition.TabIndex = 21;
@@ -178,7 +179,7 @@
             this.lbname.AutoSize = true;
             this.lbname.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbname.ForeColor = System.Drawing.Color.White;
-            this.lbname.Location = new System.Drawing.Point(962, 19);
+            this.lbname.Location = new System.Drawing.Point(1036, 21);
             this.lbname.Name = "lbname";
             this.lbname.Size = new System.Drawing.Size(63, 24);
             this.lbname.TabIndex = 21;
@@ -217,12 +218,11 @@
             // 
             this.panel2.Controls.Add(this.pnlMenuBarIcon);
             this.panel2.Controls.Add(this.pBLOGO);
-            this.panel2.Controls.Add(this.pnlCloseBar);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(59, 99);
+            this.panel2.Size = new System.Drawing.Size(100, 99);
             this.panel2.TabIndex = 0;
             // 
             // pnlMenuBarIcon
@@ -246,38 +246,6 @@
             this.pBMenuBarIcon.TabStop = false;
             this.pBMenuBarIcon.Click += new System.EventHandler(this.pBMenuBarIcon_Click);
             // 
-            // pBLOGO
-            // 
-            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
-            this.pBLOGO.Location = new System.Drawing.Point(19, 8);
-            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
-            this.pBLOGO.Name = "pBLOGO";
-            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
-            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBLOGO.TabIndex = 1;
-            this.pBLOGO.TabStop = false;
-            // 
-            // pnlCloseBar
-            // 
-            this.pnlCloseBar.Controls.Add(this.pBCloseBar);
-            this.pnlCloseBar.Location = new System.Drawing.Point(146, 31);
-            this.pnlCloseBar.Name = "pnlCloseBar";
-            this.pnlCloseBar.Size = new System.Drawing.Size(20, 21);
-            this.pnlCloseBar.TabIndex = 0;
-            // 
-            // pBCloseBar
-            // 
-            this.pBCloseBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBCloseBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBCloseBar.Image = ((System.Drawing.Image)(resources.GetObject("pBCloseBar.Image")));
-            this.pBCloseBar.Location = new System.Drawing.Point(0, 0);
-            this.pBCloseBar.Name = "pBCloseBar";
-            this.pBCloseBar.Size = new System.Drawing.Size(20, 21);
-            this.pBCloseBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBCloseBar.TabIndex = 0;
-            this.pBCloseBar.TabStop = false;
-            this.pBCloseBar.Click += new System.EventHandler(this.pBCloseBar_Click);
-            // 
             // pnlMenuBar
             // 
             this.pnlMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
@@ -294,8 +262,10 @@
             this.pnlMenuBar.Controls.Add(this.panel7);
             this.pnlMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuBar.MaximumSize = new System.Drawing.Size(212, 801);
+            this.pnlMenuBar.MinimumSize = new System.Drawing.Size(60, 801);
             this.pnlMenuBar.Name = "pnlMenuBar";
-            this.pnlMenuBar.Size = new System.Drawing.Size(59, 801);
+            this.pnlMenuBar.Size = new System.Drawing.Size(100, 801);
             this.pnlMenuBar.TabIndex = 1;
             // 
             // pnlAdmin
@@ -306,9 +276,11 @@
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 656);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(59, 65);
+            this.pnlAdmin.Size = new System.Drawing.Size(100, 65);
             this.pnlAdmin.TabIndex = 8;
             this.pnlAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            this.pnlAdmin.MouseEnter += new System.EventHandler(this.pnlAdmin_MouseEnter);
+            this.pnlAdmin.MouseLeave += new System.EventHandler(this.pnlAdmin_MouseLeave);
             // 
             // pBAdmin
             // 
@@ -321,6 +293,8 @@
             this.pBAdmin.TabIndex = 0;
             this.pBAdmin.TabStop = false;
             this.pBAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            this.pBAdmin.MouseEnter += new System.EventHandler(this.pnlAdmin_MouseEnter);
+            this.pBAdmin.MouseLeave += new System.EventHandler(this.pnlAdmin_MouseLeave);
             // 
             // lbAdmin
             // 
@@ -338,6 +312,8 @@
             this.lbAdmin.Tag = "";
             this.lbAdmin.Text = "Admin";
             this.lbAdmin.Click += new System.EventHandler(this.pBAdmin_Click);
+            this.lbAdmin.MouseEnter += new System.EventHandler(this.pnlAdmin_MouseEnter);
+            this.lbAdmin.MouseLeave += new System.EventHandler(this.pnlAdmin_MouseLeave);
             // 
             // pnlLogout
             // 
@@ -347,9 +323,11 @@
             this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlLogout.Location = new System.Drawing.Point(0, 721);
             this.pnlLogout.Name = "pnlLogout";
-            this.pnlLogout.Size = new System.Drawing.Size(59, 65);
+            this.pnlLogout.Size = new System.Drawing.Size(100, 65);
             this.pnlLogout.TabIndex = 7;
             this.pnlLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            this.pnlLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.pnlLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // pBLogout
             // 
@@ -362,6 +340,8 @@
             this.pBLogout.TabIndex = 0;
             this.pBLogout.TabStop = false;
             this.pBLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            this.pBLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.pBLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // lbLogout
             // 
@@ -379,6 +359,8 @@
             this.lbLogout.Tag = "";
             this.lbLogout.Text = "Logout";
             this.lbLogout.Click += new System.EventHandler(this.pBLogout_Click);
+            this.lbLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.lbLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // pnlProfile
             // 
@@ -388,9 +370,11 @@
             this.pnlProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlProfile.Location = new System.Drawing.Point(0, 359);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(59, 65);
+            this.pnlProfile.Size = new System.Drawing.Size(100, 65);
             this.pnlProfile.TabIndex = 6;
             this.pnlProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            this.pnlProfile.MouseEnter += new System.EventHandler(this.pnlProfile_MouseEnter);
+            this.pnlProfile.MouseLeave += new System.EventHandler(this.pnlProfile_MouseLeave);
             // 
             // pBProfile
             // 
@@ -403,6 +387,8 @@
             this.pBProfile.TabIndex = 0;
             this.pBProfile.TabStop = false;
             this.pBProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            this.pBProfile.MouseEnter += new System.EventHandler(this.pnlProfile_MouseEnter);
+            this.pBProfile.MouseLeave += new System.EventHandler(this.pnlProfile_MouseEnter);
             // 
             // lbProfile
             // 
@@ -420,6 +406,8 @@
             this.lbProfile.Tag = "";
             this.lbProfile.Text = "Profile";
             this.lbProfile.Click += new System.EventHandler(this.pBProfile_Click);
+            this.lbProfile.MouseEnter += new System.EventHandler(this.pnlProfile_MouseEnter);
+            this.lbProfile.MouseLeave += new System.EventHandler(this.pnlProfile_MouseLeave);
             // 
             // pnlService
             // 
@@ -429,9 +417,11 @@
             this.pnlService.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlService.Location = new System.Drawing.Point(0, 294);
             this.pnlService.Name = "pnlService";
-            this.pnlService.Size = new System.Drawing.Size(59, 65);
+            this.pnlService.Size = new System.Drawing.Size(100, 65);
             this.pnlService.TabIndex = 6;
             this.pnlService.Click += new System.EventHandler(this.pBService_Click);
+            this.pnlService.MouseEnter += new System.EventHandler(this.pnlService_MouseEnter);
+            this.pnlService.MouseLeave += new System.EventHandler(this.pnlService_MouseLeave);
             // 
             // pBService
             // 
@@ -444,6 +434,8 @@
             this.pBService.TabIndex = 0;
             this.pBService.TabStop = false;
             this.pBService.Click += new System.EventHandler(this.pBService_Click);
+            this.pBService.MouseEnter += new System.EventHandler(this.pnlService_MouseEnter);
+            this.pBService.MouseLeave += new System.EventHandler(this.pnlService_MouseLeave);
             // 
             // lbService
             // 
@@ -461,6 +453,8 @@
             this.lbService.Tag = "";
             this.lbService.Text = "Service";
             this.lbService.Click += new System.EventHandler(this.pBService_Click);
+            this.lbService.MouseEnter += new System.EventHandler(this.pnlService_MouseEnter);
+            this.lbService.MouseLeave += new System.EventHandler(this.pnlService_MouseLeave);
             // 
             // pnlReception
             // 
@@ -470,9 +464,11 @@
             this.pnlReception.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlReception.Location = new System.Drawing.Point(0, 229);
             this.pnlReception.Name = "pnlReception";
-            this.pnlReception.Size = new System.Drawing.Size(59, 65);
+            this.pnlReception.Size = new System.Drawing.Size(100, 65);
             this.pnlReception.TabIndex = 6;
             this.pnlReception.Click += new System.EventHandler(this.pBReception_Click);
+            this.pnlReception.MouseEnter += new System.EventHandler(this.pnlReception_MouseEnter);
+            this.pnlReception.MouseLeave += new System.EventHandler(this.pnlReception_MouseLeave);
             // 
             // pBReception
             // 
@@ -485,6 +481,8 @@
             this.pBReception.TabIndex = 0;
             this.pBReception.TabStop = false;
             this.pBReception.Click += new System.EventHandler(this.pBReception_Click);
+            this.pBReception.MouseEnter += new System.EventHandler(this.pnlReception_MouseEnter);
+            this.pBReception.MouseLeave += new System.EventHandler(this.pnlReception_MouseLeave);
             // 
             // lbReception
             // 
@@ -502,6 +500,8 @@
             this.lbReception.Tag = "";
             this.lbReception.Text = "Reception";
             this.lbReception.Click += new System.EventHandler(this.pBReception_Click);
+            this.lbReception.MouseEnter += new System.EventHandler(this.pnlReception_MouseEnter);
+            this.lbReception.MouseLeave += new System.EventHandler(this.pnlReception_MouseLeave);
             // 
             // pnlBooking
             // 
@@ -511,9 +511,11 @@
             this.pnlBooking.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBooking.Location = new System.Drawing.Point(0, 164);
             this.pnlBooking.Name = "pnlBooking";
-            this.pnlBooking.Size = new System.Drawing.Size(59, 65);
+            this.pnlBooking.Size = new System.Drawing.Size(100, 65);
             this.pnlBooking.TabIndex = 6;
             this.pnlBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            this.pnlBooking.MouseEnter += new System.EventHandler(this.pnlBooking_MouseEnter);
+            this.pnlBooking.MouseLeave += new System.EventHandler(this.pnlBooking_MouseLeave);
             // 
             // pBBooking
             // 
@@ -526,6 +528,8 @@
             this.pBBooking.TabIndex = 0;
             this.pBBooking.TabStop = false;
             this.pBBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            this.pBBooking.MouseEnter += new System.EventHandler(this.pnlBooking_MouseEnter);
+            this.pBBooking.MouseLeave += new System.EventHandler(this.pnlBooking_MouseLeave);
             // 
             // lbBooking
             // 
@@ -543,6 +547,8 @@
             this.lbBooking.Tag = "";
             this.lbBooking.Text = "Booking";
             this.lbBooking.Click += new System.EventHandler(this.pBBooking_Click);
+            this.lbBooking.MouseEnter += new System.EventHandler(this.pnlBooking_MouseEnter);
+            this.lbBooking.MouseLeave += new System.EventHandler(this.pnlBooking_MouseLeave);
             // 
             // pnlDash
             // 
@@ -552,9 +558,11 @@
             this.pnlDash.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDash.Location = new System.Drawing.Point(0, 99);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(59, 65);
+            this.pnlDash.Size = new System.Drawing.Size(100, 65);
             this.pnlDash.TabIndex = 6;
             this.pnlDash.Click += new System.EventHandler(this.pBDash_Click);
+            this.pnlDash.MouseEnter += new System.EventHandler(this.pnlDash_MouseEnter);
+            this.pnlDash.MouseLeave += new System.EventHandler(this.pnlDash_MouseLeave);
             // 
             // pBDash
             // 
@@ -567,6 +575,8 @@
             this.pBDash.TabIndex = 0;
             this.pBDash.TabStop = false;
             this.pBDash.Click += new System.EventHandler(this.pBDash_Click);
+            this.pBDash.MouseEnter += new System.EventHandler(this.pnlDash_MouseEnter);
+            this.pBDash.MouseLeave += new System.EventHandler(this.pnlDash_MouseLeave);
             // 
             // lbDash
             // 
@@ -584,6 +594,8 @@
             this.lbDash.Tag = "";
             this.lbDash.Text = "Dashboard";
             this.lbDash.Click += new System.EventHandler(this.pBDash_Click);
+            this.lbDash.MouseEnter += new System.EventHandler(this.pnlDash_MouseEnter);
+            this.lbDash.MouseLeave += new System.EventHandler(this.pnlDash_MouseLeave);
             // 
             // label2
             // 
@@ -591,7 +603,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(0, 741);
+            this.label2.Location = new System.Drawing.Point(0, 756);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 15);
             this.label2.TabIndex = 5;
@@ -605,13 +617,58 @@
             // 
             this.MouseDetect.Enabled = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "user (7).png");
+            this.imageList1.Images.SetKeyName(1, "check-out (4).png");
+            this.imageList1.Images.SetKeyName(2, "check-out (3).png");
+            this.imageList1.Images.SetKeyName(3, "user (5).png");
+            this.imageList1.Images.SetKeyName(4, "user (4).png");
+            this.imageList1.Images.SetKeyName(5, "user (3).png");
+            this.imageList1.Images.SetKeyName(6, "door-hanger (3).png");
+            this.imageList1.Images.SetKeyName(7, "door-hanger (2).png");
+            this.imageList1.Images.SetKeyName(8, "receptionist (2).png");
+            this.imageList1.Images.SetKeyName(9, "receptionist (1).png");
+            this.imageList1.Images.SetKeyName(10, "booking (2).png");
+            this.imageList1.Images.SetKeyName(11, "booking (1).png");
+            this.imageList1.Images.SetKeyName(12, "home (1).png");
+            this.imageList1.Images.SetKeyName(13, "home.png");
+            // 
+            // sidebartimer
+            // 
+            this.sidebartimer.Tick += new System.EventHandler(this.sidebartimer_Tick);
+            // 
+            // pBLogo2
+            // 
+            this.pBLogo2.Image = ((System.Drawing.Image)(resources.GetObject("pBLogo2.Image")));
+            this.pBLogo2.Location = new System.Drawing.Point(23, 11);
+            this.pBLogo2.Margin = new System.Windows.Forms.Padding(2);
+            this.pBLogo2.Name = "pBLogo2";
+            this.pBLogo2.Size = new System.Drawing.Size(104, 73);
+            this.pBLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLogo2.TabIndex = 1;
+            this.pBLogo2.TabStop = false;
+            // 
+            // pBLOGO
+            // 
+            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
+            this.pBLOGO.Location = new System.Drawing.Point(83, 11);
+            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
+            this.pBLOGO.Name = "pBLOGO";
+            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
+            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLOGO.TabIndex = 1;
+            this.pBLOGO.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 801);
-            this.Controls.Add(this.pnlBlack);
             this.Controls.Add(this.pnlMenuBar);
+            this.Controls.Add(this.pnlBlack);
             this.Controls.Add(this.pnl_U);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1378, 840);
@@ -627,9 +684,6 @@
             this.panel2.ResumeLayout(false);
             this.pnlMenuBarIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
-            this.pnlCloseBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBCloseBar)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
             this.pnlAdmin.ResumeLayout(false);
@@ -653,6 +707,8 @@
             this.pnlDash.ResumeLayout(false);
             this.pnlDash.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDash)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -666,9 +722,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlMenuBarIcon;
         private System.Windows.Forms.PictureBox pBMenuBarIcon;
-        private System.Windows.Forms.PictureBox pBLOGO;
-        private System.Windows.Forms.Panel pnlCloseBar;
-        private System.Windows.Forms.PictureBox pBCloseBar;
         private System.Windows.Forms.Panel pnlMenuBar;
         private System.Windows.Forms.Label lbPosition;
         private System.Windows.Forms.Label lbname;
@@ -699,6 +752,10 @@
         private System.Windows.Forms.PictureBox pBBooking;
         private System.Windows.Forms.Label lbBooking;
         private System.Windows.Forms.Timer MouseDetect;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Timer sidebartimer;
+        private System.Windows.Forms.PictureBox pBLogo2;
+        private System.Windows.Forms.PictureBox pBLOGO;
     }
 }
 
