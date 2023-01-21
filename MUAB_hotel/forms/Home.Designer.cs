@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.pnl_U = new System.Windows.Forms.Panel();
             this.pnlBlack = new System.Windows.Forms.Panel();
+            this.pBLogo2 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenuBarIcon = new System.Windows.Forms.Panel();
             this.pBMenuBarIcon = new System.Windows.Forms.PictureBox();
+            this.pBLOGO = new System.Windows.Forms.PictureBox();
             this.pnlMenuBar = new System.Windows.Forms.Panel();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.pBAdmin = new System.Windows.Forms.PictureBox();
@@ -70,13 +72,13 @@
             this.MouseDetect = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.sidebartimer = new System.Windows.Forms.Timer(this.components);
-            this.pBLogo2 = new System.Windows.Forms.PictureBox();
-            this.pBLOGO = new System.Windows.Forms.PictureBox();
             this.pnlBlack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlMenuBarIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
             this.pnlMenuBar.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdmin)).BeginInit();
@@ -92,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBBooking)).BeginInit();
             this.pnlDash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDash)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_U
@@ -122,6 +122,17 @@
             this.pnlBlack.Name = "pnlBlack";
             this.pnlBlack.Size = new System.Drawing.Size(1302, 99);
             this.pnlBlack.TabIndex = 4;
+            // 
+            // pBLogo2
+            // 
+            this.pBLogo2.Image = ((System.Drawing.Image)(resources.GetObject("pBLogo2.Image")));
+            this.pBLogo2.Location = new System.Drawing.Point(23, 11);
+            this.pBLogo2.Margin = new System.Windows.Forms.Padding(2);
+            this.pBLogo2.Name = "pBLogo2";
+            this.pBLogo2.Size = new System.Drawing.Size(104, 73);
+            this.pBLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLogo2.TabIndex = 1;
+            this.pBLogo2.TabStop = false;
             // 
             // lbDate
             // 
@@ -245,6 +256,17 @@
             this.pBMenuBarIcon.TabIndex = 0;
             this.pBMenuBarIcon.TabStop = false;
             this.pBMenuBarIcon.Click += new System.EventHandler(this.pBMenuBarIcon_Click);
+            // 
+            // pBLOGO
+            // 
+            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
+            this.pBLOGO.Location = new System.Drawing.Point(83, 11);
+            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
+            this.pBLOGO.Name = "pBLOGO";
+            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
+            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBLOGO.TabIndex = 1;
+            this.pBLOGO.TabStop = false;
             // 
             // pnlMenuBar
             // 
@@ -640,28 +662,6 @@
             // 
             this.sidebartimer.Tick += new System.EventHandler(this.sidebartimer_Tick);
             // 
-            // pBLogo2
-            // 
-            this.pBLogo2.Image = ((System.Drawing.Image)(resources.GetObject("pBLogo2.Image")));
-            this.pBLogo2.Location = new System.Drawing.Point(23, 11);
-            this.pBLogo2.Margin = new System.Windows.Forms.Padding(2);
-            this.pBLogo2.Name = "pBLogo2";
-            this.pBLogo2.Size = new System.Drawing.Size(104, 73);
-            this.pBLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBLogo2.TabIndex = 1;
-            this.pBLogo2.TabStop = false;
-            // 
-            // pBLOGO
-            // 
-            this.pBLOGO.Image = ((System.Drawing.Image)(resources.GetObject("pBLOGO.Image")));
-            this.pBLOGO.Location = new System.Drawing.Point(83, 11);
-            this.pBLOGO.Margin = new System.Windows.Forms.Padding(2);
-            this.pBLOGO.Name = "pBLOGO";
-            this.pBLOGO.Size = new System.Drawing.Size(104, 73);
-            this.pBLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBLOGO.TabIndex = 1;
-            this.pBLOGO.TabStop = false;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,10 +680,12 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.pnlBlack.ResumeLayout(false);
             this.pnlBlack.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnlMenuBarIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBMenuBarIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
             this.pnlMenuBar.ResumeLayout(false);
             this.pnlMenuBar.PerformLayout();
             this.pnlAdmin.ResumeLayout(false);
@@ -707,8 +709,6 @@
             this.pnlDash.ResumeLayout(false);
             this.pnlDash.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDash)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLogo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBLOGO)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -9,7 +9,6 @@ C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.Co
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.exe
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.pdb
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Home.resources
-C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.u_Home.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.U_Booking.resources
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\bin\Debug\Google.Protobuf.dll
@@ -90,3 +89,4 @@ C:\Users\nagee\source\repos\MUAB_hotel1\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.C
 C:\Users\nagee\source\repos\MUAB_hotel1\MUAB_hotel\obj\Debug\MUAB_hotel.csproj.CopyComplete
 C:\Users\nagee\source\repos\MUAB_hotel1\MUAB_hotel\obj\Debug\MUAB_hotel.exe
 C:\Users\nagee\source\repos\MUAB_hotel1\MUAB_hotel\obj\Debug\MUAB_hotel.pdb
+C:\Users\nagee\source\repos\MUAB_hotel\MUAB_hotel\obj\Debug\MUAB_hotel.Dashboard.resources

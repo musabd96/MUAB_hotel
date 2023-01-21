@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MUAB_hotel
 {
-    public partial class u_Home : UserControl
+    public partial class Dashboard : UserControl
     {
         public static int roomsNr { get; set; }
         public static string roomStatus { get; set; }
@@ -20,7 +20,7 @@ namespace MUAB_hotel
         public static int notAvailable { get; set; }
 
         dbHelper dbHelper = new dbHelper();
-        public u_Home()
+        public Dashboard()
         {
             InitializeComponent();
 
@@ -41,14 +41,12 @@ namespace MUAB_hotel
             lbtotalBooked.Text = totalBooked.ToString();
             dbHelper.notAvailable();
             lbNotAvai.Text = notAvailable.ToString();
-            if(dbHelper.employeeRole == "Housekeeping")
-            {
 
-                listBoxTasks.DataSource = dbHelper.employeeTasks();
-                listBoxTasks.Text = dbHelper.employeeTasks().ToString();
+            listBoxTasks.DataSource = dbHelper.employeeTasks();
+            listBoxTasks.Text = dbHelper.employeeTasks().ToString();
 
-                
-            }
+
+
         }
 
         

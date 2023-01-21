@@ -13,7 +13,7 @@ namespace MUAB_hotel
     public partial class Home1 : Form
     {
         dbHelper dbHelper = new dbHelper();
-        u_Home u_Home = new u_Home();
+        Dashboard u_Home = new Dashboard();
         public Home1()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace MUAB_hotel
         //Home button
         private void btnHome_Click(object sender, EventArgs e)
         {
-            u_Home u_Home = new u_Home();
+            Dashboard u_Home = new Dashboard();
             userControl(u_Home);
             btnHome.Enabled = false;
             btnService.Enabled = true;

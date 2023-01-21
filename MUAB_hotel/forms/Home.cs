@@ -15,7 +15,7 @@ namespace MUAB_hotel
     {
         Login Login = new Login();
 
-        u_Home u_Home = new u_Home();
+        Dashboard u_Home = new Dashboard();
         U_Booking U_Booking = new U_Booking();
         U_Reception U_Reception = new U_Reception();
         U_Services U_Services = new U_Services();

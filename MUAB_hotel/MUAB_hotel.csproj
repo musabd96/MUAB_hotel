@@ -138,11 +138,11 @@
     <Compile Include="U_forms\U_Booking.Designer.cs">
       <DependentUpon>U_Booking.cs</DependentUpon>
     </Compile>
-    <Compile Include="U_forms\u_Home.cs">
+    <Compile Include="U_forms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="U_forms\u_Home.Designer.cs">
-      <DependentUpon>u_Home.cs</DependentUpon>
+    <Compile Include="U_forms\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="U_forms\U_Reception.cs">
       <SubType>UserControl</SubType>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="U_forms\U_Booking.resx">
       <DependentUpon>U_Booking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="U_forms\u_Home.resx">
-      <DependentUpon>u_Home.cs</DependentUpon>
+    <EmbeddedResource Include="U_forms\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="U_forms\U_Reception.resx">
       <DependentUpon>U_Reception.cs</DependentUpon>

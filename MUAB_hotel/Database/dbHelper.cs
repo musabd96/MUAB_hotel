@@ -18,7 +18,7 @@ namespace MUAB_hotel
         public static string server = "localhost";
         public static string database = "muabhotel";
         public static string user = "root";
-        public static string pass = "allia";
+        public static string pass = "allia";            //Your Database password
 
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");
@@ -144,7 +144,7 @@ namespace MUAB_hotel
             {
                 while (reader.Read())
                 {
-                    u_Home.totalAvailable = reader.GetInt32(0);
+                    Dashboard.totalAvailable = reader.GetInt32(0);
                 }
             }
             conn.Close();
@@ -160,7 +160,7 @@ namespace MUAB_hotel
             {
                 while (reader.Read())
                 {
-                    u_Home.totalRooms = reader.GetInt32(0);
+                    Dashboard.totalRooms = reader.GetInt32(0);
                 }
             }
             conn.Close();
@@ -178,7 +178,7 @@ namespace MUAB_hotel
             {
                 while (reader.Read())
                 {
-                    u_Home.totalBooked = reader.GetInt32(0);
+                    Dashboard.totalBooked = reader.GetInt32(0);
                 }
             }
             conn.Close();
@@ -232,7 +232,7 @@ namespace MUAB_hotel
             {
                 while (reader.Read())
                 {
-                    u_Home.notAvailable = reader.GetInt32(0);
+                    Dashboard.notAvailable = reader.GetInt32(0);
                 }
             }
             conn.Close();
@@ -561,13 +561,13 @@ namespace MUAB_hotel
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("$roomsNr", u_Home.roomsNr);
+            cmd.Parameters.AddWithValue("$roomsNr", Dashboard.roomsNr);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    u_Home.roomStatus = reader.GetString(4);
+                    Dashboard.roomStatus = reader.GetString(4);
                     U_Reception.Price = reader.GetDecimal(3);
 
                 }
