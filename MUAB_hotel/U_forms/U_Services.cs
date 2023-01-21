@@ -167,6 +167,7 @@ namespace MUAB_hotel
                 MessageBox.Show("Room service is seccussfull");
             }
             checkBox1.Checked = false;
+            U_Services_Load(sender, e);
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -183,6 +184,7 @@ namespace MUAB_hotel
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            txtSearch.Text = "";
             pBsearch_Click(sender, e);
         }
 
