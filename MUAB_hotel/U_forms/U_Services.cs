@@ -23,6 +23,7 @@ namespace MUAB_hotel
         public U_Services()
         {
             InitializeComponent();
+            lbReload.Visible = false;
         }
 
         private void U_Services_Load(object sender, EventArgs e)
@@ -211,6 +212,23 @@ namespace MUAB_hotel
             txtSearch.Text = "";
             pBX.Visible = false;
             pBl.Visible = false;
+        }
+
+        private void pbReload_Click(object sender, EventArgs e)
+        {
+            U_Services_Load(sender, e);
+        }
+
+        private void pbReload_MouseEnter(object sender, EventArgs e)
+        {
+            lbReload.Visible = true;
+            lbReload.Location = PointToClient(Cursor.Position);
+            lbReload.BringToFront();
+        }
+
+        private void pbReload_MouseLeave(object sender, EventArgs e)
+        {
+            lbReload.Visible = false;
         }
     }
 }

@@ -23,15 +23,13 @@ namespace MUAB_hotel
         public Dashboard()
         {
             InitializeComponent();
-
-
+            lbReload.Visible = false;
         }
 
         private void u_Home_Load(object sender, EventArgs e)
         {
-            // Rooms Datagredview
-            dbHelper.roomsview(dataGridView1);
             dbHelper.Available();
+            dbHelper.roomsview(dataGridView1);
 
             lbCurAva.Text = totalAvailable.ToString();
 
@@ -46,7 +44,25 @@ namespace MUAB_hotel
             listBoxTasks.Text = dbHelper.employeeTasks().ToString();
 
 
+        }
 
+
+        private void pbReload_MouseEnter(object sender, EventArgs e)
+        {
+            lbReload.Visible = true;
+            lbReload.Location = PointToClient(Cursor.Position);
+            lbReload.BringToFront();
+        }
+
+        private void pbReload_MouseLeave(object sender, EventArgs e)
+        {
+            lbReload.Visible = false;
+        }
+
+        private void pbReload_Click(object sender, EventArgs e)
+        {
+
+            u_Home_Load(sender, e);
         }
 
         

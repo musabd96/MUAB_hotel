@@ -81,6 +81,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.pbReload = new System.Windows.Forms.PictureBox();
+            this.lbReload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBsearch)).BeginInit();
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlNewEmp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReload)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView6
@@ -704,11 +707,42 @@
             this.label31.TabIndex = 32;
             this.label31.Text = "Adminstration";
             // 
+            // pbReload
+            // 
+            this.pbReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbReload.Image = ((System.Drawing.Image)(resources.GetObject("pbReload.Image")));
+            this.pbReload.Location = new System.Drawing.Point(182, 3);
+            this.pbReload.Name = "pbReload";
+            this.pbReload.Size = new System.Drawing.Size(36, 33);
+            this.pbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReload.TabIndex = 69;
+            this.pbReload.TabStop = false;
+            this.pbReload.Click += new System.EventHandler(this.pbReload_Click);
+            this.pbReload.MouseEnter += new System.EventHandler(this.pbReload_MouseEnter);
+            this.pbReload.MouseLeave += new System.EventHandler(this.pbReload_MouseLeave);
+            // 
+            // lbReload
+            // 
+            this.lbReload.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbReload.AutoSize = true;
+            this.lbReload.BackColor = System.Drawing.Color.White;
+            this.lbReload.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReload.ForeColor = System.Drawing.Color.Black;
+            this.lbReload.Location = new System.Drawing.Point(233, 14);
+            this.lbReload.Name = "lbReload";
+            this.lbReload.Size = new System.Drawing.Size(68, 22);
+            this.lbReload.TabIndex = 68;
+            this.lbReload.Text = "Reload";
+            // 
             // U_Adminstration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
+            this.Controls.Add(this.pbReload);
+            this.Controls.Add(this.lbReload);
             this.Controls.Add(this.pnlNewEmp);
             this.Controls.Add(this.pnlEmp);
             this.Controls.Add(this.pBX);
@@ -738,6 +772,7 @@
             this.groupBox1.PerformLayout();
             this.pnlNewEmp.ResumeLayout(false);
             this.pnlNewEmp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -792,5 +827,7 @@
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbReload;
+        private System.Windows.Forms.Label lbReload;
     }
 }

@@ -36,6 +36,7 @@ namespace MUAB_hotel
             InitializeComponent();
             pnlNewEmp.Visible = false;
             pnlEmp.Visible = false;
+            lbReload.Visible = false;
         }
 
         #region Buttons
@@ -194,10 +195,6 @@ namespace MUAB_hotel
             pnlEmp.Visible = false;
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -237,6 +234,23 @@ namespace MUAB_hotel
         }
 
         #endregion
+
+        private void pbReload_MouseEnter(object sender, EventArgs e)
+        {
+            lbReload.Visible = true;
+            lbReload.Location = PointToClient(Cursor.Position);
+            lbReload.BringToFront();
+        }
+
+        private void pbReload_MouseLeave(object sender, EventArgs e)
+        {
+            lbReload.Visible = false;
+        }
+
+        private void pbReload_Click(object sender, EventArgs e)
+        {
+            U_Admin_Load(sender, e);
+        }
     }
 
 }

@@ -45,6 +45,7 @@ namespace MUAB_hotel
 
         private void userControl(UserControl userControl)
         {
+            
             userControl.Dock = DockStyle.Fill;
             pnl_U.Controls.Clear();
             pnl_U.Controls.Add(userControl);    

@@ -162,5 +162,6 @@ namespace MUAB_hotel
             txtCurtPass.ForeColor = Color.Black;
 
         }
+
     }
 }

@@ -18,7 +18,7 @@ namespace MUAB_hotel
         public static string server = "localhost";
         public static string database = "muabhotel";
         public static string user = "root";
-        public static string pass = "";            //Your Database password
+        public static string pass = "allia";            //Your Database password
 
 
         MySqlConnection conn = new MySqlConnection($"SERVER={server};DATABASE={database};UID={user};PASSWORD={pass};");

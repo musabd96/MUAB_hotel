@@ -45,6 +45,7 @@
             this.txtUname = new System.Windows.Forms.TextBox();
             this.pbPass = new System.Windows.Forms.PictureBox();
             this.pnlPass = new System.Windows.Forms.Panel();
+            this.pBShowConf = new System.Windows.Forms.PictureBox();
             this.pBHideConf = new System.Windows.Forms.PictureBox();
             this.pBShowPass = new System.Windows.Forms.PictureBox();
             this.pBHidePass = new System.Windows.Forms.PictureBox();
@@ -64,9 +65,9 @@
             this.txtEmpID = new System.Windows.Forms.TextBox();
             this.txtCurPassError = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtConfPassError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pBShowConf = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPass)).BeginInit();
             this.pnlPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBShowConf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHideConf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHidePass)).BeginInit();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBHideCurnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurPassError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConfPassError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBShowConf)).BeginInit();
             this.SuspendLayout();
             // 
             // lbHome
@@ -232,6 +232,17 @@
             this.pnlPass.Name = "pnlPass";
             this.pnlPass.Size = new System.Drawing.Size(411, 459);
             this.pnlPass.TabIndex = 33;
+            // 
+            // pBShowConf
+            // 
+            this.pBShowConf.Image = ((System.Drawing.Image)(resources.GetObject("pBShowConf.Image")));
+            this.pBShowConf.Location = new System.Drawing.Point(250, 268);
+            this.pBShowConf.Name = "pBShowConf";
+            this.pBShowConf.Size = new System.Drawing.Size(24, 24);
+            this.pBShowConf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBShowConf.TabIndex = 32;
+            this.pBShowConf.TabStop = false;
+            this.pBShowConf.Click += new System.EventHandler(this.pBShowConf_Click);
             // 
             // pBHideConf
             // 
@@ -419,17 +430,6 @@
             // 
             this.txtConfPassError.ContainerControl = this;
             // 
-            // pBShowConf
-            // 
-            this.pBShowConf.Image = ((System.Drawing.Image)(resources.GetObject("pBShowConf.Image")));
-            this.pBShowConf.Location = new System.Drawing.Point(250, 268);
-            this.pBShowConf.Name = "pBShowConf";
-            this.pBShowConf.Size = new System.Drawing.Size(24, 24);
-            this.pBShowConf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBShowConf.TabIndex = 32;
-            this.pBShowConf.TabStop = false;
-            this.pBShowConf.Click += new System.EventHandler(this.pBShowConf_Click);
-            // 
             // U_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -463,6 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPass)).EndInit();
             this.pnlPass.ResumeLayout(false);
             this.pnlPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBShowConf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHideConf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBShowPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBHidePass)).EndInit();
@@ -470,7 +471,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBHideCurnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurPassError)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConfPassError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBShowConf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

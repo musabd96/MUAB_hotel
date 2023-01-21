@@ -29,8 +29,7 @@ namespace MUAB_hotel
         {
             
             InitializeComponent();
-            
-            
+
         }
 
         #region - + buttons 
@@ -457,5 +456,6 @@ namespace MUAB_hotel
             dtCheckinError.SetError(dtCheckin, string.Empty);
             dtCheckinError.SetError(dtCheckout, string.Empty);
         }
+
     }
 }

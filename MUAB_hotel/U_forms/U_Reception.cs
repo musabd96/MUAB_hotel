@@ -37,7 +37,8 @@ namespace MUAB_hotel
         public U_Reception()
         {
             InitializeComponent();
-            
+            lbReload.Visible = false;
+
         }
 
 
@@ -135,7 +136,6 @@ namespace MUAB_hotel
             }
 
             roomNr = 0;
-            MessageBox.Show($"{roomNr}");
             btnChIn.Enabled = false;
             btnChOut.Enabled = false;
             btnService.Enabled = false;
@@ -162,7 +162,6 @@ namespace MUAB_hotel
             }
 
             roomNr = 0;
-            MessageBox.Show($"{roomNr}");
             btnChIn.Enabled = false;
             btnChOut.Enabled = false;
             btnService.Enabled = false;
@@ -315,7 +314,22 @@ namespace MUAB_hotel
 
         }
 
-       
+        private void pbReload_Click(object sender, EventArgs e)
+        {
+            U_Reception_Load(sender, e);
+        }
+
+        private void pbReload_MouseEnter(object sender, EventArgs e)
+        {
+            lbReload.Visible = true;
+            lbReload.Location = PointToClient(Cursor.Position);
+            lbReload.BringToFront();
+        }
+
+        private void pbReload_MouseLeave(object sender, EventArgs e)
+        {
+            lbReload.Visible = false;
+        }
     }
 
 }
