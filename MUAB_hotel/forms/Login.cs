@@ -72,7 +72,6 @@ namespace MUAB_hotel
                         lbError.Text = "Wrong password!";
                         lbError.Location = new Point(111, 233);
                         
-                        pnlPass.BackColor = Color.Red;
                         txtPass.ForeColor = Color.Red;
                     }
                     else
@@ -80,9 +79,7 @@ namespace MUAB_hotel
                         lbError.Text = "Wrong username and password!";
                         lbError.Location = new Point(133, 69);
 
-                        pnlAccNr.BackColor = Color.Red;
                         txtUname.ForeColor = Color.Red;
-                        pnlPass.BackColor = Color.Red;
                         txtPass.ForeColor = Color.Red;
                     }
                     
@@ -105,15 +102,13 @@ namespace MUAB_hotel
         }
         private void txtUname_TextChanged(object sender, EventArgs e)
         {
-            pnlAccNr.BackColor = Color.DodgerBlue;
-            txtUname.ForeColor = Color.White;
+            txtUname.ForeColor = Color.Black;
             lbError.Text = "";
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            pnlPass.BackColor = Color.DodgerBlue;
-            txtPass.ForeColor = Color.White;
+            txtPass.ForeColor = Color.Black;
             lbError.Text = "";
         }
 

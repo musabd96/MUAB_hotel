@@ -329,7 +329,6 @@ namespace MUAB_hotel
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("$roomNr", roomNr);
-            //cmd.Parameters.AddWithValue("$roomsCapacity", roomsCapacity);
             cmd.Parameters.AddWithValue("$checkIn", checkIn);
             cmd.Parameters.AddWithValue("$checkOut", checkOut);
             cmd.Parameters.AddWithValue("$totalPrice", totalPrice);
