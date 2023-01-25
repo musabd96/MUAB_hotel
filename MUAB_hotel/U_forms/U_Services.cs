@@ -184,7 +184,6 @@ namespace MUAB_hotel
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            txtSearch.Text = "";
             pBsearch_Click(sender, e);
         }
 
@@ -192,6 +191,7 @@ namespace MUAB_hotel
 
         private void pBsearch_Click(object sender, EventArgs e)
         {
+            
             roomNr = txtSearch.Text;
             if (roomNr != "")
             {
