@@ -54,8 +54,8 @@ The project is organized into two main components:
 
 2. **SchoolSync.Server:**
     ASP.NET Core application for the backend.
-    - [Api]: ASP.NET Core API controllers.
-    - [Application]: Application services and DTOs.
-    - [Domain]: Core domain logic, entities, and repositories.
-    - [Infrastructure]: Data access, external services, and configuration.
+    - Api: ASP.NET Core API controllers.
+    - Application: Application services and DTOs.
+    - Domain: Core domain logic, entities, and repositories.
+    - Infrastructure: Data access, external services, and configuration.
     
