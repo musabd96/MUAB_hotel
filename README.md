@@ -2,6 +2,6 @@
 individuella inlämningsuppgifter Databaser kurs - Hotel Management App
 
 4. **Install Dependencies:**
-    ```
+    ```bash
     npm install
     ```
